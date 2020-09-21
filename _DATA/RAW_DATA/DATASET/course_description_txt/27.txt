@@ -1,0 +1,62 @@
+Hi there, I’m Dan. In this course we’ll learn how to create and edit a video for our website. Then we’ll go and build the site from scratch. It looks fancy, but it’s not particularly hard. 
+
+Check out the final site example here.
+
+I built this course for beginners. You do not need to know how to code or how to edit video to take this class. We’ll start with the super basics. This could totally be your very first website, wouldn’t starting with a video background be a super cool first project?
+
+We’ll go through the full process. I’ll show you where to find some video, I’ll show you how to edit it in Premiere Pro. We’ll do cool video effects like blurs, tints and transitions. I’ll show you how to export the video so we can get the file size super small. Once we’ve created our video we’ll build a basic website together and make our video all cool and full screen. 
+
+We’ll also create a second option where the video peeks in through a specific box.
+
+In this course I’ve got exercise files so you can play along. I’ll also save my files as I go through each video so you can compare yours to mine - handy if something goes wrong. We’ll be using Dreamweaver & Premiere Pro but 95% of this can be done in generic web & video tools. 
+
+Remember: I’m happy to help & I’m pretty handy with replying. Also - there is a handy cheat sheet you can print out, plus there are teacher resources if you need them. 
+
+The best thing - is that it’s not that hard. But super awesome video background will impress the heck out of your clients.
+
+Download the exercise files here.
+
+Download the completed files here.
+
+What are the requirements?
+
+You'll need a copy of Dreamweaver CC 2017 & Premiere Pro CC 2017 or above. A free trial can be downloaded from Adobe.
+This course is aimed at people to to web and video. Though it will be handy if you know some basic HTML before this course. It’s focused more on video backgrounds and not the entire web design process. 
+What am I going to get from this course?
+
+15 lectures 2 Hours 18 minutes of content!
+You'll learn to build a website with a video background.
+Pros, cons & cool examples of video backgrounds. 
+How to edit your video in Premiere Pro. 
+Where to get video. 
+Basic editing, adding texture, fading, texturing, blurring, coloring. 
+Premiere or After Effects? Both?
+What size should it be. HD? 4K? 
+Minimising file size
+Exporting in the right video format
+Media Encoder. Webm, mp4, ogg, ogv. 
+How to create a basic website. 
+Add fullscreen background video
+Add a background video to a hero box. 
+Integrating with an existing Bootstrap website. 
+Make the site responsive. 
+Downloadable exercise files & cheat sheet.
+Forum support from me and the rest of the BYOL crew.
+Techniques used by professional website designers.
+Professional workflows and shortcuts.
+A wealth of other resources and websites to help your new career path.
+What is the target audience?
+
+YES: This course is for beginners. Aimed at people new to the world of web design. While no previous Dreamweaver experience is necessary, it would be good to do one of my other intro courses before attempting this course.
+NO: This course is NOT suited to people experienced in using HTML & CSS.
+ 
+
+Class ProjectsSee All
+I'd love to hear about your first project. What you learnt from testing that you might have normally not considered.  
+(Read More)
+  
+Beginner level
+794
+Students
+
+--

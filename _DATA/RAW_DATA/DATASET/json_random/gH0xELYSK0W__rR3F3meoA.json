@@ -1,0 +1,28 @@
+{
+  "id": "gH0xELYSK0W__rR3F3meoA",
+  "name": "Aluminium - Anodized (Red)",
+  "origin": "mixer-created",
+  "categories": [
+    "smartmaterial",
+    "smartmaterials",
+    "mixer"
+  ],
+  "tags": [],
+  "previews": {
+    "images": [
+      {
+        "uri": "SmartMaterialPreview.png"
+      }
+    ]
+  },
+  "meta": [],
+  "averageColor": "#F3676A",
+  "version": 2,
+  "maps": [
+    {
+      "name": "SmartMaterial",
+      "type": "smartmaterial",
+      "uri": "Aluminium - Anodized (Red).xml"
+    }
+  ]
+}

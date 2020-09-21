@@ -1,0 +1,16 @@
+In this course you will learn about:
+
+PHP as a web development language
+Who uses PHP
+How to install PHP
+What a .php file is
+PHP Syntax
+Echo / Print
+The print_r function
+Variables
+Data Types
+If/else Statements
+Switch Statements
+Functions 
+Super Global Variables
+How to accept user input from a form.

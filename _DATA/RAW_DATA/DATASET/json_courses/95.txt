@@ -1,0 +1,55 @@
+{
+            "@context": "http://schema.org/",
+            
+            "@id" : "https://www.skillshare.com/classes/Workflow-of-Modern-Web-Design-%E2%86%92-Ideation-Wireframing-Mockups-Prototype/1319364140",
+            "name" : "Workflow of Modern Web Design \u2192 Ideation, Wireframing, Mockups & Prototype",
+            
+            "description": "
+                                    From the past few years, the job of a traditional Web Designer has been drastically changed. Designing for each and every screen (Responsive Web Design) is not easy. Questions like these come to mind of every young web designer e.g. How to change the layout? How to set up grids for responsive web design? Which content to hide and show?
+Now in every Web Design project, we designers 
+Gather project requirements (from client and users)
+Sketch early Ideas
+Wire-frame those ideas
+Convert wireframes to Mockups
+Getting Specs and Style Guides ready for Developers
+Creating Prototypes to show the flows and interactions
+Every modern designer uses more than 2 to 3 tools in Web Design process. Designers also need to collaborate with Developers a lot so how to solve all these problems.
+So in this course, I will show you the modern process of creating Responsive web design from gathering information and design briefs from client to creating sketches, wireframes and prototypes or even style guides for developers.
+Tools you will learn during this course are 
+Adobe Photoshop
+Balsamiq Mockups
+Invision App
+Zeplin App
+Design frameworks you will touch in this course are
+Atomic Design framework
+8-Point Grid System
+I will show other similar online apps for Web Designers at the end and compare their pros and cons.
+Now if you are ready to learn the modern web design and become a top notch Web Designer
+Start this course Now
+                            ",
+            
+            "image": "https://static.skillshare.com/uploads/video/thumbnails/89ad6994f3b8835f8fcd77d1cef6882d/448-252",
+            "provider": {
+                
+                
+                
+                "name" : "Skillshare",
+                "sameAs": "https://www.skillshare.com",
+                
+                "logo": "https://static.skillshare.com/assets/images/hands_logo_2x.png",
+                
+                "@type": "Organization"
+            },
+            "author": {
+                
+                
+                
+                "name" : "Muhammad Ahsan",
+                "sameAs": "https://www.skillshare.com/user/ahsanidrisi",
+                
+                
+                "image": "https://static.skillshare.com/uploads/users/1830675/user-image-medium.jpg?1177464673",
+                "@type": "Person"
+            },
+            "@type": "Course"
+        }

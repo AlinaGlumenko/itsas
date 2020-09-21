@@ -1,0 +1,1 @@
+Vim will help you become a more effective programmer or sysadmin.  It's a very powerful tool that works in both the graphical and terminal environment, meaning you can login to any computer in the world over SSH and use it. Why not to learn Vim? In this course you'll learn the basics!

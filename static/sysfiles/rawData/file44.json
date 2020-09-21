@@ -1,0 +1,28 @@
+{
+  "id": "5w78ImevtECeU5JJ93ueWg",
+  "name": "Wood - Painted",
+  "origin": "mixer-created",
+  "categories": [
+    "smartmaterial",
+    "smartmaterials",
+    "mixer"
+  ],
+  "tags": [],
+  "previews": {
+    "images": [
+      {
+        "uri": "SmartMaterialPreview.png"
+      }
+    ]
+  },
+  "meta": [],
+  "averageColor": "#8A8886",
+  "version": 2,
+  "maps": [
+    {
+      "name": "SmartMaterial",
+      "type": "smartmaterial",
+      "uri": "Wood - Painted.xml"
+    }
+  ]
+}

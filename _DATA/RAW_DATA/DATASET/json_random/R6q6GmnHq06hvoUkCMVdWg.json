@@ -1,0 +1,28 @@
+{
+  "id": "R6q6GmnHq06hvoUkCMVdWg",
+  "name": "Rubber - Natural",
+  "origin": "mixer-created",
+  "categories": [
+    "smartmaterial",
+    "smartmaterials",
+    "mixer"
+  ],
+  "tags": [],
+  "previews": {
+    "images": [
+      {
+        "uri": "SmartMaterialPreview.png"
+      }
+    ]
+  },
+  "meta": [],
+  "averageColor": "#0F0F0F",
+  "version": 2,
+  "maps": [
+    {
+      "name": "SmartMaterial",
+      "type": "smartmaterial",
+      "uri": "Rubber - Natural.xml"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+In this course you will learn all about the Arduino board and how to program it. We go through various stages in this course and you are taught all about the basics of electronics and how to program Arduino firmware.
+
+If you have never even picked up a wire in your life then this course is for you, by the end of this course you will have all the experience you need to get a good grade in a university module that's based on Arduino. You will have the experience required to further your education and you will know how to create some really fun little exercises in Arduino.
+
+Not to mention you will also understand the basics of electronics at a fundamental level and have experience with various components such as resistors, LED's, diodes, capacitors and much more.
+
+You are taught all about schematics and how to read and write them, as well as how to create printed circuit boards from these schematics so that you can have your very own circuit board shipped to your home based on your design!
+
+This course also includes a Whack A Mole Game where you are taught how to create your very own little Arduino electronic game using LED's  and push buttons
+
+What you’ll learn
+
+All about Arduino and firmware programming
+Designing Electronic Schematics
+Designing PCB(Printed Circuit Boards)
+Are there any course requirements or prerequisites?
+
+Understanding Of Programming At A Basic Level
+Who this course is for:
+
+Beginner Firmware Developers
+Beginner's with Electronics
+People who want to learn how to read and create schematics
+People who want to learn how to create PCB(Printed Circuit Boards)
+Don't forget to checkout the class project!

@@ -1,0 +1,7 @@
+In this class, we’re going to cover something that’s very fundamental when building for the web and that is the use of HTML and CSS.
+
+HTML is the markup language that gives structure to web pages and applications across the web and CSS is the style sheet language used for describing the presentation of HTML.
+
+HTML and CSS work very closely together to create the visual look and layout of your website or web application and so in this class, we’re about to cover them together.
+
+Whichever specific path you wish to follow as a web developer, one thing is for sure. You will definitely need some knowledge of HTML and CSS.

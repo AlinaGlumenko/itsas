@@ -1,0 +1,28 @@
+{
+  "id": "YSaQMcTie0mIiCITeMIUEQ",
+  "name": "Plastic - Grainy",
+  "origin": "mixer-created",
+  "categories": [
+    "smartmaterial",
+    "smartmaterials",
+    "mixer"
+  ],
+  "tags": [],
+  "previews": {
+    "images": [
+      {
+        "uri": "SmartMaterialPreview.png"
+      }
+    ]
+  },
+  "meta": [],
+  "averageColor": "#252524",
+  "version": 2,
+  "maps": [
+    {
+      "name": "SmartMaterial",
+      "type": "smartmaterial",
+      "uri": "Plastic - Grainy.xml"
+    }
+  ]
+}

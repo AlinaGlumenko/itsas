@@ -1,0 +1,28 @@
+{
+  "id": "7SfLYTPGYUyuizAD-6pijg",
+  "name": "Metal - Sci Fi Armor (Bounty Hunter Orange)",
+  "origin": "mixer-created",
+  "categories": [
+    "smartmaterial",
+    "smartmaterials",
+    "mixer"
+  ],
+  "tags": [],
+  "previews": {
+    "images": [
+      {
+        "uri": "SmartMaterialPreview.png"
+      }
+    ]
+  },
+  "meta": [],
+  "averageColor": "#F5C987",
+  "version": 2,
+  "maps": [
+    {
+      "name": "SmartMaterial",
+      "type": "smartmaterial",
+      "uri": "Metal - Sci Fi Armor (Bounty Hunter Orange).xml"
+    }
+  ]
+}

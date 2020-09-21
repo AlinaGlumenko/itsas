@@ -1,0 +1,5 @@
+Linux is the fastest growing operating system in the world, it is at heart of the Internet and computing. Learn the basic Linux commands you need to succeed 
+
+If you are in IT, you are really missing out if you don't learn the Linux terminal. Billions of servers, embedded systems and super computers use Linux. So, don't be left behind!
+
+At the end of this course, you will be able to use Linux Terminal Commands.

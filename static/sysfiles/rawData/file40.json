@@ -1,0 +1,28 @@
+{
+  "id": "bGNbYNLCS0aS1rBlJPba4w",
+  "name": "Metal - Machinery Yellow",
+  "origin": "mixer-created",
+  "categories": [
+    "smartmaterial",
+    "smartmaterials",
+    "mixer"
+  ],
+  "tags": [],
+  "previews": {
+    "images": [
+      {
+        "uri": "SmartMaterialPreview.png"
+      }
+    ]
+  },
+  "meta": [],
+  "averageColor": "#C7A930",
+  "version": 2,
+  "maps": [
+    {
+      "name": "SmartMaterial",
+      "type": "smartmaterial",
+      "uri": "Metal - Machinery Yellow.xml"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+            "@context": "http://schema.org/",
+            
+            "@id" : "https://www.skillshare.com/classes/Creating-An-Emulator-In-C-For-The-Chip-8/111813381",
+            "name" : "Creating An Emulator In C For The Chip-8",
+            
+            "description": "
+                                    This course teaches you how to create an emulator for the Chip-8, once you complete this project you will be able to emulate games from the mid 1970s and on wards!
+Requirements:
+You must understand how to program in the C programming language
+Understand hexadecimal
+Understand bitwise operators
+An understanding of how to link with libraries
+Please upload the outcomes of this class in the project gallery
+                            ",
+            
+            "image": "https://static.skillshare.com/uploads/video/thumbnails/26da3cce0fb532630528dde3a2a157af/448-252",
+            "provider": {
+                
+                
+                
+                "name" : "Skillshare",
+                "sameAs": "https://www.skillshare.com",
+                
+                "logo": "https://static.skillshare.com/assets/images/hands_logo_2x.png",
+                
+                "@type": "Organization"
+            },
+            "author": {
+                
+                
+                
+                "name" : "Daniel McCarthy",
+                "sameAs": "https://www.skillshare.com/user/nibblebits",
+                
+                
+                "image": "https://static.skillshare.com/uploads/users/4349639/1528371612_pic.jpg",
+                "@type": "Person"
+            },
+            "@type": "Course"
+        }

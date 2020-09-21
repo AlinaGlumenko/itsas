@@ -1,0 +1,31 @@
+This course is for visual, creative people who need to start making HTML5 banner ads. I made this course for people that are struggling to get their heads around the new world of HTML5 advertising. This course is step by step with exercise files. I’ve saved a copy of each Adobe Animate file after every video so if you get lost you can compare your files to my completed files. At the end you’ll be able to create, test and upload standard banner ads.
+
+This course is perfect for people completely new to the digital advertising world. We’ll cover all the basics. It’s also great for people who previously worked in Adobe Flash to produce SWF advertising.
+
+Because this is such a new industry I’ll be around to help you with any questions. Use the forums on the pages and I’ll respond.
+
+Download the exercise files here.
+
+Download the completed files here.
+
+What are the requirements?
+
+You'll need a copy of Adobe CC 2015 or above. A free trial can be download from Adobe here.
+No previous Adobe Animate or digital advertising knowledge is necessary.
+If you're not sure if this course is right for you. Email me what you’re trying to do and check if you’re on the right track. 
+What am I going to get from this course?
+
+53 lectures 3 hours of content!
+Forum support from me. 
+How to build banner advertising
+How to keep file sizes down.
+
+Firm understanding of the publishing process for ad networks like Google Doubleclick, Adwords, Simek etc. 
+Professional workflows and shortcuts. 
+A wealth of other resources and websites to help your new career path.
+ 
+
+What is the target audience?
+
+YES: This course is for beginners. For people who prefer not to work in code. Visual people. Creative people. Graphic designers. Marketers. Past users of Flash.
+NO: This course is not for developers. This course will cover standard animated banners. Not dynamic banners like expanding banners, video banners or game banners. 

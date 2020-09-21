@@ -1,0 +1,62 @@
+{
+            "@context": "http://schema.org/",
+            
+            "@id" : "https://www.skillshare.com/classes/Flask-Devops-Release-Scalable-Applications-with-Heroku/568855973",
+            "name" : "Flask Devops: Release Scalable Applications with Heroku",
+            
+            "description": "
+                                    
+This course will teach you how to deploy your Flask applications to one of the most popular Platform as a Service (Paas) providers in the world: Heroku. With Platform as a Service hosting, you don’t need to worry about the small details, like server provisioning or database tuning. You focus on developing your application and you let Heroku worry about the rest.
+Flask Devops is a new series of courses which will cover how to effectively deploy your Flask application to audiences across the world using the most popular hosting providers, while also covering topics like code deployment, continuous integration and delivery, monitoring and architecture. You can get the course about the provider you want or get the whole series in one.
+The course covers the basic concepts of the Heroku release cycle and architecture, how to use Git or Docker as your development environment, how to use the built-in Postgres Heroku service or the MySQL plugin providers and routing using your own custom domain.
+If you already know the basics of Flask and you are interested in how to deploy your applications to a hosting service, this is the course for you.
+The course is divided in 4 sections:
+
+Heroku concepts which cover the architecture and the release cycles
+
+
+An introduction to the release concepts using a simple Hello World Flask app using both Git and the new Heroku container services which leverages Docker
+
+
+An overview of how to deploy data driven applications including Heroku’s own Postgres service and one of the most popular MySQL plugins
+
+
+How to efficiently assign a domain name to your application
+
+The course has a number of video tutorials as well as the boilerplate Flask application codebase. You can also purchase an eBook with all the material.
+The course can take anywhere from 3 to 7 days to complete based on how much material the student completes daily.
+Additionally we’re constantly updating the course, adding contents thanks to the feedback of our students.
+Join this course and continue your path to becoming a professional backend web developer!
+Who is the target audience?
+Programmers and developers with basic Flask knowledge who want to learn how to deploy their applications on public servers
+Application architects who want to understand better how to effectively deploy applications
+Startup CTOs who want to understand how to scale their applications
+Computer Science Students who want to get exposed to real life hosting concepts
+
+                            ",
+            
+            "image": "https://static.skillshare.com/uploads/video/thumbnails/5660835337001/448-252",
+            "provider": {
+                
+                
+                
+                "name" : "Skillshare",
+                "sameAs": "https://www.skillshare.com",
+                
+                "logo": "https://static.skillshare.com/assets/images/hands_logo_2x.png",
+                
+                "@type": "Organization"
+            },
+            "author": {
+                
+                
+                
+                "name" : "Jorge Escobar",
+                "sameAs": "https://www.skillshare.com/user/fromzero",
+                
+                
+                "image": "https://static.skillshare.com/uploads/users/3048582/user-image-medium.jpg?920124152",
+                "@type": "Person"
+            },
+            "@type": "Course"
+        }

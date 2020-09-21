@@ -1,0 +1,5 @@
+Learn Python Desktop programming, learn the skill you need to succeed 
+
+If you are in IT, you are really missing out if you don't learn PyQt. It's the most used desktop module. So, don't be left behind!
+
+At the end of this course, you will be able to make desktop apps with Python!

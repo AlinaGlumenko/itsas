@@ -1,0 +1,28 @@
+{
+  "id": "yhmsMct8sESNRVQyxFMXCA",
+  "name": "Aluminium Foil",
+  "origin": "mixer-created",
+  "categories": [
+    "smartmaterial",
+    "smartmaterials",
+    "mixer"
+  ],
+  "tags": [],
+  "previews": {
+    "images": [
+      {
+        "uri": "SmartMaterialPreview.png"
+      }
+    ]
+  },
+  "meta": [],
+  "averageColor": "#F9FAFA",
+  "version": 2,
+  "maps": [
+    {
+      "name": "SmartMaterial",
+      "type": "smartmaterial",
+      "uri": "Aluminium Foil.xml"
+    }
+  ]
+}

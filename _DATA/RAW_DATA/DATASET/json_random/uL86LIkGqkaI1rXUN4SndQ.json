@@ -1,0 +1,28 @@
+{
+  "id": "uL86LIkGqkaI1rXUN4SndQ",
+  "name": "Cobalt",
+  "origin": "mixer-created",
+  "categories": [
+    "smartmaterial",
+    "smartmaterials",
+    "mixer"
+  ],
+  "tags": [],
+  "previews": {
+    "images": [
+      {
+        "uri": "SmartMaterialPreview.png"
+      }
+    ]
+  },
+  "meta": [],
+  "averageColor": "#ACA59C",
+  "version": 2,
+  "maps": [
+    {
+      "name": "SmartMaterial",
+      "type": "smartmaterial",
+      "uri": "Cobalt.xml"
+    }
+  ]
+}

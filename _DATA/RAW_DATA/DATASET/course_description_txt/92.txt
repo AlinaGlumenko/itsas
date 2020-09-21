@@ -1,0 +1,13 @@
+Google is now officially supporting Kotlin in Android development. Kotlin is clearly the future for Java. Come learn it in this fun and exciting course!
+
+This Course is for beginner programmers: We'll start off from very basics such as installing IDE, Java JDK and writing Hello World Program.
+
+In this class we'll cover:
+
+Variables
+Data Types
+Operators
+Conditional Statements
+Arrays and
+Functions 
+If you're looking to make Android apps, command line tools, Javascript, or just want to learn a new programming language, this is the course for you!

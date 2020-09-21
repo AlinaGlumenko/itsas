@@ -1,0 +1,9 @@
+Figma is one of the most powerful UI and UX Design tool that can run in a Browser. Figma’s power is hidden in its being cross-platform and Collaboration with other Designers and Developers. It works seamlessly on Windows and Mac Operating Systems with a Desktop Application. In recent times, it is one of the most powerful and popular User Interface Design App due to being a Cloud based App
+
+This class will teach you all about User Interface Designing and also adding interactivity to your Designs with powerful prototyping features of Figma. First, we will learn about the basic tools, common keyboard shortcuts and familiarizing ourselves with the Figma’s interface.
+
+Once you have solid basics, we will move on to Auto Layout, Responsive design and few advance things like viewing your Prototype live on an actual Mobile Device. I will show you everything step by step.
+
+We will design together the User Interface and then the prototype of a “Recipe App called YUMMS” from the scratch and make it into a pro level design by multiplying Artboards, using reusable Styles and Components.
+
+If you are Beginner in UI UX Design or a seasoned UI/UX Designer trying to switch from Sketch or Adobe XD, please join me in this learning experience.

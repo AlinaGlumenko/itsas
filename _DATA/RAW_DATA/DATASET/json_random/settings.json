@@ -1,0 +1,73 @@
+{
+  "guid": "02f002f4-bec6-42fa-b77a-2b8d2724b395",
+  "dayzpath": "F:\\SteamLibrary\\steamapps\\common\\DayZ",
+  "additionalparameters": null,
+  "additionalmods": null,
+  "lastpassword": null,
+  "nosplash": false,
+  "nopause": false,
+  "window": false,
+  "nobenchmark": false,
+  "scriptdebug": false,
+  "favourites": [
+    {
+      "ip": "185.16.86.55",
+      "port": 27116
+    },
+    {
+      "ip": "185.16.86.48",
+      "port": 27116
+    }
+  ],
+  "latestjoined": [
+    {
+      "joined": "2019-08-04T19:44:53.0999326+04:00",
+      "endpoint": {
+        "ip": "193.70.80.124",
+        "port": 27900
+      }
+    },
+    {
+      "joined": "2019-08-19T18:51:59.8145675+04:00",
+      "endpoint": {
+        "ip": "185.16.86.55",
+        "port": 27116
+      }
+    },
+    {
+      "joined": "2019-08-06T19:01:12.4952261+04:00",
+      "endpoint": {
+        "ip": "186.233.186.51",
+        "port": 27016
+      }
+    },
+    {
+      "joined": "2019-08-07T02:51:07.0444859+04:00",
+      "endpoint": {
+        "ip": "213.202.230.107",
+        "port": 27016
+      }
+    },
+    {
+      "joined": "2019-08-18T18:59:20.5338002+04:00",
+      "endpoint": {
+        "ip": "83.239.99.119",
+        "port": 2305
+      }
+    },
+    {
+      "joined": "2019-08-25T21:09:14.1625434+04:00",
+      "endpoint": {
+        "ip": "185.16.86.48",
+        "port": 27116
+      }
+    }
+  ],
+  "activefilters": 128,
+  "ingamename": "ingamename",
+  "changelogseen": 1772,
+  "previoussymlinks": [],
+  "skipbe": false,
+  "runasadmin": false,
+  "discordPresence": true
+}

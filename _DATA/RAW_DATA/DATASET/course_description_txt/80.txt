@@ -1,0 +1,5 @@
+Linux is the fastest growing operating system in the world, it is at heart of the Internet and computing. Ubuntu is one of the most popular Linux-based systems. Learn how to use Ubuntu Linux and be one step ahead of your colleagues 
+
+If you are in IT, you are really missing out if you don't learn about Linux. Billions of servers, embedded systems and super computers use Linux. So, don't be left behind!
+
+At the end of this course, you will be able to install and use the Ubuntu Linux Desktop.

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block header %}
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">Confusion matrix</h1>
+    <p class="lead">Здесь Вы можете узнать точность распознавания.</p>
+</div>
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="card-deck mb-3 text-center">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Normalized Confusion Matrix</h4>
+                </div>
+                <div class="card-body">
+                    <div id="container"></div>                    
+                </div>                
+            </div>
+            <div class="w-100"></div>
+            <div class="card-body">
+                <div class="alert alert-primary" role="alert">
+                    Accuracy: {{ accuracy }}
+                </div>
+            </div>
+            <div class="w-100"></div>
+        </div>
+    </div>   
+	<script src="./static/js/matrix.js"></script>
+
+    <script>		
+		var confusionMatrix = {{ matrix|safe }};
+		var labels = {{ classes|safe }};
+		
+		Matrix({
+			container : '#container',
+			data      : confusionMatrix,
+			labels    : labels
+		});
+	</script>
+{% endblock %}

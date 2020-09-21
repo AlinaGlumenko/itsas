@@ -1,0 +1,28 @@
+{
+  "id": "xoVsm5hGME67MMZgOhPUUw",
+  "name": "Organic - Headcrab Skin",
+  "origin": "mixer-created",
+  "categories": [
+    "smartmaterial",
+    "smartmaterials",
+    "mixer"
+  ],
+  "tags": [],
+  "previews": {
+    "images": [
+      {
+        "uri": "SmartMaterialPreview.png"
+      }
+    ]
+  },
+  "meta": [],
+  "averageColor": "#827658",
+  "version": 2,
+  "maps": [
+    {
+      "name": "SmartMaterial",
+      "type": "smartmaterial",
+      "uri": "Organic - Headcrab Skin.xml"
+    }
+  ]
+}

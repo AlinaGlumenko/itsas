@@ -1,0 +1,28 @@
+{
+  "id": "2fwla6M38UCAQzMF79ydDA",
+  "name": "Metal - Sci-Fi Armor (Slayer Green)",
+  "origin": "mixer-created",
+  "categories": [
+    "smartmaterial",
+    "smartmaterials",
+    "mixer"
+  ],
+  "tags": [],
+  "previews": {
+    "images": [
+      {
+        "uri": "SmartMaterialPreview.png"
+      }
+    ]
+  },
+  "meta": [],
+  "averageColor": "#808172",
+  "version": 2,
+  "maps": [
+    {
+      "name": "SmartMaterial",
+      "type": "smartmaterial",
+      "uri": "Metal - Sci-Fi Armor (Slayer Green).xml"
+    }
+  ]
+}

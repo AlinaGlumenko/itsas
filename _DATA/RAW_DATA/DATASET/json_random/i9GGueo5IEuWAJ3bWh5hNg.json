@@ -1,0 +1,28 @@
+{
+  "id": "i9GGueo5IEuWAJ3bWh5hNg",
+  "name": "Steel - Ceramic Coating (OD Green)",
+  "origin": "mixer-created",
+  "categories": [
+    "smartmaterial",
+    "smartmaterials",
+    "mixer"
+  ],
+  "tags": [],
+  "previews": {
+    "images": [
+      {
+        "uri": "SmartMaterialPreview.png"
+      }
+    ]
+  },
+  "meta": [],
+  "averageColor": "#54574D",
+  "version": 2,
+  "maps": [
+    {
+      "name": "SmartMaterial",
+      "type": "smartmaterial",
+      "uri": "Steel - Ceramic Coating (OD Green).xml"
+    }
+  ]
+}

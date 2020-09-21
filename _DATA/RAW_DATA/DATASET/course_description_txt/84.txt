@@ -1,0 +1,70 @@
+In 3 days you will be able to perform Linux installation, configuration, administration, scripting and much more...
+
+This course is designed for those students who do not have enough time to learn Linux.  They want to be able to do Linux installation and manage the Linux server by running commands in 3 days.  Spend a few hours with me everyday for the next 3 days and I will make sure you will learn the following:
+
+Day 1 – Installation, Configuration, File System and Basic Commands
+
+Understanding of Linux?
+What is Oracle Virtual Box?
+Downloading and Installing Oracle Virtual Box
+Creating virtual machine
+Linux Distributions
+Downloading and Installing Linux (CentOS)
+Download and install Putty
+Connect Linux VM via Putty
+Changing Password
+Introduction to File System
+File system structure description
+File system navigation commands
+Directory listing overview
+Creating Files and Directories
+File system paths
+Finding Files and Directories (find, locate)
+Wildcard (*, $, ^)
+Quiz and Handouts
+ 
+
+Day 2 – Linux System Administration
+
+File Permissions (chmod)
+File Ownership (chown, chgrp)
+Getting Help (man, whatis etc.)
+Adding text to file
+Pipes ( | )
+File Maintenance Commands
+File Display Commands
+Filters / Text Processing Commands (cut, sort, grep, awk, uniq, wc)
+Compare Files (diff, cmp)
+Compress and un-compress files/directories (tar, gzip, gunzip)
+Linux File Editors (vi text editor)
+User account management (useradd, groupadd, usermod, userdel, groupdel)
+Switch users and Sudo access
+Monitor users (who, id, last)
+System utility commands (date, uptime, hostname, which, cal, bc etc.)
+Quiz and Handouts
+ 
+
+Day 3 – Advance Linux System Administration
+
+Processes and schedules (systemctl, ps, top, kill, crontab and at)
+System Monitoring Commands (top, df, dmesg, iostat 1, netstat, free etc.)
+OS Maintenance Commands (shutdown, reboot, halt, init etc.)
+Changing System Hostname (hostnamectl)
+Finding System Information (uname, cat /etc/redhat-release, cat /etc/*rel*, dmidecode)
+Terminal control keys
+Linux Kernel
+What is Shell?
+Shell scripting
+Basic Shell scripts
+Aliases
+Command history
+Enabling Internet in Linux VM
+Network Files and Commands (ping, ifconfig, netstat, tcpdump, networking config files)
+Network Interface (ethtool)
+System Updates and Repositories (rpm and yum)
+System Upgrade and Path Management
+System Run Levels
+File transfer (ftp, scp, rsync etc.)
+Message of the Day
+Disk Partition (df, fdisk, etc.)
+Quiz and Handouts

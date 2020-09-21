@@ -1,0 +1,40 @@
+{
+            "@context": "http://schema.org/",
+            
+            "@id" : "https://www.skillshare.com/classes/Python-for-Everybody/168841217",
+            "name" : "Python for Everybody",
+            
+            "description": "
+                                    Welcome to Python for Everybody, the complete Python course for beginners, intermediate and advanced developers. 
+Python is the #3 most popular programming language on Earth. There's no software that Python isn't involved in. Whether you want to get into Data Science, Machine Learning, Artificial Intelligence, Web Development, Video Games or anything else, Python is the language you'll want to learn. This course is designed to set you up for success in every Python-related industry.
+If you are new to programming, Python is the perfect language to learn first. It's easy to read and write and the learning curve is very low making it the ideal first-language to learn. 
+If you're coming in from another language such as C or Java, you'll pick up on Python even easier! Python takes care of all the little things behind the scenes so you can focus on writing clean code that performs well. 
+In this course we'll learn about variables, data structures, conditionals, loops, functions, Object Oriented Programming (OOP), classes, interfaces, the Python 3rd party package ecosystem, virtual environments, decorators, generators, try and except, and unit testing your code. Plus everything between the major learning points. 
+This course comes with interactive coding notebooks so you can test out every piece of code I write in this course, you can edit it and experiment safely, and take notes beside your interactive code. It's the perfect way to learn! 
+                            ",
+            
+            "image": "https://static.skillshare.com/uploads/video/thumbnails/ef290281fe5abdef4088b2326e47071c/448-252",
+            "provider": {
+                
+                
+                
+                "name" : "Skillshare",
+                "sameAs": "https://www.skillshare.com",
+                
+                "logo": "https://static.skillshare.com/assets/images/hands_logo_2x.png",
+                
+                "@type": "Organization"
+            },
+            "author": {
+                
+                
+                
+                "name" : "Kalob Taulien",
+                "sameAs": "https://www.skillshare.com/user/kalobtaulien",
+                
+                
+                "image": "https://static.skillshare.com/uploads/users/378680/user-image-medium.png?672236983",
+                "@type": "Person"
+            },
+            "@type": "Course"
+        }

@@ -1,0 +1,65 @@
+{
+            "@context": "http://schema.org/",
+            
+            "@id" : "https://www.skillshare.com/classes/Professional-RESTful-API-Design-using-Python-Flask/342222066",
+            "name" : "Professional RESTful API Design using Python Flask",
+            
+            "description": "
+                                    
+This course will teach you how to build a professional API platform using pure Flask, without any supplemental libraries, so that students can learn the fundamentals of RESTful API design.
+In today’s world, dominated by gorgeous JavaScript user interfaces and mobile applications, the ability to build a scalable and well architected API is key to be able to supplement those applicationsand ensure that clients and servers communicate with the proper interfaces.
+The course covers the basic concepts of the RESTful API pattern and then goes into detail and step by step building an API platform that will cover the six constraints of the architecture. Students will learn the industry-standard and will follow best practices for API architectures.
+If you already know the basics of Flask and you are interested in how to design, architect and build an API platform, this is the course for you.
+The course is divided in 2 sections:
+
+Introduction which covers all the concepts necessary to understand what is a RESTful API and its six constraints
+
+
+A step by step explanation building a Pet Store API that will include an authentication layer, a Store endpoint and a Pet endpoint as well as search functionalities
+
+The course has more than 5 hours of video tutorials as well as the source code at the end of each section, so that you can follow along with the coding process.
+The course can take anywhere from 3 to 10 days to complete based on how much material the student completes daily.
+Additionally we’re constantly updating the course, adding contents thanks to the feedback of our students.
+Join this course and continue your path to becoming a professional backend web developer!
+What are the requirements?
+A computer with internet access and administrative access to install packages
+Good understanding of how to use the command line interface, internet and code editors
+Good knowledge of the Flask web framework
+What am I going to get from this course?
+You will learn the fundamental concepts for the design of RESTful API platforms
+You will be introduced to the RESTful API constraints
+You will learn how to setup an authentication API layer
+You will learn how to effectively build API endpoints
+What is the target audience?
+Programmers and developers with basic Flask knowledge who want to learn how to design and build professional API platforms
+Application architects who want to understand better how to build API applications
+Startup CTOs who want to understand better best practices for API design
+Computer Science Students who want to get exposed to real life API building concepts
+
+                            ",
+            
+            "image": "https://static.skillshare.com/uploads/video/thumbnails/5660384880001/448-252",
+            "provider": {
+                
+                
+                
+                "name" : "Skillshare",
+                "sameAs": "https://www.skillshare.com",
+                
+                "logo": "https://static.skillshare.com/assets/images/hands_logo_2x.png",
+                
+                "@type": "Organization"
+            },
+            "author": {
+                
+                
+                
+                "name" : "Jorge Escobar",
+                "sameAs": "https://www.skillshare.com/user/fromzero",
+                
+                
+                "image": "https://static.skillshare.com/uploads/users/3048582/user-image-medium.jpg?920124152",
+                "@type": "Person"
+            },
+            "@type": "Course"
+        }

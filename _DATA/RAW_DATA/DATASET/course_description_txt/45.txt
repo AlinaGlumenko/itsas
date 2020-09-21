@@ -1,0 +1,10 @@
+In this class, I take you through my basic process for Test Driven Development on Android, using Kotlin. Please note that I am deliberately trying to keep my explanations and lessons simple and practical, as I dislike the annoying jargon which permeates discussion of Testing and TDD.
+
+I also discuss best practices for:
+
+Creating a testable architecture
+Testing with suspend functions and launch coroutines
+How to create test doubles without any libraries
+How to organize a single entry point to test all Units in a class
+Plenty of discussion on implementing Coroutines on Android
+Please visit this link for the source code in this class.

@@ -1,0 +1,28 @@
+{
+  "id": "uCvSu5OxJ065LwHrDqRDMQ",
+  "name": "Plastic - PVC (Green)",
+  "origin": "mixer-created",
+  "categories": [
+    "smartmaterial",
+    "smartmaterials",
+    "mixer"
+  ],
+  "tags": [],
+  "previews": {
+    "images": [
+      {
+        "uri": "SmartMaterialPreview.png"
+      }
+    ]
+  },
+  "meta": [],
+  "averageColor": "#12A34F",
+  "version": 2,
+  "maps": [
+    {
+      "name": "SmartMaterial",
+      "type": "smartmaterial",
+      "uri": "Plastic - PVC (Green).xml"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "LXJxtqB2Ok-qYcR5jRQraw",
+  "name": "Ceramic Glazed",
+  "origin": "mixer-created",
+  "categories": [
+    "smartmaterial",
+    "smartmaterials",
+    "mixer"
+  ],
+  "tags": [],
+  "previews": {
+    "images": [
+      {
+        "uri": "SmartMaterialPreview.png"
+      }
+    ]
+  },
+  "meta": [],
+  "averageColor": "#1A2834",
+  "version": 2,
+  "maps": [
+    {
+      "name": "SmartMaterial",
+      "type": "smartmaterial",
+      "uri": "Ceramic Glazed.xml"
+    }
+  ]
+}

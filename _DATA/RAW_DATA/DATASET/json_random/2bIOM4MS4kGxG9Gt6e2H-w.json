@@ -1,0 +1,28 @@
+{
+  "id": "2bIOM4MS4kGxG9Gt6e2H-w",
+  "name": "Parkerized Steel",
+  "origin": "mixer-created",
+  "categories": [
+    "smartmaterial",
+    "smartmaterials",
+    "mixer"
+  ],
+  "tags": [],
+  "previews": {
+    "images": [
+      {
+        "uri": "SmartMaterialPreview.png"
+      }
+    ]
+  },
+  "meta": [],
+  "averageColor": "#6B6D6C",
+  "version": 2,
+  "maps": [
+    {
+      "name": "SmartMaterial",
+      "type": "smartmaterial",
+      "uri": "Parkerized Steel.xml"
+    }
+  ]
+}

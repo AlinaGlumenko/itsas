@@ -1,0 +1,28 @@
+{
+  "id": "gnAqMlK_t0OcObGx1eyKiA",
+  "name": "Metal - Sci-Fi Armor (Chief Green)",
+  "origin": "mixer-created",
+  "categories": [
+    "smartmaterial",
+    "smartmaterials",
+    "mixer"
+  ],
+  "tags": [],
+  "previews": {
+    "images": [
+      {
+        "uri": "SmartMaterialPreview.png"
+      }
+    ]
+  },
+  "meta": [],
+  "averageColor": "#67675F",
+  "version": 2,
+  "maps": [
+    {
+      "name": "SmartMaterial",
+      "type": "smartmaterial",
+      "uri": "Metal - Sci-Fi Armor (Chief Green).xml"
+    }
+  ]
+}

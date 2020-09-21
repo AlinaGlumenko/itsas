@@ -1,0 +1,16 @@
+You'll learn how to create a secure, session-based login system in PHP. There's two versions: 1) a simple non-database version we'll create first to quickly over all the base concepts. Then 2) we'll convert that into full-fledged database-driven login script complete with:
+
+Secure, session-based user access
+User registration
+Remember me feature
+Email-based password reset
+Cryptographically secure tokens
+SQL injection prevention
+Install script
+And more.
+
+FAIR WARNING
+
+This is an advanced course. The topics covered here assume a certain level of PHP knowledge. It's frankly only a small percentage of developers in the world who know how to do this properly. I strongly recommend you take my PHP 101 course BEFORE taking this one. Only jump into this when you're ready to challenge yourself and take your PHP skills up a notch.
+
+Comes with full source code in the Class Project section.

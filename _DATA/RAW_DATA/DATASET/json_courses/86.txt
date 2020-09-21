@@ -1,0 +1,59 @@
+{
+            "@context": "http://schema.org/",
+            
+            "@id" : "https://www.skillshare.com/classes/The-Android-O-and-Java-Developer-Course-Build-9-Full-Apps/1634932136",
+            "name" : "The Android O and Java Developer Course - Build 9 Full Apps",
+            
+            "description": "
+                                    My Promise to You:
+ I'll be here for you every step of the way. If you have any questions about the course content or anything related to this topic, you can always post a question in the course or send me a direct message. 
+I want to make this the best course on how to learn Java and Android App Development. So if there is any way I can improve this course, just tell me and I'll make it happen.
+What's this course all about? 
+- Get ready to create polished Android Apps from the get-go! If you've always wanted to learn how to make Android Apps then this course is for you.  NOT EXPERIENCE REQUIRED.
+I assume you know nothing about Java and Android - so I take you from the very beginning to advanced.
+Build a strong foundation in Android O Development,
+Android Studio, 
+IntelliJ IDEA and object-oriented Java Programming.
+Content and Overview 
+This course will take you from knowing nothing about Android O app development to a complete Android developer in 4 weeks.
+You will learn the following:
+IntelliJ IDEA and build User Interface (Set up and walkthrough)
+Android Studio and build User Interface (Set up and walkthrough)
+Fundamentals of Java Programming
+ Android Building blocks Variables, Arrays, Loops, ArrayLists, ListView
+Navigate between screens Passing information between screens
+Learn how professional android apps developers think and work
+Learn how to design android apps
+Build several amazing apps - Hands-on And Learn much more by Building Real World Apps ...
+Knowing Java and Android App Development is a great skill to have that is in demand and highly marketable.
+I've landed many jobs with the skills that I teach you in this course.
+Start learning today! and I'll see you in lesson 1!
+Cheers,
+Paulo
+                            ",
+            
+            "image": "https://static.skillshare.com/uploads/video/thumbnails/076d10ada61a4e69b4f984c4e0dad5a5/448-252",
+            "provider": {
+                
+                
+                
+                "name" : "Skillshare",
+                "sameAs": "https://www.skillshare.com",
+                
+                "logo": "https://static.skillshare.com/assets/images/hands_logo_2x.png",
+                
+                "@type": "Organization"
+            },
+            "author": {
+                
+                
+                
+                "name" : "Paulo Dichone",
+                "sameAs": "https://www.skillshare.com/user/pdichone",
+                
+                
+                "image": "https://static.skillshare.com/uploads/users/735772/user-image-medium.png?186901171",
+                "@type": "Person"
+            },
+            "@type": "Course"
+        }

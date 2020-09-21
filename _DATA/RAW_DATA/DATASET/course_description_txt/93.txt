@@ -1,0 +1,7 @@
+AOA students,
+
+In this CLI (command line Interface) for absolute beginners course, you will learn how to use the terminal on any Linux or Unix based machines. I'll be using a Windows PC or laptop, do not worry! they'll work the same for all Operating Systems (OS's).
+
+In this course, we will learn what the command line is and why is it useful to us. We'll be learning about how to navigate the filesystem / our Computer, file manipulation, and much more.
+
+If you complete this course by practicing along, by the end of this course, you'll never find this CLI daunting or scary EVER!!!.

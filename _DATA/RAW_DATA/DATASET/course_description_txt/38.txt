@@ -1,0 +1,7 @@
+Squarespace is an easy-to-use platform for building beautiful websites usually targeted towards those with no coding skills but what if you could have full control over your website?
+
+What if you could edit or create your own Squarespace template?
+
+In this class, we’re gonna learn how to use something called the developer mode in Squarespace. It’s a feature in Squarespace that allows us to download our template code and make more precise updates to our website, plus add in features that might not already exist on the template.
+
+The result is the same great user experience of building any Squarespace site, it’s just now, you have full control over the template.

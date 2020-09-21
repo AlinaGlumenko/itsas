@@ -1,0 +1,38 @@
+{
+            "@context": "http://schema.org/",
+            
+            "@id" : "https://www.skillshare.com/classes/SQL-Master-SQL-With-PhpMyAdmin-and-MYSQL-Engine/305765102",
+            "name" : "SQL: Master SQL With PhpMyAdmin and MYSQL Engine",
+            
+            "description": "
+                                    In this fantastic course you will learn the SQL query language for the MySQL  Engine. We will install MySQL with PhpMyAdmin to make learning as easy as possible.
+This course will teach you all about database relationships, creating tables, selecting data, inserting data, updating data, deleting data, subqueries and joining multiple tables together.
+Taught by a professional freelance software engineer with a 1st class bachelors degree in Computer Science and over 13 years experience you cannot go wrong with this course!
+By the end of this course you will understand SQL very well and should have no trouble passing your university level assignments 
+                            ",
+            
+            "image": "https://static.skillshare.com/uploads/video/thumbnails/d84653c64bcd42786d07230b404e88bc/448-252",
+            "provider": {
+                
+                
+                
+                "name" : "Skillshare",
+                "sameAs": "https://www.skillshare.com",
+                
+                "logo": "https://static.skillshare.com/assets/images/hands_logo_2x.png",
+                
+                "@type": "Organization"
+            },
+            "author": {
+                
+                
+                
+                "name" : "Daniel McCarthy",
+                "sameAs": "https://www.skillshare.com/user/nibblebits",
+                
+                
+                "image": "https://static.skillshare.com/uploads/users/4349639/1528371612_pic.jpg",
+                "@type": "Person"
+            },
+            "@type": "Course"
+        }

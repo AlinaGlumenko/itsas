@@ -1,0 +1,15 @@
+In this PHP project, I'll show you how to create a markdown-based blogging application with no database. The main advantage of an application like this will performance. Without the overhead of an admin interface and database queries, this application moves very fast. 
+
+But, beyond that, as a class it's a great way to deepen your PHP skills. 
+
+You'll learn how to do things like:
+
+How to Rewrite "Pretty" URLs
+How to Create a Template Handler
+Mapping Content to Templates
+How to Write PHP-Based Blog Widgets
+How to Create a Custom RSS Feed
+Website Templating
+And more.
+
+This is my most advanced website template to date. If you really want to dig into some advanced PHP and learn how to create PHP applications, this course is for you. Source code included.

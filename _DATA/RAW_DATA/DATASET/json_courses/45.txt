@@ -1,0 +1,35 @@
+{
+            "@context": "http://schema.org/",
+            
+            "@id" : "https://www.skillshare.com/classes/JavaScript-From-Scratch-For-University-and-School-Students/722925236",
+            "name" : "JavaScript From Scratch For University and School Students",
+            
+            "description": "
+                                    This course is aimed to teach university or school students the basics of JavaScript, anyone can take this course if they want to get a good grasp of JavaScript Fundamentals. This course is awesome because it was created with the help of a friend of mine teaching at university and all the exercises in this course are the questions that came in university's exams. And i promise you that at the end of this course you'll be comfortable programming with JavaScript.
+                            ",
+            
+            "image": "https://static.skillshare.com/uploads/video/thumbnails/5787328837001/448-252",
+            "provider": {
+                
+                
+                
+                "name" : "Skillshare",
+                "sameAs": "https://www.skillshare.com",
+                
+                "logo": "https://static.skillshare.com/assets/images/hands_logo_2x.png",
+                
+                "@type": "Organization"
+            },
+            "author": {
+                
+                
+                
+                "name" : "Muhammad Ali Yasin",
+                "sameAs": "https://www.skillshare.com/profile/Muhammad-Ali-Yasin/5024579",
+                
+                
+                "image": "https://static.skillshare.com/uploads/users/5024579/user-image-medium.jpg?1220954421",
+                "@type": "Person"
+            },
+            "@type": "Course"
+        }

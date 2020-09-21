@@ -1,0 +1,7 @@
+In this class you will learn all about C++ multithreading and how to create thread safe programs in C++
+
+Why Will This Benefit Me?
+
+Learning how to create multi-threaded applications is a must know if you wish to do software engineering in C or C++ and even Java. In this easy to follow crash course you can learn all you need to know to get started with multi-threading in C++. Taught by someone with over 13 years experience you can know for sure the information you are gaining is valuable .
+
+I look forward to teaching you

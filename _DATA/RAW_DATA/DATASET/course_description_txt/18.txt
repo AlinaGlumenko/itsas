@@ -1,0 +1,19 @@
+It's time to finally master the C programming language. Dan your tutor has been developing in the C programming language for over ten years and has a lot of experience to give. What makes this course different than the others is that you will actually use the compiler an IDE will not do it for us we will be using the compiler ourselves this will give you the experience you need to manually use the GCC compiler. Be A Pro.
+
+This course will teach you everything about the C programming language, you will be taken through the basics all the way to more complicated concepts such as functions pointers and library development.
+
+We end this course by creating a book program that allows a user to create books, save them to disk and then read them again.
+
+This course is beginner friendly regardless of your current skill level
+
+What you’ll learn
+
+How to know the C programming language very well
+How to manually use the "gcc" C compiler
+How to automate project building with "Makefiles"
+Are there any course requirements or prerequisites?
+
+Be able to follow the course all the way through, every lecture pushes you a little more further
+Who this course is for:
+
+C Programmers Who Want To Master The Language

@@ -1,0 +1,35 @@
+{
+            "@context": "http://schema.org/",
+            
+            "@id" : "https://www.skillshare.com/classes/Practical-C-Programming-Beginner-Course/919943529",
+            "name" : "Practical C++ Programming: Beginner Course",
+            
+            "description": "
+                                    C++ is one of the most used programming languages. It is an object-oriented language, offering you the utmost control over interface, resource allocation and data usage.This class covers the basics of programming in C++.  Created for the beginner programmer, this class requires no prior knowledge of programming. The main aspects of the language are  introduced in a logical, gradient manner with a step by step approach.  This will provide you with a solid foundation for writing useful, correct, maintainable, and effective code.  By the end of this class you’ll have all the skills you need to start programming in C++. With this complete class, you’ll quickly learn the basics, and then move on to more advanced concepts. 
+                            ",
+            
+            "image": "https://static.skillshare.com/uploads/video/thumbnails/1e4c810bd0544bfb3220860f3ee2ce83/448-252",
+            "provider": {
+                
+                
+                
+                "name" : "Skillshare",
+                "sameAs": "https://www.skillshare.com",
+                
+                "logo": "https://static.skillshare.com/assets/images/hands_logo_2x.png",
+                
+                "@type": "Organization"
+            },
+            "author": {
+                
+                
+                
+                "name" : "Zach Hughes",
+                "sameAs": "https://www.skillshare.com/profile/Zach-Hughes/437001969",
+                
+                
+                "image": "https://static.skillshare.com/assets/images/default-profile-2020.jpg",
+                "@type": "Person"
+            },
+            "@type": "Course"
+        }

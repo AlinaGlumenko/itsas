@@ -1,0 +1,7 @@
+Take your web design/development skills to the next level by learning Javascript!
+
+Javascript is one of the most in demand programming languages today. This course will take you from zero knowledge to confidently adding interactivity to websites and building standalone applications.
+
+Javascript is here to stay, it is built into and runs in all the major browsers and is the default scripting language for the web.
+
+By learning Javascript you will have the power to add features and interactivity to websites, build large scale full stack applications and create games using one programming language!

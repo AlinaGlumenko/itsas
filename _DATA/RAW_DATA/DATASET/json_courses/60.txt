@@ -1,0 +1,117 @@
+{
+            "@context": "http://schema.org/",
+            
+            "@id" : "https://www.skillshare.com/classes/Linux-Troubleshooting-Course-with-Practical-Examples/1449742266",
+            "name" : "Linux Troubleshooting Course with Practical Examples",
+            
+            "description": "
+                                    Maintain a reliable and highly available Linux server infrastructure, and reduce costly downtime. In this Linux troubleshooting training course, you gain the expertise to effectively diagnose and fix common and complex Linux server configuration and administrations issues, and learn to apply those skills in production environment
+Linux Troubleshooting Course
+Section 1 – Introduction and Course Overview
+• What is this course about
+• Syllabus Overview
+• Download Syllabus
+Section 2 – Troubleshooting Best Practices
+• Follow Policies and Standards
+• Documentation or Ticketing Process
+• Patience To Work With the Users / Group
+• Get Online Help
+• Understanding the Issue Before Making a Decision
+• Involve Vendor If Needed
+• Log Monitor
+• Be Honest and Ask Questions
+Section 3 - Lab Setup
+• What is VirtualBox?
+• Installing Oracle VirtualBox
+• Creating First Virtual Machine
+• Linux Installation
+Section 4 - Conceptual Troubleshooting
+• Who is Who?
+• Cannot Access Server
+• Cannot Install Linux
+• Linux Virtual Machine Running Slow
+Section 5 - System Access Troubleshooting
+• Server is Not Reachable
+• Cannot Connect to a Website or an Application
+• Cannot SSH as root or a Specific User
+• Firewall Issue
+• Terminal Client is not working
+• Cannot Connect using Putty to a VirutalBox VM
+Section 6 - FileSystem Troubleshooting
+• Cannot cd into a Directory
+• Cannot Open a File or Run a Script
+• Having Trouble Finding Files and Directories
+• Cannot Create Links
+• Cannot Write to a File
+• Cannot Delete, Copy, Move or Rename a File
+• Cannot Change File Permissions or View Other Users Files
+• Disk Space Full or Add More Disk Space
+• Add Disk and Create Standard Partition
+• Add Disk and Create Standard Partition
+• Add Disk and Create LVM Partition
+• Extend Disk with LVM
+• How to Delete Old Files
+• FileSystem is Corruption
+• Corruption in /etc/fstab
+• Script to Delete Old Files
+• Handouts
+Section 7 - System Administration Troubleshooting
+• Running Out of Memory
+• Add Swap Space
+• System Rebooted or Process Restarted
+• Unable to get IP Address
+• IP Assigned but not Reachable
+• Having Trouble using vi Editor
+• Cannot Run Certain Commands
+• Cannot Change Password
+• User Account has no Home Directory
+• How to Change Every Instance of a Word in a File
+• How to Use sed Command
+• How to Kill a User Terminal or Process
+• Recover Root Password
+• SOS Report
+• List of Users Logged in by Date
+• System is Running Slow
+Section 8 - System Recovery
+• Recover Virtual System
+• Recover Physical System
+• Disaster Recovery
+Section 9 - Bonus Section
+• What is FileSystem
+• File Ownership Commands (chown, chgrp)
+• Files and Directory Permissions (chmod)
+• System Logs Monitor (/var/log)
+• Soft and Hard Links
+• curl and ping commands
+• Programs and Service Management
+• Processes and Jobs (systemctl, ps, kill, top, crontab, at)
+• New Network Commands
+• Script to Delete Old Files
+• Difference Between CentOS/Redhat 5, 6 and 7
+                            ",
+            
+            "image": "https://static.skillshare.com/uploads/video/thumbnails/a877f973c7b41027e0b9870cc715775b/448-252",
+            "provider": {
+                
+                
+                
+                "name" : "Skillshare",
+                "sameAs": "https://www.skillshare.com",
+                
+                "logo": "https://static.skillshare.com/assets/images/hands_logo_2x.png",
+                
+                "@type": "Organization"
+            },
+            "author": {
+                
+                
+                
+                "name" : "Imran Afzal",
+                "sameAs": "https://www.skillshare.com/user/iafzal0405",
+                
+                
+                "image": "https://static.skillshare.com/uploads/users/5999364/user-image-medium.jpg?1033660780",
+                "@type": "Person"
+            },
+            "@type": "Course"
+        }

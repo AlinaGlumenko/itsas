@@ -1,0 +1,19 @@
+In this course, I will teach you a basic HTML for the web development.  This course is specially designed for students who have no knowledge of web development and want to get started. Everything you learn in this course will help you in steering your knowledge and polish your skills that will help in starting a career as a web developer.
+
+Most of the concepts I teach you in this project-based course can be applied in making tons of other websites, the key point is to learn the process. 
+
+Following things will be tough this course: 
+
+Basic terminology of web development
+Basic HTML structure
+Common HTML tag and attributes
+Inserting images and link in a web page
+Creating various list (ordered, unordered and nested) using HTML
+Creating Table
+Creating Form
+Requirements
+
+A computer with an internet connection
+I promise this course will be a big value add in your learning process and will steer you to the success in your web development career.
+
+ 

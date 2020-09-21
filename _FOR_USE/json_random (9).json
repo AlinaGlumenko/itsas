@@ -1,0 +1,28 @@
+{
+  "id": "A4LxPD_IM06_xFVNtjbqlA",
+  "name": "Steel - Ceramic Coating (Flat Dark Earth)",
+  "origin": "mixer-created",
+  "categories": [
+    "smartmaterial",
+    "smartmaterials",
+    "mixer"
+  ],
+  "tags": [],
+  "previews": {
+    "images": [
+      {
+        "uri": "SmartMaterialPreview.png"
+      }
+    ]
+  },
+  "meta": [],
+  "averageColor": "#978E82",
+  "version": 2,
+  "maps": [
+    {
+      "name": "SmartMaterial",
+      "type": "smartmaterial",
+      "uri": "Steel - Ceramic Coating (Flat Dark Earth).xml"
+    }
+  ]
+}

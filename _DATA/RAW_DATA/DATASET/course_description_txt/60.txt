@@ -1,0 +1,13 @@
+In this course you will create a calculator you can use on a web page. It will look and act like a proper calculator. 
+
+We'll be using basic HTML, CSS and JavaScript — but don't worry, this is still a beginner friendly course! I'll walk you through the HTML, CSS and JavaScript if you aren't already familiar with those technologies (they are REALLY easy in this course!)
+
+Below is what the final outcome will look like. You'll be able to click on any of the buttons, and they'll move in and change the numbers at the top. And we'll deal with strange math logic like dividing by zero. 
+
+c9942d57
+
+e885936e
+
+You can even use this in your web design and web development portfolio! 
+
+Let's get started right away! 

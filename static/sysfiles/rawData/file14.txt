@@ -1,0 +1,7 @@
+With the digitalization of the modern world, programming is becoming a lot more important. It's versatility allows you to solve simple repetitive, as well as long and complex problems, and its power and breadth of application is solely dependent on the programmer.
+
+Python is a scripting language that has a very large community. It allows for very fast and easy prototyping, and the community makes complex things, such as machine learning and artificial intelligence, readily useable for the public. Python is a great language to learn, as it's much easier to read and understand, but it still allows you to do whatever you want. It's perfect for your first programming language, because it has great readability, but also as your second, third, or fourth (or even more), because of how quickly you can develop in it.
+
+This course will take you through a lot of the essentials of what you'll need to be able to program, and at the end should leave you with solid fundamentals and an understanding which you can then apply to create your own programs, or which you can use to continue your learning endeavours into more advanced areas.
+
+This course is designed to not beat around the bush, and will teach you Python programming in a very short time. It does this through lectures that are to the point, as well as by providing you extra material and practice sheets that you can use to solidify your knowledge.

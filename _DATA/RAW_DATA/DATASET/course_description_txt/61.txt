@@ -1,0 +1,7 @@
+Learn JavaScript from scratch and become an intermediate frontend developer. 
+
+In this course you will learn all the JavaScript fundamentals that will launch you into a career as a web developer. JavaScript Essentials was designed to give your transferable programming skills so you can learn Node.js, Python or PHP after so you can become a full stack developer. 
+
+We'll go over variables, functions, hoisting, classes, inheritance, and much much more! View the list of lessons below.
+
+You'll also get advice on what to learn next, what makes a great web developer and a few tips on how you can earn a living while learning to code.

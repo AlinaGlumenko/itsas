@@ -1,0 +1,19 @@
+Have you already got some experience in the C programming language but want to take it further? Then this course is for you.
+
+This course will teach you all about creating internal data structures in C.
+
+This course will teach you how to create the following:
+
+Linked List Implementation
+
+Double Linked List Implementation
+
+Array List Implementation
+
+Queue Implementation
+
+Stack Implementation
+
+Binary Tree Implementation
+
+All of the implementations described above will be created on video from scratch! You will learn how all of these work internally and when they should be used. This course is a "must have" for someone who has learned the fundamentals of the C Programming Language

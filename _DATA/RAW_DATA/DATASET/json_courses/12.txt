@@ -1,0 +1,39 @@
+{
+            "@context": "http://schema.org/",
+            
+            "@id" : "https://www.skillshare.com/classes/C-Multithreading-And-Thread-Safety/957099609",
+            "name" : "C++ Multithreading And Thread Safety",
+            
+            "description": "
+                                    In this class you will learn all about C++ multithreading and how to create thread safe programs in C++
+Why Will This Benefit Me?
+Learning how to create multi-threaded applications is a must know if you wish to do software engineering in C or C++ and even Java. In this easy to follow crash course you can learn all you need to know to get started with multi-threading in C++. Taught by someone with over 13 years experience you can know for sure the information you are gaining is valuable .
+I look forward to teaching you
+ 
+                            ",
+            
+            "image": "https://static.skillshare.com/uploads/video/thumbnails/866eb2c00c0c3118ff64fb673531b0ff/448-252",
+            "provider": {
+                
+                
+                
+                "name" : "Skillshare",
+                "sameAs": "https://www.skillshare.com",
+                
+                "logo": "https://static.skillshare.com/assets/images/hands_logo_2x.png",
+                
+                "@type": "Organization"
+            },
+            "author": {
+                
+                
+                
+                "name" : "Daniel McCarthy",
+                "sameAs": "https://www.skillshare.com/user/nibblebits",
+                
+                
+                "image": "https://static.skillshare.com/uploads/users/4349639/1528371612_pic.jpg",
+                "@type": "Person"
+            },
+            "@type": "Course"
+        }

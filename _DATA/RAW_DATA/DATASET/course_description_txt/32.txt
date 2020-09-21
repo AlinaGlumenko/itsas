@@ -1,0 +1,13 @@
+I LOVE finding ways to speed up or automate my work. So I'm very excited to introduce you to Emmet, a plugin that enables you to write code FASTER.
+
+What you will need:
+
+Emmet is available in most web editors. Adobe Dreamweaver, Brackets, Sublime Text etc. 
+
+For this class, I'll be demonstrating Emmet using an online web editor I use on a daily basis - Codepen.
+
+Who should take this class:
+
+This class is aimed at people who already have some basic knowledge of HTML. It is a beginners class, that will help you become a more efficient developer.
+
+Feel free to leave any comments or ask questions on this page, and let me know if there is anything else you'd like to learn.

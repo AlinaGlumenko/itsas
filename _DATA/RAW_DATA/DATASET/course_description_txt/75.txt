@@ -1,0 +1,58 @@
+Learn from scratch how to build backend web applications using Python Flask, Cloud9, MySQL and Docker Containers
+
+This course will teach you, assuming no prior coding knowledge, how to develop back end web applications the way professional coders do in the top internet startups. How do I know this? Because I've been leading tech teams in both large enterprise as well as startup companies in New York City for the past 15 years.
+
+I have seen a lot of courses and free tutorials and I can tell you 90% of them just teach bad habits while promising to turn you into a real “web developer". But let me tell you a reality: There's no such thing as a web developer these days. You're either a back end web applications developer, a front end application developer or the so-called (and rare) full stack web developer which includes the other two. However there are so many technologies to master in both the backend and frontend areas that full-stacks (or “web developers") are a rarity in professional environments -- You're either a back end or a front end web developer.
+
+This course doesn't promise to turn you into a professional back end developer after you complete it -- it takes much more than the 11 hours of of this course (and probably hundreds of hours of self-practicing) to do that, but it will give you a good foundation from where to start and continue your training, knowing the right path to become a real professional backend web applications developer using Python. My goal is to make a second course, which would introduce more advanced back end concepts and then start the front end courses (basic and advanced) soon after that.
+
+The course goes through a step by step process of developing web applications, teaching you the Python basics for web development, introducing Flask and using Cloud9 as your development environment. It then moves to explore SQL databases, using MySQL and finally showing you how to develop a blogging application using all these learnings.
+
+Best of all, you don't need to install anything as we will use a revolutionary online web development environment that essentially gives you your own Linux web server with database capabilities! All you need to have is a browser and internet connection and it's completely free to you.
+
+The course is divided in 8 sections and 2 bonus sections:
+
+Introduction
+Setting up our environment
+Python basics
+Installing Flask
+Introduction to Flask
+An introduction to databases
+Our first Flask application: A personal blog powered by MySQL
+Final Project
+Bonus: Running Our Flask Application with Docker
+Bonus: Deploying our Application to a Cloud Server
+The course has more than 12 hours of video tutorials as well as the source code at the end of each of the Flask application lessons, so that you can see exactly what the whole project looks like in each stage.
+
+The course can take anywhere from 10 days to a month to complete based on how much material the student completes daily.
+
+Additionally we're constantly updating the course, adding content thanks to the feedback of our students.
+
+We will also have office hours where you can ask the instructor any question you might have about the course or about Python Backend Web Application Development in general.
+
+So If you are interested in learning how to code from zero and without prior knowledge, but do it using best industry practices towards becoming a professional backend web developer, this is the course for you.
+
+So stop looking around and start the right path to becoming a professional Python backend web developer with this course!
+
+What are the requirements?
+
+A computer with internet access and administrative access to install packages
+A basic understanding of how to use the internet and text editors
+What am I going to get from this course?
+
+You will learn the basics of the Python programming language
+You will learn what databases are and how to use them effectively
+You will learn how to interact with the database using the MySQL CLI
+You will learn how to effectively develop a Flask application
+You will learn about Software Patterns like MVC and decorators
+You will learn how to process data from HTML Forms into a web application
+You will learn how to run Flask applications using Docker
+You will learn how to deploy an application to a cloud server
+What is the target audience?
+
+Programmers
+Software Developers
+Project Managers
+Computer students
+Entrepreneurs
+Software development aficionados

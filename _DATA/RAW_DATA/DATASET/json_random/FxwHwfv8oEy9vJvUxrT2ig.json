@@ -1,0 +1,28 @@
+{
+  "id": "FxwHwfv8oEy9vJvUxrT2ig",
+  "name": "Steel - Oxidized",
+  "origin": "mixer-created",
+  "categories": [
+    "smartmaterial",
+    "smartmaterials",
+    "mixer"
+  ],
+  "tags": [],
+  "previews": {
+    "images": [
+      {
+        "uri": "SmartMaterialPreview.png"
+      }
+    ]
+  },
+  "meta": [],
+  "averageColor": "#79584A",
+  "version": 2,
+  "maps": [
+    {
+      "name": "SmartMaterial",
+      "type": "smartmaterial",
+      "uri": "Steel - Oxidized.xml"
+    }
+  ]
+}

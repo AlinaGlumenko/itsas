@@ -1,0 +1,7 @@
+In this course you will learn:
+
+What cloning, pushing, staging and committing are
+How to create a repo from scratch
+Make changes to your code
+Save that code on Github.com 
+Make more modifications and save it to Github.com

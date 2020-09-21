@@ -1,0 +1,17 @@
+This free class is brought to you by the wiseAss brand and community. For more great content on Android, Java, Kotlin, and Clean Architecture, check us out on your preferred social media networks:
+
+https://www.facebook.com/wiseassblog/
+
+https://www.youtube.com/channel/UCSwuCetC3YlO1Y7bqVW5GHg
+
+https://twitter.com/wiseAss301
+
+In this short class, you will learn the fundamentals of how to represent information virtually in a Kotlin program. About half of what we do as programmers is design data structures to represent real world information virtually, and it turns out that there are good and bad ways to do this! One of the most important takeaways of this class, is that it is critically important to separate things which change (mutable) from things which don't change (immutable). 
+
+Topics include:
+
+How references work with the JVM (simplified for beginners)
+The problem of Shared Mutable State (this is bad)
+How to avoid Shared Mutable State by introducing Immutability (const val and val properties) to your code
+How and when it makes sense to use var references
+How to make classes, and the data class construct

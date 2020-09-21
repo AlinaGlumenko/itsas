@@ -1,0 +1,13 @@
+This class covers all the essential elements of JQuery. It includes many practical examples for beginners in order to understand things btter. You'll learn how to traverse the DOM, handle events, perform animations, learn about attributes, perform Ajax requests, and even unit test your code.
+
+If you want to learn and understand how to build interactive web pages, unobtrusive script, and even nice animations that don't kill your browser, this class is for you.
+
+What you'll learn in this class:
+
+Learn how to use jQuery with DOM to overcome the limitations of basic HTML and CSS
+Learn how jQuery selectors and actions can be used together
+Learn how to write functions & wire them to interface elements
+Learn how to use jQuery effects to create actions on the page
+Learn how to make your web pages come alive using  animation
+Learn how to develop interactive web pages with jQuery and Ajax
+Learn how to build forms in web applications

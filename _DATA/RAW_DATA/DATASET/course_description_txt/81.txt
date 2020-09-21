@@ -1,0 +1,9 @@
+Emacs will help you become a more effective programmer or sysadmin. 
+
+It's a very powerful tool that works in both the graphical and terminal environment, meaning you can login to any computer in the world over ssh and use it.
+
+With over 1300 extensions, working on any platform, anywhere in the world, why not to learn Emacs?
+
+Once you learn it, it will change your life forever.
+
+In this course you'll learn the basics and get pro tips!

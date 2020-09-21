@@ -1,0 +1,42 @@
+{
+  "id": "omm-q6G0pUmnRwonaNKnmw",
+  "name": "Oxidized Galvanized Steel",
+  "origin": "mixer-created",
+  "categories": [
+    "smartmaterial",
+    "smartmaterials",
+    "mixer"
+  ],
+  "tags": [],
+  "previews": {
+    "images": [
+      {
+        "uri": "SmartMaterialPreview.png"
+      }
+    ]
+  },
+  "meta": [],
+  "averageColor": "#E5EBEC",
+  "version": 2,
+  "maps": [
+    {
+      "name": "SmartMaterial",
+      "type": "smartmaterial",
+      "uri": "Oxidized Galvanized Steel.xml"
+    },
+    {
+      "name": "ImageMask",
+      "type": "imagemask",
+      "colorSpace": "Linear",
+      "averageColor": "#000000",
+      "resolution": "4096x4096",
+      "uri": "Custom Sources/p3ryvvisiuo2rzuci7ncgg.png",
+      "bitDepth": 8,
+      "mimeType": "image/png",
+      "contentLength": 15195148,
+      "isGrayscale": true,
+      "keepSource": true,
+      "orignalName": "rmooabvp_4K_Mask"
+    }
+  ]
+}

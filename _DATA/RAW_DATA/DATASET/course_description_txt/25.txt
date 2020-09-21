@@ -1,0 +1,21 @@
+Hi, I'm Dan and in this free short-course we'll quickly go through all the basics to creating a simple responsive website using Dreamweaver CC 2018. We'll look at responsive web design techniques, as well as making sure you understand exactly what you're doing. We'll make the most of the most up to date web techniques, using HTML5 and CSS3 to present the best site possible. We'll use Media queries to manipulate the sites styling at different widths to give our site responsiveness. 
+
+I built this course for the super-newbies. I've even got fail-safe exercise files so you can never fall behind. This would be the perfect starting point for anyone that wants to dip their toes into building responsive websites. We'll make 3 different responsive points, desktop, tablet and mobile. 
+
+We'll start with defining the site in Dreamweaver. I'll give you a basic starting point of the site to get the ball rolling, then we'll preview our site and improve the responsiveness.
+
+Grab the exercise files here: Download
+
+What are the requirements?
+
+You'll need a copy of Dreamweaver CC 2017 or above. A free trial can be download from Adobe here.
+No previous Dreamweaver or web design experience is necessary.
+If you're not sure if this course is right for you. Email me what you’re trying to do and check if you’re on the right track.
+What am I going to get from this course?
+
+Techniques used by professional website designers.
+Basic understanding of responsive web design.
+What is the target audience?
+
+YES: This course is for beginners. Aimed at people new to the world of web design. No previous Dreamweaver experience is necessary. 
+NO: This course is NOT suited to people experienced in using HTML & CSS. If you prefer to work in code only then this course isn’t right for you.

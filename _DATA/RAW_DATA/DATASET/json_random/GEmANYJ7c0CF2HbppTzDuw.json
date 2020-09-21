@@ -1,0 +1,28 @@
+{
+  "id": "GEmANYJ7c0CF2HbppTzDuw",
+  "name": "Organic - Carapace",
+  "origin": "mixer-created",
+  "categories": [
+    "smartmaterial",
+    "smartmaterials",
+    "mixer"
+  ],
+  "tags": [],
+  "previews": {
+    "images": [
+      {
+        "uri": "SmartMaterialPreview.png"
+      }
+    ]
+  },
+  "meta": [],
+  "averageColor": "#191B1D",
+  "version": 2,
+  "maps": [
+    {
+      "name": "SmartMaterial",
+      "type": "smartmaterial",
+      "uri": "Organic - Carapace.xml"
+    }
+  ]
+}

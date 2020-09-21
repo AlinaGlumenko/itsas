@@ -1,0 +1,28 @@
+{
+  "id": "nutmEmGUYU-msSGVNYuOZw",
+  "name": "Metal - Sci Fi Armor (Slayer Brown)",
+  "origin": "mixer-created",
+  "categories": [
+    "smartmaterial",
+    "smartmaterials",
+    "mixer"
+  ],
+  "tags": [],
+  "previews": {
+    "images": [
+      {
+        "uri": "SmartMaterialPreview.png"
+      }
+    ]
+  },
+  "meta": [],
+  "averageColor": "#726E6C",
+  "version": 2,
+  "maps": [
+    {
+      "name": "SmartMaterial",
+      "type": "smartmaterial",
+      "uri": "Metal - Sci Fi Armor (Slayer Brown).xml"
+    }
+  ]
+}

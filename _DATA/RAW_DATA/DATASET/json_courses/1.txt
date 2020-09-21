@@ -1,0 +1,46 @@
+{
+            "@context": "http://schema.org/",
+            
+            "@id" : "https://www.skillshare.com/classes/2019-Android-With-Kotlin-And-Android-Studio-For-Absolute-Beginners/1194122497",
+            "name" : "2019 - Android With Kotlin And Android Studio For Absolute Beginners",
+            
+            "description": "
+                                    This class is designed to get you started with the preliminaries required to start your journey as an Android Developer. While we will be using Kotlin for this class and many of my others, this class will still be useful as an introduction for Java Developers looking to learn the basics of Android Studio.
+Note: This is an introductory course for absolute beginners, watch for more advanced content in another class!
+Topics for this course include:
+Android Studio IDE
+Introduction to XML eXtensible Markup Language
+Testing and Deploying to Virtual (Emulators) and Physical Devices
+Using Mixed Java and Kotlin Sources in Android Studio
+Resources and Layouts (User Interface)
+The AndroidManifest configuration file
+The Gradle build automation tool
+Overview of the most fundamental directories and Android SDK classes necessary to get you started.
+
+                            ",
+            
+            "image": "https://static.skillshare.com/uploads/video/thumbnails/6085726020001/448-252",
+            "provider": {
+                
+                
+                
+                "name" : "Skillshare",
+                "sameAs": "https://www.skillshare.com",
+                
+                "logo": "https://static.skillshare.com/assets/images/hands_logo_2x.png",
+                
+                "@type": "Organization"
+            },
+            "author": {
+                
+                
+                
+                "name" : "Ryan Kay",
+                "sameAs": "https://www.skillshare.com/user/wiseass",
+                
+                
+                "image": "https://static.skillshare.com/uploads/users/532815216/user-image-medium.png?1851606530",
+                "@type": "Person"
+            },
+            "@type": "Course"
+        }

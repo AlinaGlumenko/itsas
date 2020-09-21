@@ -1,0 +1,28 @@
+{
+  "id": "yYaCFaHCDUmhfRFNbsjAsA",
+  "name": "Plastic - PVC (Blue)",
+  "origin": "mixer-created",
+  "categories": [
+    "smartmaterial",
+    "smartmaterials",
+    "mixer"
+  ],
+  "tags": [],
+  "previews": {
+    "images": [
+      {
+        "uri": "SmartMaterialPreview.png"
+      }
+    ]
+  },
+  "meta": [],
+  "averageColor": "#33358F",
+  "version": 2,
+  "maps": [
+    {
+      "name": "SmartMaterial",
+      "type": "smartmaterial",
+      "uri": "Plastic - PVC (Blue).xml"
+    }
+  ]
+}

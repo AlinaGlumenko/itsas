@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Cache-Control" content="no-cache">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">        
+        <link href="./static/css/bootstrap.min.css" rel="stylesheet">
+        <link href="./static/css/style.css" rel="stylesheet">
+        <title>System supporting architectural solutions</title>
+        <script src="https://d3js.org/d3.v3.min.js"></script>
+    </head> 
+
+    <body>
+        <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+            <h5 class="my-0 mr-md-auto font-weight-normal">System supporting architectural solutions</h5>
+            <nav class="my-2 my-md-0 mr-md-3">
+                <a class="p-2 text-dark" href="classifier">Classifier</a>
+                <a class="p-2 text-dark" href="confusion_matrix">Confusion matrix</a>
+                <a class="p-2 text-dark" href="exploitation">Exploitation</a>
+            </nav>
+        </div>
+
+        {% block header %}
+        {% endblock %}
+        
+        {% block content %}
+        {% endblock %} 
+
+        <footer class="pt-4 my-md-5 pt-md-5 border-top text-center">
+            <div class="row">
+                <div class="col-12 col-md">
+                    <img class="mb-2" src="./static/icons/footer.svg" alt="" width="48" height="48">
+                    <small class="d-block mb-3 text-muted">Copyright © Glumenko Alina 2020</small>
+                </div>
+            </div>
+        </footer>
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="./static/js/popper.min.js"></script>
+        <script src="./static/js/bootstrap.min.js"></script>
+        <script src="./static/js/holder.min.js"></script>
+        <script src="./static/js/main.js"></script>
+        <script>
+            Holder.addTheme('thumb', {
+                bg: '#55595c',
+                fg: '#eceeef',
+                text: 'Thumbnail'
+            });
+        </script>
+    </body>
+</html>

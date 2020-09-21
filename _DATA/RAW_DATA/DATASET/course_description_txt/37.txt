@@ -1,0 +1,7 @@
+This course is the sequel to my previous course ‘Shopify Theme Development: How to Build and Customise your own Online Store’.
+
+My first class on Shopify theme development covered topics like creating a development store, using Themekit and understanding theme structure. These are all important fundamentals for Shopify theme development but in this class, we’re going to go deeper into the actual theme code and gain a better understanding of how themes are programmed.
+
+We’ll take a closer look at the templating language behind Shopify themes (Shopify Liquid), discuss how to create your own customisations using JSON schemas and learn about a few APIs that help you access store data without having to reload the page.
+
+By the end of the class, you’ll have a solid understanding of how to program Liquid themes and the ability to create your own sections and snippets to access the full scope of what can be achieved with Shopify theme development.

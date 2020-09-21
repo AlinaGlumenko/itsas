@@ -1,0 +1,28 @@
+{
+  "id": "8YXLphz4A0aXmO8J5oVUjQ",
+  "name": "Rubber - Synthetic",
+  "origin": "mixer-created",
+  "categories": [
+    "smartmaterial",
+    "smartmaterials",
+    "mixer"
+  ],
+  "tags": [],
+  "previews": {
+    "images": [
+      {
+        "uri": "SmartMaterialPreview.png"
+      }
+    ]
+  },
+  "meta": [],
+  "averageColor": "#151515",
+  "version": 2,
+  "maps": [
+    {
+      "name": "SmartMaterial",
+      "type": "smartmaterial",
+      "uri": "Rubber - Synthetic.xml"
+    }
+  ]
+}

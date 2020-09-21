@@ -1,0 +1,45 @@
+{
+            "@context": "http://schema.org/",
+            
+            "@id" : "https://www.skillshare.com/classes/How-to-Efficiently-Build-Wordpress-Websites-with-Divi/134387458",
+            "name" : "How to Efficiently Build Wordpress Websites with Divi",
+            
+            "description": "
+                                    Wordpress powers almost a third of the internet and so, if you're looking to build a content-based website, you should totally be aware of Wordpress.
+Over the years, I’ve come to learn how to build Wordpress sites ‘the right way’ and what I mean by that is ‘how to build sites efficiently that are also able to easily updated and maintained down the track.  
+You see, when I built my first Wordpress site, I decided to build my own theme from scratch. I took a 7 hour class just to learn the basics and then spent the next few weeks, working on my website full-time to get it work.
+Not only did it take me a long time to build, every time I want to update it, even just to change some text on a landing page, I need to jump into a the backend code and update the website manually. 
+Trust me, it’s a pain in the ass.
+I wondered to myself, how do professional freelancers and agencies make Wordpress sites. Surely, they don’t spend 40 hours a week building a single site? What am I missing here?
+Well, it wasn’t until I spent months and years freelancing with Wordpress, speaking to other developers and working for agencies that I realised ‘the right way’ to develop Wordpress sites.
+Now, don’t get me wrong. If you want to create your own theme to sell as a product on Themeforest or similar marketplaces be my guest but for building quick and highly customisable Wordpress websites for clients, you don’t want to have to reinvent the wheel each time you’re tasked with a new site development.
+So, in this course, I’m going to teach you how to develop and update Wordpress websites much faster by customising a premium theme like Divi.
+Divi is now what I use for developing all my own websites as well as websites for clients and I’ve found it to be one of the most versatile and efficient themes to create whatever layout or design you please.
+So, if you’re ready to learn the right way to developing Wordpress websites, click onto the next video and let’s get started.
+                            ",
+            
+            "image": "https://static.skillshare.com/uploads/video/thumbnails/21fd6e360c7cd09822b201bdbad65c81/448-252",
+            "provider": {
+                
+                
+                
+                "name" : "Skillshare",
+                "sameAs": "https://www.skillshare.com",
+                
+                "logo": "https://static.skillshare.com/assets/images/hands_logo_2x.png",
+                
+                "@type": "Organization"
+            },
+            "author": {
+                
+                
+                
+                "name" : "Christopher Dodd",
+                "sameAs": "https://www.skillshare.com/profile/Christopher-Dodd/3311891",
+                
+                
+                "image": "https://static.skillshare.com/uploads/users/3311891/user-image-medium.jpg?2070404059",
+                "@type": "Person"
+            },
+            "@type": "Course"
+        }

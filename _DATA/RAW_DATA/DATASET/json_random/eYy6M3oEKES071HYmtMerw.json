@@ -1,0 +1,28 @@
+{
+  "id": "eYy6M3oEKES071HYmtMerw",
+  "name": "Plastic - Polymer (M4)",
+  "origin": "mixer-created",
+  "categories": [
+    "smartmaterial",
+    "smartmaterials",
+    "mixer"
+  ],
+  "tags": [],
+  "previews": {
+    "images": [
+      {
+        "uri": "SmartMaterialPreview.png"
+      }
+    ]
+  },
+  "meta": [],
+  "averageColor": "#1E1E1F",
+  "version": 2,
+  "maps": [
+    {
+      "name": "SmartMaterial",
+      "type": "smartmaterial",
+      "uri": "Plastic - Polymer (M4).xml"
+    }
+  ]
+}
