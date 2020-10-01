@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root><context>http://schema.org/
+</context><id>https://www.skillshare.com/classes/Linux-Terminal-Commands-for-Beginners/1393243931undefined</id>undefined<name>Linux Terminal Commands for Beginners</name>undefined<description> Linux is the fastest growing operating system in the world, it is at heart of the Internet and computing. Learn the basic Linux commands you need to succeed If you are in IT, you are really missing out if you don't learn the Linux terminal. Billions of servers, embedded systems and super computers use Linux. So, don't be left behind!At the end of this course, you will be able to use Linux Terminal Commands. </description>undefined<image>https://static.skillshare.com/uploads/video/thumbnails/2d8f44cbc70aff969b8529c1068c0114/448-252</image>undefined<provider>
+<name>Skillshare</name>
+<sameAs>https://www.skillshare.com</sameAs>
+<logo>https://static.skillshare.com/assets/images/hands_logo_2x.png</logo><type>Organizationundefined</type>undefined</provider>undefined<author>undefined<name>Frank A</name>undefined<sameAs>https://www.skillshare.com/user/frank-a</sameAs>undefined<image>https://static.skillshare.com/uploads/users/8500718/user-image-medium.gif?1574987543</image><type>Personundefined</type>undefined</author><type>Courseundefined</type>undefined</root>

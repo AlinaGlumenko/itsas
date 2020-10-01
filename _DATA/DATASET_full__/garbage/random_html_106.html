@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135443835-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-135443835-2');
+    </script>
+    <meta http-equiv="content-type" content="text/html" charset="UTF-8" />
+    <title>ULI Analyzer</title>
+    <link href="https://elsur.us/styles/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-Bx4pytHkyTDy3aJKjGkGoHPt3tvv6zlwwjc3iqN7ktaiEMLDPqLSZYts2OjKcBx1" crossorigin="anonymous">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="https://elsur.us/css/materialize.min.css"  media="screen,projection"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+<div class="container"><h1>EPS LTE User Location Information (ULI) decoder</h1>
+<p>This utility supports decoding 133 108 EPS LTE ULI values. ULI is an EPS GTPV2 Specific Parameter Information Element
+    (IE) Type encoded as specified in 133 108 Annex B.9 (which references ETSI TS 129 274). This utility supports
+    decoding the extensible ULI IE with one to all eight ULI identity types in 129 274 V14.4.0 section 8.21.</p>
+<form action="" method="post">
+    <fieldset>
+        <legend>Enter User Location Information octet string encoded to 133 108 (2 to 78 hexadecimal digits)</legend>
+        <label for="uli">LTE User Location Information: </label><input id="uli" type="text" name="uli" required=
+        "required" minlength="2" maxlength="78"><br>
+    </fieldset>
+    <div align="center"><input type="submit" name="submit" value="Submit ULI" /></div>
+</form><br>
+    <h4>Fake sample data for testing</h4>
+    <p>Single Identity Types:</p>
+<small>
+CGI: 0113002113061300<br>
+SAI: 0213002145678921<br>
+RAI: 0413918213821942<br>
+TAI: 081391823792<br>
+ECGI: 1013002135678921 (invalid spare)<br>
+ECGI: 1013002105678921 (valid spare)<br>
+LAI: 201391823792<br>
+macro eNodeB ID: 40139182356789 (invalid spare)<br>
+macro eNodeB ID: 40139182056789 (valid spare)<br>
+extended macro eNodeB ID: 80139182656789 (invalid spare)<br>
+extended macro eNodeB ID: 80139182056789 (valid spare)<br>
+</small>
+    <p>Multi-Identity Types:</p>
+<small>
+TAI + ECGI: 181300211246130021524253E33 (invalid spare + invalid length - too long by single extra hex digit)<br>
+TAI + ECGI: 18130021124613002102423E33 (valid spare)<br>
+All but ext macro: 3F181300211246130021524253E33181300211246130021524253E33181300211246130021524253E33 (invalid length)
+    <-- The HTML5 form will truncate extra digits. If you circumvent the HTML5 form then RegEx check will catch.<br>
+All but ext macro: 3F181300211246130021524253E33181300211246130021524253E331813002112461300215242 (valid length)<br>
+TAI + ECGI: 1813002112461300210253E33 (invalid length - short)<br>
+TAI + ECGI: 18130021124613002103E33 (invalid length - really short)<br>
+TAI + ECGI: 181300211246130021024253E3321 (invalid length - too long)<br>
+</small>
+</div><div align="center">
+    <footer>
+        <a href="https://elsur.us/" title="Return home">ELSUR Play Ground home </a><br>
+        <a href="https://elsur.us/misc_files/privacy.php" title="Privacy Policy & Terms">Privacy</a><br>
+        <a href="https://elsur.us/misc_files/terms_of_use.php" title="Terms of Use">Terms of Use</a><br>
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License"
+                                                                                    style=
+                                                                                    "border-width:0"
+                                                                                    src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"/></a>
+        <br>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+            Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    </footer>
+</div>
+<!--JavaScript at end of body for optimized loading-->
+<script type="text/javascript" src="https://elsur.us/js/materialize.min.js"></script>
+<script src="js/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn');
+
+    clipboard.on('success', function(e) {
+        console.log(e);
+    });
+
+    clipboard.on('error', function(e) {
+        console.log(e);
+    });
+
+</script>
+</body>
+</html>

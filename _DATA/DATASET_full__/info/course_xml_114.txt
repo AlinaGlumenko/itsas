@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root><context>http://schema.org/
+</context><id>https://www.skillshare.com/classes/Emacs-Course-Linux/875419458undefined</id>undefined<name>Emacs Course - Linux</name>undefined<description>Emacs will help you become a more effective programmer or sysadmin. It's a very powerful tool that works in both the graphical and terminal environment, meaning you can login to any computer in the world over ssh and use it. With over 1300 extensions, working on any platform, anywhere in the world, why not to learn Emacs? Once you learn it, it will change your life forever.In this course you'll learn the basics and get pro tips!</description>undefined<image>https://static.skillshare.com/uploads/video/thumbnails/240894122c03c6f2e7ac4ec5e57068e7/448-252</image>undefined<provider>
+<name>Skillshare</name>
+<sameAs>https://www.skillshare.com</sameAs>
+<logo>https://static.skillshare.com/assets/images/hands_logo_2x.png</logo><type>Organizationundefined</type>undefined</provider>undefined<author>undefined<name>Frank A</name>undefined<sameAs>https://www.skillshare.com/user/frank-a</sameAs>undefined<image>https://static.skillshare.com/uploads/users/8500718/user-image-medium.gif?1574987543</image><type>Personundefined</type>undefined</author><type>Courseundefined</type>undefined</root>

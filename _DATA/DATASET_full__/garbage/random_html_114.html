@@ -1,0 +1,2845 @@
+<!DOCTYPE html>
+<html id="htmlTag" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"93a8bd5691",applicationID:"145396307"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(c(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(5),c=e(6),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,n){s[n]=i(p+n,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(l+"tracer",[u.now(),e,t],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&d("lcp",[t[t.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var n=Math.round(e.timeStamp),t={type:e.type};n<=p.now()?t.fid=p.now()-n:n>p.offset&&n<=Date.now()?(n-=p.offset,t.fid=p.now()-n):n=p.now(),g=!0,d("timing",["fi",n,t])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(4),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e){function n(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,n,!1)}n.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],5:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],6:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],7:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function t(t,r,i,o){if(!p.aborted||o){e&&e(t,r,i);for(var a=n(i),c=v(t),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[t]];return d&&d.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(t)}function y(e,n){u(e,function(e,t){n=n||"feature",w[t]=n,n in s||(s[n]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(5),s={},d={},p=n.exports=i();p.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(w,function(n,t){e[n]||(e[n]=t)});var t=a();f("mark",["onload",t+E.offset],null,"api"),f("timing",["load",t]);var r=l.createElement("script");r.src="https://"+e.agent,n.parentNode.insertBefore(r,n)}}function i(){"complete"===l.readyState&&o()}function o(){f("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(c=Math.max((new Date).getTime(),c))-E.offset}var c=(new Date).getTime(),f=e("handle"),u=e(5),s=e("ee"),d=e(3),p=window,l=p.document,m="addEventListener",v="attachEvent",g=p.XMLHttpRequest,y=g&&g.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:g,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var h=""+location,w={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1177.min.js"},b=g&&y&&y[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:c,now:a,origin:h,features:{},xhrWrappable:b,userAgent:d};e(1),e(2),l[m]?(l[m]("DOMContentLoaded",o,!1),p[m]("load",r,!1)):(l[v]("onreadystatechange",i),p[v]("onload",r)),f("mark",["firstbyte",c],null,"api");var x=0,O=e(7)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(6),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof t?t(r,a):t||{}}catch(u){p([u,"",[r,a,i],c])}s(n+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(n+"err",[r,a,d],c),d}finally{s(n+"end",[r,a,f],c)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<n.length;f++)c=n[f],a=e[c],r(a)||(e[c]=t(a,u?c+i:i,o,c))}function s(t,r,i){if(!f||n){var o=f;f=!0;try{e.emit(t,r,i,n)}catch(a){p([a,t,r,i])}f=o}}function d(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){p([r])}for(var i in e)c.call(e,i)&&(n[i]=e[i]);return n}function p(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+	
+	
+	<base href="https://forums.unrealengine.com/" />
+	
+		<link rel="Shortcut Icon" href="favicon.ico" type="image/x-icon" />
+	
+
+	
+	
+	
+		
+		
+	
+
+	
+
+	
+	<link rel="stylesheet" type="text/css" href="css.php?styleid=1&amp;td=ltr&amp;sheet=css_reset.css,css_unreset.css,css_utilities.css&amp;ts=1599247276 " />
+<link rel="stylesheet" type="text/css" href="css.php?styleid=1&amp;td=ltr&amp;sheet=css_imgareaselect-animated.css,css_jquery-ui-1_11_4_custom.css,css_jquery_qtip.css,css_jquery_selectBox.css,css_global.css,css_fonts.css,css_b_link.css,css_b_layout.css,css_b_button.css,css_b_button_group.css,css_b_icon.css,css_b_tabbed_pane.css,css_b_form_control.css,css_b_form_input.css,css_b_form_select.css,css_b_form_textarea.css,css_b_media.css,css_b_divider.css,css_b_avatar.css,css_b_ajax_loading_indicator.css,css_responsive.css,css_b_vbscroller.css,css_b_theme_selector.css,css_b_top_background.css,css_b_module.css,css_b_comp_menu_horizontal.css,css_b_comp_menu_dropdown.css,css_b_comp_menu_vert.css,css_b_top_menu.css&amp;ts=1599247276 " />
+
+<script type="text/javascript" src="js/header-rollup-561.js"></script>
+
+	
+
+	
+		<meta property="og:site_name" content="Unreal Engine Forums" />
+		<meta property="og:description" content="For discussions about Materials, Textures, Lighting, Particle Systems, and Post Process Effects." />
+		<meta property="og:url" content="https://forums.unrealengine.com/development-discussion/rendering/103023-set-actor-component-lighting-properties-at-runtime" />
+		
+		<meta property="og:type" content="website" />
+	
+
+	
+	
+	<link rel="canonical" href="https://forums.unrealengine.com/development-discussion/rendering/103023-set-actor-component-lighting-properties-at-runtime" />
+
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+	
+	
+	
+		
+		
+		
+			
+			
+		
+		
+	
+
+	
+	
+	
+		
+
+	<title>
+		
+			Set actor / component lighting properties at runtime. - 
+		
+		Unreal Engine Forums
+	</title>
+
+	<meta name="description" content="For discussions about Materials, Textures, Lighting, Particle Systems, and Post Process Effects." />
+	<meta name="generator" content="vBulletin 5.6.1" />
+
+	<link rel="stylesheet" type="text/css" href="css.php?styleid=1&amp;td=ltr&amp;sheet=css_b_post.css,css_b_post_control.css,css_b_post_attachments.css,css_b_post_notice.css,css_b_post_sm.css,css_b_comments.css,css_b_comment.css,css_b_comment_entry.css,css_b_userinfo.css,css_b_meter.css,css_b_inlinemod.css,css_b_bbcode_user.css,css_b_event.css,css_b_link_thumbnail_list.css,css_b_thumbnail_nav.css&amp;ts=1599247276 " />
+<link rel="stylesheet" type="text/css" href="css.php?styleid=1&amp;td=ltr&amp;sheet=css_b_sharing_menu.css&amp;ts=1599247276 " />
+<link class="js-additional-css" rel="stylesheet" type="text/css" href="css.php?styleid=1&amp;td=ltr&amp;sheet=css_additional.css&amp;ts=1599247276 " />
+
+<script type="text/javascript">
+		if (location.hash) {
+			document.write('<style type="text/css"> a.anchor { display:none;} <\/style>');
+		}
+
+		var uploadUrlTarget = "https://forums.unrealengine.com/uploader/url";
+		var pageData = {
+			"baseurl": "https://forums.unrealengine.com",
+			"baseurl_path": "/",
+			"baseurl_login": "",
+			"baseurl_core": "https://forums.unrealengine.com/core",
+			"baseurl_pmchat": "https://forums.unrealengine.com/pmchat/chat",
+			"pageid": "114",
+			"pagetemplateid": "4",
+			"channelid": "47",
+			"nodeid": "103023",
+			"userid": "0",
+			"username": "Guest",
+			"musername": "Guest",
+			"user_startofweek": "1",
+			
+			"user_lang_pickerdateformatoverride": "",
+			"user_editorstate": "",
+			"textDirLeft": "left",
+			"textDirRight": "right",
+			"textdirection": "ltr",
+			"can_use_sitebuilder": "",
+			"cookie_prefix": "uevb",
+			"cookie_path": "/",
+			"cookie_domain": "",
+			"sb_state_cookie": "uevbsitebuilder_active",
+			"inlinemod_cookie_name": "inlinemod_nodes",
+			
+				"pagenum": "1",
+			
+			"languageid": "1",
+			"threadmarking": "1",
+			"lastvisit": "1599913999",
+			"phrasedate": "1595274572",
+			"optionsdate": "1599247276",
+			
+			"current_server_datetime": "1600618322",
+			"simpleversion": "v=561",
+			
+			"showhv_post": "1",
+			
+			"nextcron": "1600618500",
+			"securitytoken": "guest",
+			"eustatus": "0",
+			"flash_message": "",
+			"registerurl": "https://forums.unrealengine.com/register",
+			"activationurl": "https://forums.unrealengine.com/activateuser",
+			"helpurl": "https://forums.unrealengine.com/help",
+			"contacturl": "https://forums.unrealengine.com/contact-us",
+			"datenow": "09-20-2020"
+		};
+		
+		
+
+	</script>
+	
+	
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+var isSSOModuleEnabled = 1;
+
+var originUrl="https://unrealengine.com";
+var headerUrl="https://www.unrealengine.com/epic-games-header-simple?useServerUrl=true";
+var footerUrl="https://www.unrealengine.com/epic-games-footer-simple?useServerUrl=true";
+var loginUrl="https://unrealengine.com/id/login?client_id=f65082b48b504eb88f73961b0131cda7&loginSubheading=Sign+In&regSubheading=Register&state=https%3A%2F%2Fforums.unrealengine.com%2Fdevelopment-discussion%2Frendering%2F103023-set-actor-component-lighting-properties-at-runtime";
+var logoutUrl="https://unrealengine.com/id/logout?redirectUrl=https%3A%2F%2Fforums.unrealengine.com%2F%3Flogouthash%3D";
+var userName="Guest";
+
+var profileUrl="https://forums.unrealengine.com/";
+var settingUrl="https://forums.unrealengine.com/settings/profile";
+
+</script>
+
+
+
+<script type="text/javascript" src="./core/packages/epicforum/sso/js/header.js?v=14261773" defer></script>
+
+
+        
+        
+        <link rel="stylesheet" type="text/css" href="./css/forum.css?v=14261773">
+        <script type="text/javascript" src="./js/forum.js?v=14261773" defer></script>
+
+<link rel="alternate" title="Unreal Engine Forums" type="application/rss+xml" href="https://forums.unrealengine.com/external?type=rss2" />
+<link rel="alternate" title="Unreal Engine Forums -- Rendering" type="application/rss+xml" href="https://forums.unrealengine.com/external?type=rss2&amp;nodeid=47" />
+</head>
+
+	
+
+
+
+
+
+
+
+	
+
+<!--[if gte IE 9]>
+<body id="vb-page-body" class="l-desktop page114 vb-page ie ie9 view-mode logged-out" itemscope itemtype="http://schema.org/ItemPage" data-usergroupid="1" data-styleid="1>
+<![endif]-->
+<!--[if !IE]><!-->
+<body id="vb-page-body" class="l-desktop page114 vb-page view-mode logged-out" itemscope itemtype="http://schema.org/ItemPage" data-usergroupid="1" data-styleid="1">
+<!--<![endif]-->
+<script type="text/javascript">
+	vBulletin.Responsive.Debounce.checkBrowserSize();
+</script>
+
+
+        
+        <script>window.__tracking_base ="https://tracking.unrealengine.com";</script>
+        <script src="https://tracking.unrealengine.com/tracking.js" async></script>
+
+        <script type="text/javascript" src="js/polyfill.js"></script>
+
+        
+
+        
+
+        
+
+
+
+	
+
+
+<div class="b-top-menu__background b-top-menu__background--sitebuilder js-top-menu-sitebuilder h-hide">
+	<div class="b-top-menu__container">
+		<ul class="b-top-menu b-top-menu--sitebuilder js-top-menu-sitebuilder--list">
+			
+		</ul>
+	</div>
+</div>
+
+<nav class="b-top-menu__background js-top-menu-user">
+	<div class="b-top-menu__container">
+		<ul class="b-top-menu b-top-menu--user js-top-menu-user--list js-shrink-event-parent">
+			
+
+
+
+
+	
+
+
+
+	<li class="b-top-menu__item b-top-menu__item--no-left-divider b-top-menu__item--no-right-divider username-container js-shrink-event-child">
+
+		<div class="b-comp-menu-dropdown b-comp-menu-dropdown--headerbar js-comp-menu-dropdown b-comp-menu-dropdown--open-on-hover js-login-menu">
+			<div id="lnkLoginSignupMenu" class="b-comp-menu-dropdown__trigger js-comp-menu-dropdown__trigger b-comp-menu-dropdown__trigger--arrow b-comp-menu-dropdown__trigger--headerbar js-button" tabindex="0">
+				Login
+			</div>
+
+			<ul class="b-comp-menu-dropdown__content js-comp-menu-dropdown__content b-comp-menu-dropdown__content--right">
+
+				<li class="b-comp-menu-dropdown__content-item js-comp-menu-dropdown__content-maintain-menu b-comp-menu-dropdown__content-item--no-hover">
+					
+				</li>
+
+				
+				
+
+				<li id="externalLoginProviders" class="b-comp-menu-dropdown__content-item js-comp-menu-dropdown__content-maintain-menu b-comp-menu-dropdown__content-item--no-hover js-external-login-providers h-clearfix h-hide-imp">
+					<span class="h-left h-margin-left-s h-margin-top-s">Log in with</span>
+					
+					
+					
+				</li>
+
+			</ul>
+
+		</div>
+
+	</li>
+
+	
+
+		</ul>
+	</div>
+</nav>
+
+<div id="sitebuilder-wrapper" class="noselect h-clearfix">
+	
+</div>
+
+<div class="main-navbar-bottom-line"></div>
+
+<div id="outer-wrapper">
+<div id="wrapper">
+
+	
+	<div id="header-axd" class="header-edit-box axdnum_1 h-clearfix">
+		
+		<div class="axd-container axd-container_header">
+			<div class="admin-only">
+				
+			</div>
+			<div class="axd axd_header">
+				
+			</div>
+		</div>
+		<div class="axd-container axd-container_header2">
+			<div class="admin-only">
+				
+			</div>
+			<div class="axd axd_header2">
+				
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	<header class="b-top-background__header-mainnav-subnav">
+
+		
+		<div class="b-top-background__header-mainnav">
+
+			
+			<div id="header" class="noselect">
+				<div class="header-cell">
+					
+					<div class="site-logo header-edit-box">
+						<a href="https://forums.unrealengine.com/"><img src="core/images/epic/site_logo.png" data-orig-src="core/images/epic/site_logo.png" alt="Logo" title="" /></a>
+					</div>
+				</div>
+				<div class="toolbar">
+					<ul class="h-right">
+						
+						
+						
+						<li class="search-container">
+							<form id="searchForm" action="https://forums.unrealengine.com/search" class="h-left" method="GET">
+								<div class="h-left">
+
+									
+									<div class="search-box h-clearfix">
+
+										<div class="search-term-container">
+
+											<input type="text" name="q" id="q" placeholder="Search" class="search-term b-form-input__input b-form-input__input--shadow" autocomplete="off" />
+
+											<div class="search-menu-container h-clearfix">
+												<div class="vertical-divider-left"></div>
+												<div class="b-comp-menu-dropdown js-comp-menu-dropdown b-comp-menu-dropdown--open-on-hover b-comp-menu-dropdown--header-search">
+													<div class="b-comp-menu-dropdown__trigger js-comp-menu-dropdown__trigger b-comp-menu-dropdown__trigger--arrow js-button" tabindex="0"></div>
+													<ul class="b-comp-menu-dropdown__content js-comp-menu-dropdown__content">
+
+	<li class="b-comp-menu-dropdown__content-item b-comp-menu-dropdown__content-item--first b-comp-menu-dropdown__content-item--no-hover js-comp-menu-dropdown__content-maintain-menu">
+
+		<div class="searchPopupBody">
+
+			<label><input type="checkbox" name="searchFields[title_only]" class="searchFields_title_only" value="1" />Search in titles only</label>
+
+			
+
+			
+				
+				
+					<label><input type="checkbox" name="searchFields[channel][]" class="searchFields_channel" value="47" />Search in Rendering only</label>
+				
+			
+
+			<div class="b-button-group h-margin-top-xs">
+				<button type="submit" id="btnSearch-popup" class="b-button b-button--primary">Search</button>
+			</div>
+
+		</div>
+
+		<input type="hidden" name="searchJSON" value="" />
+	</li>
+
+	<li class="b-comp-menu-dropdown__content-item js-comp-menu-dropdown__content-maintain-menu">
+		<a href="#" id="btnAdvSearch" class="adv-search-btn">Advanced Search</a>
+	</li>
+
+</ul>
+												</div>
+											</div>
+
+										</div>
+
+										<button type="submit" id="btnSearch" class="search-btn" title="Search"><span class="b-icon b-icon__search"></span></button>
+
+									</div>
+
+								</div>
+							</form>
+						</li>
+						
+					</ul>
+				</div>
+				
+			</div>
+
+			
+			<nav id="channel-tabbar" class="h-clearfix noselect">
+				<ul class="channel-tabbar-list h-left b-comp-menu-horizontal js-comp-menu-horizontal js-comp-menu--dropdown-on-small b-comp-menu-dropdown--inactive js-comp-menu-dropdown__content--main-menu h-hide-on-small js-shrink-event-parent">
+
+					
+						
+					
+
+					
+					
+					
+						
+						
+						
+						<li class="current section-item js-shrink-event-child">
+							<a   href="" class="h-left navbar_home">Forums</a>
+							
+							<span class="mobile dropdown-icon"><span class="icon h-right"></span></span>
+						</li>
+					
+					
+				</ul>
+			</nav>
+
+
+		</div>
+
+
+		
+		<nav id="channel-subtabbar" class="h-clearfix  h-hide-on-small h-block js-channel-subtabbar">
+			<ul class="h-left channel-subtabbar-list js-channel-subtabbar-list js-shrink-event-parent">
+				
+					
+					
+					<li class=" js-shrink-event-child">
+						<a   href="search?searchJSON=%7B%22date%22%3A%22lastVisit%22%2C%22view%22%3A%22topic%22%2C%22unread_only%22%3A1%2C%22sort%22%3A%7B%22lastcontent%22%3A%22desc%22%7D%2C%22exclude_type%22%3A%5B%22vBForum_PrivateMessage%22%5D%7D" class="navbar_newtopics" rel="nofollow">New Topics</a>
+					</li>
+				
+					
+					
+					<li class=" js-shrink-event-child">
+						<a   href="search?searchJSON=%7B%22last%22%3A%7B%22from%22%3A%22lastDay%22%7D%2C%22view%22%3A%22topic%22%2C%22starter_only%22%3A+1%2C%22sort%22%3A%7B%22lastcontent%22%3A%22desc%22%7D%2C%22exclude_type%22%3A%5B%22vBForum_PrivateMessage%22%5D%7D" class="navbar_todays_posts" rel="nofollow">Today's Posts</a>
+					</li>
+				
+			</ul>
+		</nav>
+
+
+	</header>
+
+
+	
+		
+	
+
+	
+	
+		
+		<nav class="breadcrumbs-wrapper">
+		<ul id="breadcrumbs" class="h-clearfix" itemprop="breadcrumb">
+			<li class="crumb">
+				<a class="crumb-link h-flex-valign-center" href="https://forums.unrealengine.com/" rel="nofollow">
+					<span class="b-icon b-icon__home" title="Home"></span>
+				</a>
+			</li>
+			
+				
+					
+					
+				
+				
+			
+				
+					
+					
+				
+				
+					<li class="vb-icon separator"></li>
+					<li class="crumb ellipsis"><a class="crumb-link" href="https://forums.unrealengine.com/development-discussion" rel="nofollow">Development Discussion</a></li>
+				
+			
+				
+					
+					
+				
+				
+					<li class="vb-icon separator"></li>
+					<li class="crumb ellipsis"><a class="crumb-link" href="https://forums.unrealengine.com/development-discussion/rendering" rel="nofollow">Rendering</a></li>
+				
+			
+		</ul>
+		</nav>
+	
+
+	
+
+	
+	
+		
+			
+			
+				
+				
+				
+			
+		
+			
+			
+				
+				
+				
+			
+		
+	
+
+	
+
+	
+
+
+	
+
+
+	
+	<div id="content">
+		<div class="canvas-layout-container js-canvas-layout-container">
+
+<div id="canvas-layout-full" class="canvas-layout" data-layout-id="1">
+
+	
+
+	
+
+		
+	
+
+
+
+	
+
+
+
+<!-- row -->
+<div class="canvas-layout-row l-row no-columns h-clearfix">
+
+	
+	
+
+	
+
+		
+		
+		
+
+		
+	
+
+
+
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+<!-- section 2 -->
+
+
+
+<div class="canvas-widget-list section-2 js-sectiontype-notice h-clearfix l-col__large-12 l-col__small--full l-wide-column">
+
+	
+
+	
+	<!-- *** START WIDGET widgetid:33, widgetinstanceid:19, template:widget_announcement *** -->
+	
+	
+
+
+	
+	
+
+
+
+
+
+<div class="b-module canvas-widget default-widget announcement-widget empty" id="widget_19" data-widget-id="33" data-widget-instance-id="19">
+	
+	<div class="widget-header h-clearfix">
+		
+		
+			
+		
+
+		<div class="module-title h-left">
+			
+				<h1 class="main-title js-main-title hide-on-editmode">Announcement</h1>
+				
+				
+				
+			
+		</div>
+		
+			<div class="module-buttons">
+				
+					<span class="toggle-button module-button-item collapse" title="Collapse" data-toggle-title="Expand"><span class="b-icon b-icon__toggle-collapse">Collapse</span></span>
+				
+			</div>
+		
+	</div>
+	
+
+	<div class="widget-content">
+		
+			
+				No announcement yet.
+				
+			
+				
+	</div>
+</div>
+	<!-- *** END WIDGET widgetid:33, widgetinstanceid:19, template:widget_announcement *** -->
+
+	<!-- *** START WIDGET widgetid:54, widgetinstanceid:20, template:widget_pagetitle *** -->
+	
+	
+
+
+	
+	
+
+
+
+
+
+	
+	
+	
+		
+		
+	
+
+
+
+
+
+
+
+	
+
+
+
+
+	
+
+
+
+<div class="b-module canvas-widget default-widget page-title-widget widget-no-header-buttons widget-no-border" id="widget_20" data-widget-id="54" data-widget-instance-id="20">
+	
+	<div class="widget-header h-clearfix">
+		
+		
+
+		<div class="module-title h-left">
+			
+				<h1 class="main-title js-main-title hide-on-editmode">Set actor / component lighting properties at runtime.</h1>
+				
+				
+				
+			
+		</div>
+		
+			<div class="module-buttons">
+				
+					<span class="toggle-button module-button-item collapse" title="Collapse" data-toggle-title="Expand"><span class="b-icon b-icon__toggle-collapse">Collapse</span></span>
+				
+			</div>
+		
+	</div>
+	
+
+
+	
+	
+
+</div>
+	<!-- *** END WIDGET widgetid:54, widgetinstanceid:20, template:widget_pagetitle *** -->
+
+
+	
+
+</div>
+
+	
+
+</div>
+
+	
+
+		
+	
+
+
+
+	
+
+
+
+<!-- row -->
+<div class="canvas-layout-row l-row no-columns h-clearfix">
+
+	
+	
+
+	
+
+		
+		
+		
+
+		
+	
+
+
+
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+
+	
+	
+
+	
+	
+
+
+
+
+
+
+
+<!-- section 0 -->
+
+
+
+<div class="canvas-widget-list section-0 js-sectiontype-primary js-sectiontype-secondary h-clearfix l-col__large-12 l-col__small--full l-wide-column">
+
+	
+
+	
+	<!-- *** START WIDGET widgetid:7, widgetinstanceid:21, template:widget_conversationdisplay *** -->
+	
+
+
+
+	
+		
+	
+	
+		
+			
+		
+	
+
+	
+	
+	
+		
+		
+		
+		
+		
+
+		
+			
+			
+			
+
+			
+
+			
+				
+			
+			
+
+			
+
+			
+
+			
+				
+					
+				
+				
+				
+				
+				
+				
+			
+
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+			
+
+			
+				
+			
+
+			
+			
+			
+
+			
+			
+
+			
+				
+			
+
+
+			
+			
+				
+					
+					
+					
+				
+				
+					
+				
+			
+				
+					
+					
+					
+				
+				
+					
+				
+			
+				
+					
+					
+					
+				
+				
+					
+				
+			
+
+			
+			
+
+			
+				
+				
+					
+						
+					
+				
+
+				
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+				
+			
+
+			
+			
+			
+			
+			
+			
+
+		
+	
+
+	
+	
+	
+		
+		
+		 
+	
+
+	
+	
+	
+		
+		
+	
+
+	<div class="b-module canvas-widget default-widget conversation-content-widget  forum-conversation-content-widget widget-tabs widget-no-border widget-no-header-buttons  axd-container" id="widget_21" data-widget-id="7" data-widget-instance-id="21" data-widget-default-tab="">
+		
+			<div class="conversation-status-messages">
+				
+				
+				
+				<div class="conversation-status-message notice h-hide"><span></span><div class="close">X</div></div>
+			</div>
+
+			<div class="widget-header h-clearfix">
+				<div class="module-title h-left main-header-title">
+					
+				</div>
+				<div class="module-buttons">
+					<span class="toggle-button module-button-item collapse" title="Collapse" data-toggle-title="Expand"><span class="b-icon b-icon__toggle-collapse">Collapse</span></span>
+				</div>
+				
+				
+				<div class="conversation-controls h-right h-clear hide-on-editmode b-button-group h-margin-bottom-l js-movable-toolbar-button-container">
+					
+				</div>
+				
+					<div class="widget-tabs-nav h-clear">
+						<a id="topic-module-top" class="anchor js-module-top-anchor"></a>
+						<ul class="ui-tabs-nav hide-on-editmode h-left b-comp-menu-horizontal js-module-tab-menu js-comp-menu-horizontal js-comp-menu--dropdown-on-xsmall b-comp-menu-dropdown--inactive">
+							
+							
+							<li><a href="#thread-view-tab" data-href="https://forums.unrealengine.com/development-discussion/rendering/103023-set-actor-component-lighting-properties-at-runtime?view=thread">Posts</a></li>
+							
+							<li><a href="#stream-view-tab" data-href="https://forums.unrealengine.com/development-discussion/rendering/103023-set-actor-component-lighting-properties-at-runtime?view=stream">Latest Activity</a></li>
+						</ul>
+					</div>
+				
+			</div>
+			<div class="widget-content tab widget-tabs-panel">
+				<input type="hidden" name="canmoderate" id="canmoderate" value="0" />
+				<div id="thread-view-tab" class="conversation-view conversation-thread-view">
+					
+						
+					
+					
+						
+							
+						
+					
+
+					
+
+
+	
+		
+	
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+<div class="conversation-toolbar-wrapper  top h-clear hide-on-editmode
+	
+		scrolltofixed-floating
+		scrolltofixed-top
+	
+" data-allow-history="1">
+	<div class="conversation-toolbar">
+
+
+		
+
+		
+			
+			<div class="toolset-left">
+
+				
+				<div class="conversation-toolbar-height-shim js-shrink-event-child">
+					<div class="b-button">&nbsp;</div>
+				</div>
+
+			</div>
+		
+		
+
+		
+
+		<ul class="toolset-right js-shrink-event-parent">
+
+			
+				<li class="toolbar-search h-hide-on-small js-shrink-event-child">
+					<form name="toolbar-search-form" action="activity/get" method="post" class="toolbar-search-form">
+						<input type="hidden" name="nodeid" value="103023" />
+						<input type="hidden" name="view" value="thread" />
+						
+							<input type="hidden" name="per-page" value="15" />
+							<input type="hidden" name="pagenum" value="1" />
+						
+
+						<div class="js-toolbar-search-inner b-form-input__input-with-button-container b-form-input__input-with-button-container--full">
+
+							<input type="text" name="q" value="" class="b-form-input__input b-form-input__input--with-button b-form-input__input--shadow js-filter-search" placeholder="Search" data-filter-name="Search" />
+
+							<button type="submit" name="btnSearch" id="btnSearch-top" class="b-form-input__inside-button"><span class="b-form-input__inside-button-icon b-icon b-icon__search-gray-s">Search</span></button>
+
+						</div>
+
+					</form>
+				</li>
+				<li class="h-hide-on-small js-shrink-event-child">
+					<div class="toolbar-divider">
+						<span class="toolbar-divider-inner"></span>
+					</div>
+				</li>
+			
+
+			
+			
+				
+			
+
+			
+			
+				<li class="toolbar-pagenav js-toolbar-pagenav h-hide-on-xsmall js-shrink-event-child">
+					<div class="toolbar-pagenav-wrapper">
+						<!-- Page Nav controls -->
+
+
+
+
+
+
+
+
+
+
+
+<div class="pagenav-controls ">
+	<form class="pagenav-form h-clearfix" action="https://forums.unrealengine.com/development-discussion/rendering/103023-set-actor-component-lighting-properties-at-runtime">
+		<input type="hidden" class="defaultpage" value="1" />
+		
+		<div class="pagenav h-left">
+			Page <input type="text" name="page" class="js-pagenum textbox h-padding-horiz-none b-form-input__input--shadow" value="1" /> of <span class="pagetotal">1</span>
+		</div>
+
+		<div class="horizontal-arrows h-left">
+			<a  class="arrow left-arrow h-disabled"  title="Previous Page" rel="prev"><span class="vb-icon vb-icon-arrow-left"></span></a>
+			<a  class="arrow right-arrow h-disabled"  title="Next Page" rel="next"><span class="vb-icon vb-icon-arrow-right"></span></a>
+		</div>
+	</form>	
+</div>
+					</div>
+				</li>
+				
+					<li class="h-hide-on-xsmall js-shrink-event-child">
+						<div class="toolbar-divider">
+							<span class="toolbar-divider-inner"></span>
+						</div>
+					</li>
+				
+			
+
+			
+				<li class="toolbar-filter toolbar-filter-top js-shrink-event-child">
+					<div class="filter-wrapper h-clearfix js-button" tabindex="0">
+						<div class="label h-left">Filter</div>
+						<div class="arrow vb-icon-wrapper h-left"><span class="vb-icon vb-icon-triangle-down-wide"></span></div>
+					</div>
+				</li>
+			
+
+			
+
+			
+		</ul>
+	</div>
+
+
+	
+
+	
+		
+			
+		
+		
+		<form action="activity/get" method="post" class="toolbar-filter-overlay h-clearfix">
+			<input type="hidden" name="nodeid" value="103023" />
+			<input type="hidden" name="view" value="thread" />
+			
+			
+			
+			
+				<input type="hidden" name="nolimit" value="1" />
+			
+			
+				<input type="hidden" name="per-page" value="15" />
+				<input type="hidden" name="pagenum" value="1" />
+			
+			
+			
+			
+				<input type="hidden" name="userid" value="0" />
+			
+			
+			
+			<input type="hidden" name="showChannelInfo" value="1" />
+			<ul class="filter-options-list">
+				
+				
+				<li>
+					<div class="filter-header">Time</div>
+					<div class="filter-options">
+						
+						
+						
+						
+						
+						
+						
+						
+						
+							
+						
+						
+						
+						
+
+						
+							<label><input type="radio" name="filter_time" value="time_all" checked="checked" class="js-default-checked" /><span>All Time</span></label>
+						
+						<label><input type="radio" name="filter_time" value="time_today" /><span>Today</span></label>
+						<label><input type="radio" name="filter_time" value="time_lastweek" /><span>Last Week</span></label>
+						<label><input type="radio" name="filter_time" value="time_lastmonth" /><span>Last Month</span></label>
+					</div>
+				</li>
+				
+				
+				<li>
+					<div class="filter-header">Show</div>
+					<div class="filter-options">
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+							
+						
+						
+						
+						
+
+						<label><input type="radio" name="filter_show" value="show_all" checked="checked" class="js-default-checked" /><span>All</span></label>
+						<label><input type="radio" name="filter_show" value="vBForum_Text" /><span>Discussions only</span></label>
+						<label><input type="radio" name="filter_show" value="vBForum_Gallery" /><span>Photos only</span></label>
+						<label><input type="radio" name="filter_show" value="vBForum_Video" /><span>Videos only</span></label>
+						<label><input type="radio" name="filter_show" value="vBForum_Link" /><span>Links only</span></label>
+						<label><input type="radio" name="filter_show" value="vBForum_Poll" /><span>Polls only</span></label>
+						<label><input type="radio" name="filter_show" value="vBForum_Event" /><span>Events only</span></label>
+					</div>
+				</li>
+				
+				
+				
+				
+				
+				
+
+				
+
+				
+				<!-- end if prefixsets -->
+			</ul>
+		</form>
+
+		
+
+		<div class="filtered-by h-clearfix h-hide">
+			<label>Filtered by:</label>
+			<div class="filter-text-wrapper h-left">
+				
+				
+				
+			</div>
+			<a href="#" class="clear-all h-hide">Clear All</a>
+		</div>
+		<div class="new-conversations-strip"><span></span> new posts</div>
+	
+</div>
+
+
+
+	<div class="h-show-on-xsmall h-right h-margin-top-l js-under-toolbar-pagenav h-margin-bottom-m">
+		
+
+
+	
+
+
+
+	
+
+
+<div class="pagenav-container h-clearfix noselect h-hide pagenav-container--no-margin">
+	<div class="js-pagenav pagenav h-right js-shrink-event-parent" data-baseurl="https://forums.unrealengine.com/development-discussion/rendering/103023-set-actor-component-lighting-properties-at-runtime">
+
+		
+
+		
+		
+			<a class="js-pagenav-button js-pagenav-prev-button b-button b-button--secondary h-hide-imp js-shrink-event-child" data-page="0" href="" tabindex="0">Previous</a>
+		
+
+		
+		
+		
+		
+		
+		<a class="js-pagenav-button b-button b-button--narrow js-shrink-event-child b-button--secondary js-pagenav-button--template h-hide-imp" data-page="0" href="https://forums.unrealengine.com/development-discussion/rendering/103023-set-actor-component-lighting-properties-at-runtime" tabindex="0">template</a>
+
+		
+		
+			<a class="js-pagenav-button js-pagenav-next-button b-button b-button--secondary h-hide-imp js-shrink-event-child" data-page="0" href="" tabindex="0">Next</a>
+		
+
+	</div>
+</div>
+	</div>
+
+					<div class="conversation-content">
+						<ul class="conversation-list list-container h-clearfix   thread-view">
+							
+								
+								
+								
+
+								
+								
+								
+								
+									
+
+									
+
+									
+								
+									
+
+									
+
+									
+								
+									
+
+									
+
+									
+								
+
+								
+
+								
+									
+
+									
+										
+									
+								
+									
+
+									
+										
+									
+								
+									
+
+									
+										
+									
+								
+							
+							
+							
+							
+								
+							
+								
+							
+								
+							
+
+							
+							
+							
+								
+									
+									
+								
+								
+									
+									<!-- Starter Conversation -->
+									
+									
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+	
+
+
+
+
+
+<li data-node-id="103023" 
+	data-node-publishdate="1480784755"  
+	class="b-post js-post js-comment-entry__parent h-restore--on-preview b-post--text b-post--first js-conversation-starter h-left h-clear js-slideshow__gallery-node js-poll__parent " itemscope itemtype="http://schema.org/CreativeWork">
+	<a id="post103023" class="anchor"></a>
+	
+		
+
+		
+		
+
+		
+
+		
+		
+		<meta  itemprop="url" content="https://forums.unrealengine.com/development-discussion/rendering/103023-set-actor-component-lighting-properties-at-runtime" />
+	
+
+
+	<div class="l-row l-row__fixed--left">
+		<div class="l-col__fixed-3 l-col__small--full h-hide--on-preview h-padding-right-l">
+			
+
+
+
+<div class="userinfo b-userinfo b-post__hide-when-deleted" itemprop="author" itemscope itemtype="http://schema.org/Person">
+	
+		
+		
+			
+			
+		
+
+		
+			<a href="https://forums.unrealengine.com/member/8503-z-enzyme" class="b-avatar b-avatar--m b-avatar--thread h-margin-bottom-l"><img src="./core/images/default/default_avatar_medium.png" width="64" height="64" alt="Z-enzyme" title="Z-enzyme" /></a>
+		
+	
+	<!-- responsive alteration: Added userinfo-details wrapper in order to
+	support left floated avatar with all other information on the right. -->
+	
+	<div class="b-userinfo__details">
+		
+		<div class="author h-text-size--14">
+			<strong><a href="https://forums.unrealengine.com/member/8503-z-enzyme" >Z-enzyme</a></strong>
+			
+
+
+	
+
+
+
+
+
+	
+
+
+
+
+		</div>
+		
+		
+			
+			<div class="usertitle"><span style="color:#007EBF;">Promoter</span></div>
+		
+		
+
+		<div class="b-meter h-margin-top-m pos" title="is on a distinguished road">
+			
+			
+				<div class="b-meter__bar"></div>
+				<div class="b-meter__bar"></div>
+			
+				<div class="b-meter__bar"></div>
+				<div class="b-meter__bar"></div>
+			
+				<div class="b-meter__bar"></div>
+				<div class="b-meter__bar"></div>
+			
+				<div class="b-meter__bar"></div>
+				<div class="b-meter__bar"></div>
+			
+				<div class="b-meter__bar"></div>
+				<div class="b-meter__bar"></div>
+			
+		</div>
+		
+		<div class="b-userinfo__rank h-margin-top-s h-hide"></div>
+		
+		<ul class="b-userinfo__additional-info-block h-margin-top-xl">
+			
+				<li class="b-userinfo__additional-info"><label>Join Date:</label> <span>May 2014</span></li>
+				<li class="b-userinfo__additional-info"><label>Posts:</label> <span>203</span></li>
+				
+			
+			
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			
+			
+		</ul>
+		<ul class="b-userinfo__icons h-margin-none">
+			
+				
+			
+			<li class="b-userinfo__icon h-left" title="Z-enzyme is offline"><span class="b-icon b-icon__status--gray"></span></li>
+
+			
+		</ul>
+	</div>
+</div>
+			
+
+
+
+
+
+
+
+
+	
+
+
+<ul class="b-sharing-menu js-sharing-menu js-comp-menu-horizontal js-comp-menu--dropdown-on-small b-post__hide-when-deleted" data-dropdown-trigger-phrase="share" data-dropdown-icon-classes="b-icon b-icon__share" data-dropdown-content-classes="b-sharing-menu--dropdown" data-dropdown-menu-classes="b-sharing-menu--right-on-small">
+
+	
+
+	
+
+	
+
+</ul>
+		</div>
+
+		<div class="js-post__content-wrapper l-col__flex-3 l-col__small--full h-restore--on-preview">
+			<div class="b-post__body h-restore--on-preview h-padding-horiz-xxl h-padding-top-xl h-padding-bottom-m h-clearfix">
+				<div class="b-post__arrow b-post__hide-when-deleted"></div>
+
+				
+
+				<div class="b-post__content js-post__content">
+					<hr class="b-divider--section" />
+
+					<div class="b-media h-hide--on-preview">
+						<div class="b-media__img--rev">
+
+							
+								
+							
+
+							
+							
+							
+							
+							
+								<a class="b-post__count" href="https://forums.unrealengine.com/development-discussion/rendering/103023-set-actor-component-lighting-properties-at-runtime#post103023">#1
+								</a>
+							
+
+							
+
+							
+
+
+						</div>
+						<div class="b-media__body">
+							
+								<h2 class="b-post__title js-post-title b-post__hide-when-deleted">
+									
+									
+									Set actor / component lighting properties at runtime.
+								</h2>
+							
+
+
+							
+							
+							<div class="b-post__timestamp"><time itemprop="dateCreated" datetime="2016-12-03T17:05:55">12-03-2016, 01:05 PM</time></div>
+
+						</div>
+					</div>
+
+
+					<div class="b-post__hide-when-deleted">
+					<div class="OLD__post-content h-padding-vert-xl">
+						
+							<div class="axd axd_first-post">
+								
+								
+								
+							</div>
+						
+
+
+						
+						<div class="js-post__content-text restore h-wordwrap" itemprop="text">
+							
+								
+								<a id="attachment1201382" class="bbcode-attachment js-slideshow__gallery-node" href="filedata/fetch?id=1201382&amp;d=1480784613" rel="Lightbox_0" ><img border="0" src="filedata/fetch?id=1201382&amp;d=1480784613" alt="Click image for larger version
+
+Name:	Lighting.jpg
+Views:	1
+Size:	73.8 KB
+ID:	1201382" style="float:CONFIG" data-attachmentid="1201382" class="bbcode-attachment thumbnail" /></a><br />
+<br />
+What I want is to set Lighting Channels in game dynamically. Why all the lighting properties can't be changed during runtime? Is there a good reason for that? As it comes to lighting channels I can't think of a reason, same for &quot;Cast Dynamic Shadow&quot;, or &quot;Self Shadow&quot;, &quot;Shadow Two Sided&quot;...<br />
+<br />
+So, next question, is it possible to write functions in C++ for that not changing the source code of the engine. Like, a plugin?
+							
+						</div>
+					</div>
+
+
+	
+	
+
+	</div> 
+  </div> 
+
+
+
+
+		
+			
+				
+				
+				
+			
+			
+<div class="b-post__footer h-hide--on-preview h-clear h-padding-bottom-m h-margin-horiz-xl">
+
+	<div class="h-clearfix">
+		
+			<div class="h-margin-bottom-xl h-margin-top-none h-text-size--11" id="content-tags-103023">
+
+	
+	
+	
+	
+	
+	
+		
+	
+
+	
+		<strong>Tags:</strong>
+	
+
+	
+		<span class="js-content-tag-none">None</span>
+	
+</div>
+		
+
+		
+			<hr class="b-divider b-divider--post-controls" />
+		
+
+		<ul class="h-left js-post-info">
+
+			
+			
+
+			
+
+			
+		</ul>
+
+		<ul class="h-margin-top-s h-right js-post-controls b-comp-menu-horizontal js-comp-menu-horizontal js-comp-menu--dropdown-on-xsmall b-comp-menu-dropdown--inactive" data-node-id="103023" data-dropdown-icon-classes="b-icon b-icon__ellipsis" data-dropdown-content-classes="b-comp-menu-dropdown__content--right">
+			
+
+			
+
+			
+
+			
+
+				
+
+					
+
+				
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+				
+
+			
+
+		</ul>
+
+
+	</div>
+</div>
+
+
+			<div class="edit-conversation-container"></div>
+		
+
+
+
+      </div>
+    </div>  
+  </div>    
+</li><!-- /end .b-post -->
+									
+								
+								
+							
+								
+									
+									
+								
+								
+									<!-- Conversation Replies or Comments -->
+									
+									
+									
+										
+									
+
+									
+										
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+<li data-node-id="884061" 
+	data-node-publishdate="1480793971"  
+	class="b-post js-post js-comment-entry__parent h-restore--on-preview b-post--text  js-conversation-reply h-left h-clear js-slideshow__gallery-node js-poll__parent " itemscope itemtype="http://schema.org/Comment">
+	<a id="post884061" class="anchor"></a>
+	
+		
+
+		
+		
+
+		
+
+		
+		
+		<meta  itemprop="url" content="https://forums.unrealengine.com/development-discussion/rendering/103023-set-actor-component-lighting-properties-at-runtime" />
+	
+
+
+	<div class="l-row l-row__fixed--left">
+		<div class="l-col__fixed-3 l-col__small--full h-hide--on-preview h-padding-right-l">
+			
+
+
+
+<div class="userinfo b-userinfo b-post__hide-when-deleted" itemprop="author" itemscope itemtype="http://schema.org/Person">
+	
+		
+		
+			
+			
+		
+
+		
+			<a href="https://forums.unrealengine.com/member/8503-z-enzyme" class="b-avatar b-avatar--m b-avatar--thread h-margin-bottom-l"><img src="./core/images/default/default_avatar_medium.png" width="64" height="64" alt="Z-enzyme" title="Z-enzyme" /></a>
+		
+	
+	<!-- responsive alteration: Added userinfo-details wrapper in order to
+	support left floated avatar with all other information on the right. -->
+	
+	<div class="b-userinfo__details">
+		
+		<div class="author h-text-size--14">
+			<strong><a href="https://forums.unrealengine.com/member/8503-z-enzyme" >Z-enzyme</a></strong>
+			
+
+
+	
+
+
+
+
+
+	
+
+
+
+
+		</div>
+		
+		
+			
+			<div class="usertitle"><span style="color:#007EBF;">Promoter</span></div>
+		
+		
+
+		<div class="b-meter h-margin-top-m pos" title="is on a distinguished road">
+			
+			
+				<div class="b-meter__bar"></div>
+				<div class="b-meter__bar"></div>
+			
+				<div class="b-meter__bar"></div>
+				<div class="b-meter__bar"></div>
+			
+				<div class="b-meter__bar"></div>
+				<div class="b-meter__bar"></div>
+			
+				<div class="b-meter__bar"></div>
+				<div class="b-meter__bar"></div>
+			
+				<div class="b-meter__bar"></div>
+				<div class="b-meter__bar"></div>
+			
+		</div>
+		
+		<div class="b-userinfo__rank h-margin-top-s h-hide"></div>
+		
+		<ul class="b-userinfo__additional-info-block h-margin-top-xl">
+			
+				<li class="b-userinfo__additional-info"><label>Join Date:</label> <span>May 2014</span></li>
+				<li class="b-userinfo__additional-info"><label>Posts:</label> <span>203</span></li>
+				
+			
+			
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			
+			
+		</ul>
+		<ul class="b-userinfo__icons h-margin-none">
+			
+				
+			
+			<li class="b-userinfo__icon h-left" title="Z-enzyme is offline"><span class="b-icon b-icon__status--gray"></span></li>
+
+			
+		</ul>
+	</div>
+</div>
+			
+
+
+
+
+
+
+
+
+	
+
+
+<ul class="b-sharing-menu js-sharing-menu js-comp-menu-horizontal js-comp-menu--dropdown-on-small b-post__hide-when-deleted" data-dropdown-trigger-phrase="share" data-dropdown-icon-classes="b-icon b-icon__share" data-dropdown-content-classes="b-sharing-menu--dropdown" data-dropdown-menu-classes="b-sharing-menu--right-on-small">
+
+	
+
+	
+
+	
+
+</ul>
+		</div>
+
+		<div class="js-post__content-wrapper l-col__flex-3 l-col__small--full h-restore--on-preview">
+			<div class="b-post__body h-restore--on-preview h-padding-horiz-xxl h-padding-top-xl h-padding-bottom-m h-clearfix">
+				<div class="b-post__arrow b-post__hide-when-deleted"></div>
+
+				
+
+				<div class="b-post__content js-post__content">
+					<hr class="b-divider--section" />
+
+					<div class="b-media h-hide--on-preview">
+						<div class="b-media__img--rev">
+
+							
+								
+							
+
+							
+							
+							
+							
+							
+
+							
+								<a class="b-post__count" href="https://forums.unrealengine.com/development-discussion/rendering/103023-set-actor-component-lighting-properties-at-runtime?p=884061#post884061">#2</a>
+							
+
+							
+
+
+						</div>
+						<div class="b-media__body">
+							
+
+
+							
+							
+							<div class="b-post__timestamp"><time itemprop="dateCreated" datetime="2016-12-03T19:39:31">12-03-2016, 03:39 PM</time></div>
+
+						</div>
+					</div>
+
+
+					<div class="b-post__hide-when-deleted">
+					<div class="OLD__post-content h-padding-vert-xl">
+						
+
+
+						
+						<div class="js-post__content-text restore h-wordwrap" itemprop="text">
+							
+								
+								Never mind, got that, I guess.<br />
+<br />
+
+<div class="bbcode_container">
+	<div class="bbcode_description">Code:</div>
+	
+	<pre class="bbcode_code" style="height:calc(11 * 1.4rem + 12px + 20px);">void UTiExtendedLibrary::SetLightingChannels(UPrimitiveComponent * Component, bool Channel0, bool Channel1, bool Channel2)
+{
+	FLightingChannels Channels;
+
+	Channels.bChannel0 = Channel0;
+	Channels.bChannel1 = Channel1;
+	Channels.bChannel2 = Channel2;
+
+	Component-&gt;LightingChannels = Channels;
+	Component-&gt;MarkRenderStateDirty();
+}</pre>
+</div>Truth is, that function could be added, along with others. Might consider writing some library for that later...
+							
+						</div>
+					</div>
+
+
+
+	
+	
+
+	</div> 
+  </div> 
+
+
+	
+	
+
+
+
+
+
+		
+			
+				
+				
+				
+			
+			
+<div class="b-post__footer h-hide--on-preview h-clear h-padding-bottom-m h-margin-horiz-xl">
+
+	<div class="h-clearfix">
+		
+
+		
+			<hr class="b-divider b-divider--post-controls" />
+		
+
+		<ul class="h-left js-post-info">
+
+			
+			
+
+			
+
+			
+		</ul>
+
+		<ul class="h-margin-top-s h-right js-post-controls b-comp-menu-horizontal js-comp-menu-horizontal js-comp-menu--dropdown-on-xsmall b-comp-menu-dropdown--inactive" data-node-id="884061" data-dropdown-icon-classes="b-icon b-icon__ellipsis" data-dropdown-content-classes="b-comp-menu-dropdown__content--right">
+			
+
+			
+
+			
+
+			
+
+				
+
+					
+
+				
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+				
+
+					<li id="votecount-884061" class="h-margin-top-xs b-post-control b-post-control--disabled votecount">
+						<span class="b-post-control__icon"></span>
+						<span class="b-post-control__label">1 like</span>
+					</li>
+
+				
+
+			
+
+		</ul>
+
+
+	</div>
+</div>
+
+
+			<div class="b-comment-entry js-comment-entry h-padding-xxl h-padding-top-xl  comment-entry-box h-hide ">
+				<h2 class="h-margin-bottom-xl">Comment</h2>
+				<textarea class="b-comment-entry__textbox js-comment-entry__textbox autogrow" placeholder="Type your comment here"></textarea>
+
+				<div class="b-button-group h-margin-top-xl">
+					<button type="button" id="btnPostComment-884061" class="b-button b-button--primary js-comment-entry__post">Post</button>
+					<button type="button" id="btnPostCommentCancel-884061" class="b-button js-comment-entry__cancel">Cancel</button>
+				</div>
+			</div>
+
+			<div class="edit-conversation-container"></div>
+
+			
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b-comments js-comments   h-margin-bottom-xl h-clearfix h-hide">
+
+	
+
+	
+		<div class="b-comments__header js-comments__header b-media h-padding-vert-m h-padding-horiz-l h-hide">
+			<div class="js-comments__total h-margin-left-l b-media__body">
+				<span class="b-icon b-icon__speech-single h-margin-right-s"></span>
+				<label class="js-comments__total-text h-align-top"></label>
+			</div>
+			<div class="b-media__img--rev js-comments__pagination h-hide">
+				<label></label>
+				<span class="b-comments__pagination--up js-comments__page--prev h-margin-left-s" title="See previous comments"><span class="b-icon b-icon__arrow-up-m"></span></span>
+			</div>
+		</div>
+		<ul class="b-comments__comments js-comments__comments h-left"></ul>
+		<div class="b-comments__footer js-comments__footer b-media h-padding-vert-m h-padding-horiz-l h-clear h-hide">
+			<div class="b-media__img--rev js-comments__pagination">
+				<label></label>
+				<span class="b-comments__pagination--down js-comments__page--next h-margin-left-s" title="See next comments"><span class="b-icon b-icon__arrow-down-m"></span></span>
+			</div>
+		</div>
+	
+</div>
+
+		
+
+
+      </div>
+    </div>  
+  </div>    
+</li><!-- /end .b-post -->
+									
+								
+								
+							
+								
+									
+									
+								
+								
+									<!-- Conversation Replies or Comments -->
+									
+									
+									
+										
+									
+
+									
+										
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+<li data-node-id="1797562" 
+	data-node-publishdate="1596667422"  
+	class="b-post js-post js-comment-entry__parent h-restore--on-preview b-post--text  js-conversation-reply h-left h-clear js-slideshow__gallery-node js-poll__parent " itemscope itemtype="http://schema.org/Comment">
+	<a id="post1797562" class="anchor"></a>
+	
+		
+
+		
+		
+
+		
+
+		
+		
+		<meta  itemprop="url" content="https://forums.unrealengine.com/development-discussion/rendering/103023-set-actor-component-lighting-properties-at-runtime" />
+	
+
+
+	<div class="l-row l-row__fixed--left">
+		<div class="l-col__fixed-3 l-col__small--full h-hide--on-preview h-padding-right-l">
+			
+
+
+
+<div class="userinfo b-userinfo b-post__hide-when-deleted" itemprop="author" itemscope itemtype="http://schema.org/Person">
+	
+		
+		
+			
+			
+		
+
+		
+			<a href="https://forums.unrealengine.com/member/3870067-paul-elliott" class="b-avatar b-avatar--m b-avatar--thread h-margin-bottom-l"><img src="./core/images/default/default_avatar_medium.png" width="64" height="64" alt="Paul.Elliott" title="Paul.Elliott" /></a>
+		
+	
+	<!-- responsive alteration: Added userinfo-details wrapper in order to
+	support left floated avatar with all other information on the right. -->
+	
+	<div class="b-userinfo__details">
+		
+		<div class="author h-text-size--14">
+			<strong><a href="https://forums.unrealengine.com/member/3870067-paul-elliott" >Paul.Elliott</a></strong>
+			
+
+
+	
+
+
+
+
+
+	
+
+
+
+
+		</div>
+		
+		
+			
+			<div class="usertitle">Supporter</div>
+		
+		
+
+		<div class="b-meter h-margin-top-m pos" title="will become famous soon enough">
+			
+			
+				<div class="b-meter__bar"></div>
+				<div class="b-meter__bar"></div>
+			
+				<div class="b-meter__bar"></div>
+				<div class="b-meter__bar"></div>
+			
+				<div class="b-meter__bar"></div>
+				<div class="b-meter__bar"></div>
+			
+				<div class="b-meter__bar"></div>
+				<div class="b-meter__bar"></div>
+			
+				<div class="b-meter__bar"></div>
+				<div class="b-meter__bar"></div>
+			
+		</div>
+		
+		<div class="b-userinfo__rank h-margin-top-s h-hide"></div>
+		
+		<ul class="b-userinfo__additional-info-block h-margin-top-xl">
+			
+				<li class="b-userinfo__additional-info"><label>Join Date:</label> <span>Jun 2020</span></li>
+				<li class="b-userinfo__additional-info"><label>Posts:</label> <span>4</span></li>
+				
+			
+			
+				
+					
+				
+					
+				
+					
+				
+					
+				
+			
+			
+		</ul>
+		<ul class="b-userinfo__icons h-margin-none">
+			
+				
+			
+			<li class="b-userinfo__icon h-left" title="Paul.Elliott is online now"><span class="b-icon b-icon__status--green"></span></li>
+
+			
+		</ul>
+	</div>
+</div>
+			
+
+
+
+
+
+
+
+
+	
+
+
+<ul class="b-sharing-menu js-sharing-menu js-comp-menu-horizontal js-comp-menu--dropdown-on-small b-post__hide-when-deleted" data-dropdown-trigger-phrase="share" data-dropdown-icon-classes="b-icon b-icon__share" data-dropdown-content-classes="b-sharing-menu--dropdown" data-dropdown-menu-classes="b-sharing-menu--right-on-small">
+
+	
+
+	
+
+	
+
+</ul>
+		</div>
+
+		<div class="js-post__content-wrapper l-col__flex-3 l-col__small--full h-restore--on-preview">
+			<div class="b-post__body h-restore--on-preview h-padding-horiz-xxl h-padding-top-xl h-padding-bottom-m h-clearfix">
+				<div class="b-post__arrow b-post__hide-when-deleted"></div>
+
+				
+
+				<div class="b-post__content js-post__content">
+					<hr class="b-divider--section" />
+
+					<div class="b-media h-hide--on-preview">
+						<div class="b-media__img--rev">
+
+							
+								
+							
+
+							
+							
+							
+							
+							
+
+							
+								<a class="b-post__count" href="https://forums.unrealengine.com/development-discussion/rendering/103023-set-actor-component-lighting-properties-at-runtime?p=1797562#post1797562">#3</a>
+							
+
+							
+
+
+						</div>
+						<div class="b-media__body">
+							
+
+
+							
+							
+							<div class="b-post__timestamp"><time itemprop="dateCreated" datetime="2020-08-05T22:43:42">08-05-2020, 06:43 PM</time></div>
+
+						</div>
+					</div>
+
+
+					<div class="b-post__hide-when-deleted">
+					<div class="OLD__post-content h-padding-vert-xl">
+						
+							<div class="axd axd_last-post">
+								
+								
+								
+							</div>
+						
+
+
+						
+						<div class="js-post__content-text restore h-wordwrap" itemprop="text">
+							
+								
+								For posterity: 4.25 has a built in blueprint method: <a href="https://forums.unrealengine.com/development-discussion/blueprint-visual-scripting/1732443-setting-lighting-channels-through-blueprint-instance-editable-variables" target="_blank">https://forums.unrealengine.com/deve...able-variables</a>
+							
+						</div>
+					</div>
+
+
+
+	
+	
+
+	</div> 
+  </div> 
+
+
+	
+	
+
+
+
+
+
+		
+			
+				
+				
+				
+			
+			
+<div class="b-post__footer h-hide--on-preview h-clear h-padding-bottom-m h-margin-horiz-xl">
+
+	<div class="h-clearfix">
+		
+
+		
+			<hr class="b-divider b-divider--post-controls" />
+		
+
+		<ul class="h-left js-post-info">
+
+			
+			
+
+			
+
+			
+		</ul>
+
+		<ul class="h-margin-top-s h-right js-post-controls b-comp-menu-horizontal js-comp-menu-horizontal js-comp-menu--dropdown-on-xsmall b-comp-menu-dropdown--inactive" data-node-id="1797562" data-dropdown-icon-classes="b-icon b-icon__ellipsis" data-dropdown-content-classes="b-comp-menu-dropdown__content--right">
+			
+
+			
+
+			
+
+			
+
+				
+
+					
+
+				
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+				
+
+			
+
+		</ul>
+
+
+	</div>
+</div>
+
+
+			<div class="b-comment-entry js-comment-entry h-padding-xxl h-padding-top-xl  comment-entry-box h-hide ">
+				<h2 class="h-margin-bottom-xl">Comment</h2>
+				<textarea class="b-comment-entry__textbox js-comment-entry__textbox autogrow" placeholder="Type your comment here"></textarea>
+
+				<div class="b-button-group h-margin-top-xl">
+					<button type="button" id="btnPostComment-1797562" class="b-button b-button--primary js-comment-entry__post">Post</button>
+					<button type="button" id="btnPostCommentCancel-1797562" class="b-button js-comment-entry__cancel">Cancel</button>
+				</div>
+			</div>
+
+			<div class="edit-conversation-container"></div>
+
+			
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="b-comments js-comments   h-margin-bottom-xl h-clearfix h-hide">
+
+	
+
+	
+		<div class="b-comments__header js-comments__header b-media h-padding-vert-m h-padding-horiz-l h-hide">
+			<div class="js-comments__total h-margin-left-l b-media__body">
+				<span class="b-icon b-icon__speech-single h-margin-right-s"></span>
+				<label class="js-comments__total-text h-align-top"></label>
+			</div>
+			<div class="b-media__img--rev js-comments__pagination h-hide">
+				<label></label>
+				<span class="b-comments__pagination--up js-comments__page--prev h-margin-left-s" title="See previous comments"><span class="b-icon b-icon__arrow-up-m"></span></span>
+			</div>
+		</div>
+		<ul class="b-comments__comments js-comments__comments h-left"></ul>
+		<div class="b-comments__footer js-comments__footer b-media h-padding-vert-m h-padding-horiz-l h-clear h-hide">
+			<div class="b-media__img--rev js-comments__pagination">
+				<label></label>
+				<span class="b-comments__pagination--down js-comments__page--next h-margin-left-s" title="See next comments"><span class="b-icon b-icon__arrow-down-m"></span></span>
+			</div>
+		</div>
+	
+</div>
+
+		
+
+
+      </div>
+    </div>  
+  </div>    
+</li><!-- /end .b-post -->
+									
+								
+								
+							
+						</ul>
+					</div>
+				</div>
+				
+					
+
+
+	
+
+
+
+	
+
+
+<div class="pagenav-container h-clearfix noselect h-hide">
+	<div class="js-pagenav pagenav h-right js-shrink-event-parent" data-baseurl="https://forums.unrealengine.com/development-discussion/rendering/103023-set-actor-component-lighting-properties-at-runtime">
+
+		
+
+		
+		
+			<a class="js-pagenav-button js-pagenav-prev-button b-button b-button--secondary h-hide-imp js-shrink-event-child" data-page="0" tabindex="0">Previous</a>
+		
+
+		
+		
+		
+		
+		
+		<a class="js-pagenav-button b-button b-button--narrow js-shrink-event-child b-button--secondary js-pagenav-button--template h-hide-imp" data-page="0" tabindex="0">template</a>
+
+		
+		
+			<a class="js-pagenav-button js-pagenav-next-button b-button b-button--secondary h-hide-imp js-shrink-event-child" data-page="0" tabindex="0">Next</a>
+		
+
+	</div>
+</div>
+					
+						<div class="h-margin-top-xl"></div>
+					
+				
+
+				
+			</div>
+		
+		
+	</div>
+	<script type="text/javascript">
+	(function(){
+	
+		window.vBulletin = window.vBulletin || {};
+		vBulletin.widget = vBulletin.widget || {};
+		vBulletin.conversation = vBulletin.conversation || {};
+	
+		vBulletin.conversation.COMMENTS_PER_PAGE = Number('25') || 25;
+		vBulletin.conversation.POSTS_PER_PAGE = Number('15') || 15;
+	})();
+	</script>
+
+
+
+
+
+	<!-- *** END WIDGET widgetid:7, widgetinstanceid:21, template:widget_conversationdisplay *** -->
+
+
+	
+
+</div>
+
+	
+
+</div>
+
+	
+
+		
+	
+
+
+
+	
+
+
+
+<!-- row -->
+<div class="canvas-layout-row l-row no-columns h-clearfix">
+
+	
+	
+
+	
+
+		
+		
+		
+
+		
+	
+
+
+
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+<!-- section 3 -->
+
+
+
+<div class="canvas-widget-list section-3 js-sectiontype-extra h-clearfix l-col__large-12 l-col__small--full l-wide-column">
+
+	
+
+	
+
+	
+
+</div>
+
+	
+
+</div>
+
+	
+
+</div>
+
+</div>
+	<div class="h-clear"></div>
+</div>
+
+	<footer id="footer">
+		
+		
+		<nav id="footer-tabbar" class="h-clearfix js-shrink-event-parent">
+			
+			
+			
+			
+			
+				
+			
+			
+			<ul class="h-left js-footer-chooser-list h-margin-left-xxl js-shrink-event-child">
+				
+					<li>
+
+						<div class="b-comp-menu-dropdown js-comp-menu-dropdown b-comp-menu-dropdown--open-on-hover b-comp-menu-dropdown--direction-up js-stylechooser js-select-on-xsmall h-margin-right-l">
+							<div class="b-comp-menu-dropdown__trigger js-comp-menu-dropdown__trigger b-comp-menu-dropdown__trigger--arrow">
+								
+									
+										EpicForum Style
+									
+								
+									
+								
+							</div>
+							<ul class="b-comp-menu-dropdown__content js-comp-menu-dropdown__content b-comp-menu-dropdown__content--left">
+								
+									<li class="b-comp-menu-dropdown__content-item b-comp-menu-dropdown__content-item--current">
+										<a href="#" data-styleid="1"> EpicForum Style</a>
+									</li>
+								
+									<li class="b-comp-menu-dropdown__content-item">
+										<a href="#" data-styleid="16">- Unreal Engine - [Dark]</a>
+									</li>
+								
+							</ul>
+						</div>
+
+					</li>
+				
+				
+				
+			</ul>
+
+			<ul class="nav-list h-right js-footer-nav-list h-margin-right-xxl b-comp-menu-horizontal js-comp-menu-horizontal js-comp-menu--dropdown-on-xsmall b-comp-menu-dropdown--inactive js-shrink-event-child" data-dropdown-trigger-phrase="go_to_ellipsis" data-dropdown-menu-classes="h-margin-vert-l b-comp-menu-dropdown--direction-up" data-dropdown-trigger-classes="b-comp-menu-dropdown__trigger--arrow">
+				
+				
+					
+					
+					
+						
+						
+					
+					
+					
+					
+					
+					
+					
+					
+
+					<li class="">
+						<a rel="nofollow" href="https://forums.unrealengine.com/help">Help</a>
+					</li>
+
+				
+					
+					
+					
+						
+						
+					
+					
+					
+					
+					
+					
+					
+					
+
+					<li class="">
+						<a rel="nofollow" href="https://forums.unrealengine.com/contact-us">Contact Us</a>
+					</li>
+
+				
+				<li><a href="#" class="js-footer-go-to-top">Go to top</a></li>
+			</ul>
+		</nav>
+		
+	</footer>
+</div>
+
+</div>
+
+<div id="loading-indicator" class="js-loading-indicator b-ajax-loading-indicator h-hide">
+	<span>Working...</span>
+</div>
+<div class="js-flash-message b-ajax-loading-indicator b-ajax-loading-indicator--medium h-hide">
+	<span class="js-flash-message-content"></span>
+</div>
+<div id="confirm-dialog" class="sb-dialog">
+	<div class="dialog-content h-clearfix">
+		<div class="icon h-left"></div>
+		<div class="message"></div>
+	</div>
+	<div class="b-button-group">
+		<button id="btnConfirmDialogYes" type="button" class="b-button b-button--primary js-button">Yes</button>
+		<button id="btnConfirmDialogNo" type="button" class="b-button b-button--secondary js-button">No</button>
+	</div>
+</div>
+<div id="alert-dialog" class="sb-dialog">
+	<div class="dialog-content h-clearfix">
+		<div class="icon h-left"></div>
+		<div class="message"></div>
+	</div>
+	<div class="b-button-group">
+		<button id="btnAlertDialogOK" type="button" class="b-button b-button--primary js-button">OK</button>
+	</div>
+</div>
+<div id="prompt-dialog" class="sb-dialog">
+	<div class="dialog-content table h-clearfix">
+		<div class="message td"></div>
+		<div class="input-box-container td">
+			<input type="text" class="input-box textbox" />
+			<textarea class="input-box textbox h-hide" rows="3"></textarea>
+		</div>
+	</div>
+	<div class="js-prompt-error h-hide"></div>
+	<div class="b-button-group">
+		<button id="btnPromptDialogOK" type="button" class="b-button b-button--primary js-button">OK</button>
+		<button id="btnPromptDialogCancel" type="button" class="b-button b-button--secondary js-button">Cancel</button>
+	</div>
+</div>
+<div id="slideshow-dialog" class="sb-dialog slideshow">
+	<div class="slideshow-wrapper"><div class="b-icon b-icon__x-square--gray close-btn">X</div></div>
+	<div class="caption"></div>
+	<div class="thumbnails"></div>
+
+</div>
+
+<div class="unsubscribe-overlay-container"></div>
+
+<div id="fb-root" data-facebook-language="en_US"></div>
+
+
+
+
+<script type="text/javascript" src="js/jquery/jquery-2.1.4.min.js"></script>
+
+
+
+<script type="text/javascript">window.jQuery || document.write('<script type="text/javascript" src="js/jquery/jquery-2.1.4.min.js"><\/script>');</script>
+
+<script type="text/javascript" src="js/footer-rollup-561.js"></script>
+
+
+
+<script type="text/javascript">
+	
+		window.vBulletin = window.vBulletin || {};
+	
+		vBulletin.version = '5.6.1';
+</script>
+
+
+
+
+
+
+
+<script type="text/javascript" src="js/conversation-rollup-561.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"93a8bd5691","applicationID":"145396307","transactionName":"MlxXbUBZWkJUAkVQCgsWYEtbF11fUQRJFxUNSQ==","queueTime":0,"applicationTime":96,"atts":"HhtUGwhDSUw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

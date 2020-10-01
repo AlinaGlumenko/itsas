@@ -1,6 +1,7 @@
 import os
+import pickle
 from flask import Flask, render_template, request, redirect, send_file
-from logic.classifier import buildClassifier, startClassify
+from logic.classifier import buildClassifier, startClassify, getConfusionMatrix
 from logic.fileManager import allowedFile, secureCustomFilename, saveRawDataFiles, clearDir
 from logic.featuresFinder import findFeatures
 
@@ -26,9 +27,11 @@ app.config["COLUMN_NAMES"] = ['Letter frequency', 'Numbers frequency', \
                                 'Signs frequency', 'Сategory', \
                                 'File extension', 'Content Type', 'Result']
 
-app.config["RESULT_VALUES"] = ['garbage', 'NoSQL key-value - cache', \
-                                'NoSQL column - users', 'NoSQL document - courses', \
-                                'SQL - finance']
+app.config["RESULT_VALUES"] = ['garbage', \
+                                'NoSQL key-value - cache', \
+                                'NoSQL column - users', \
+                                'NoSQL document - courses', \
+                                'NoSQL key-value - support']
 
 
 @app.after_request
@@ -46,10 +49,13 @@ def main():
 
 
 @app.route('/classifier', methods=["GET", "POST"])
-def classifier():    
+def classifier():
     if request.method == 'POST':
         # get test_size from form
         testSize = request.form.get('testSize')
+        # check if testSize is numeric
+        if not testSize.isnumeric():
+            return redirect('/classifier')
         # get training set option
         selectTrainingSet = request.form.get('trainingSetSelect')
         # if custom
@@ -67,29 +73,50 @@ def classifier():
                 # save file
                 trainingSetFile.save(os.path.join(app.config['TRAINING_DATA_PATH'], filename))
                 # build custom classifier
-                buildClassifier(app.config["TRAINING_DATA_PATH"], 'custom', testSize, app.config["COLUMN_NAMES"])                                       
+                buildClassifier(app.config["TRAINING_DATA_PATH"], 'custom', testSize, app.config["COLUMN_NAMES"], app.config["RESULT_VALUES"])                                       
         else:
             # build default classifier
-            buildClassifier(app.config["TRAINING_DATA_PATH"], 'default', testSize, app.config["COLUMN_NAMES"])
+            buildClassifier(app.config["TRAINING_DATA_PATH"], 'default', testSize, app.config["COLUMN_NAMES"], app.config["RESULT_VALUES"])
             
         return redirect('/confusion_matrix')
     return render_template('classifier.html')
 
-
+import numpy as np
 @app.route('/confusion_matrix', methods=["GET", "POST"])
 def confusionMatrix():
-    # посчитать точность для обучающей выборки, учитывая выбранный файл (дефолтный или кастомный)
-    # посчитать точность для тестовой выборки, учитывая выбранный файл (дефолтный или кастомный)
+    # load info for confusion matrix
+    path_conf_matr_pickle = os.getcwd() + "\\logic\\intermediateFiles\\conf_matrix.pickle"
+    with open(path_conf_matr_pickle, 'rb') as data:
+        infoObj = pickle.load(data)
     
+    if not infoObj:
+        return redirect('/classifier')
 
-    # classes = ['Cannot detect', 'Citroen', 'Honda', 'Mercedes', 'Opel', 'Renault']
-    # elements = RecognitionManager().recognize_images(app.config["IMAGES_TEST"])
-    # y_predicted = [el[1] for el in elements]
-    # y_target = ImageManager().get_image_names(app.config["IMAGES_TEST"], classes[1:])
-    # cm = RecognitionManager().get_confusion_matrix(y_target, y_predicted)
-    # accuracy = RecognitionManager().get_accuracy(y_target, y_predicted)
-    # return render_template('confusion_matrix.html', matrix=cm, classes=classes, accuracy=accuracy)
-    return render_template('confusion_matrix.html')
+    # get info for test set
+    accuracy_test = infoObj['accuracy_test']
+    y_predicted_test = infoObj['y_predicted_test']
+    y_target_test = infoObj['y_target_test']
+
+    # get confusion matrix for test
+    cm_test = getConfusionMatrix(y_target_test, y_predicted_test)
+
+    # get info for train set
+    accuracy_train = infoObj['accuracy_train']
+    y_predicted_train = infoObj['y_predicted_train']
+    y_target_train = infoObj['y_target_train']
+
+    # get confusion matrix for train
+    cm_train = getConfusionMatrix(y_target_train, y_predicted_train)
+
+    # classes
+    classes = ['garbage', \
+                'NoSQL key-value cache', \
+                'NoSQL column users', \
+                'NoSQL document courses', \
+                'NoSQL key-value support']
+    return render_template('confusion_matrix.html', classes=classes, \
+                                                    matrixTrain=cm_train, accuracyTrain=accuracy_train, \
+                                                    matrixTest=cm_test, accuracyTest=accuracy_test)
 
 
 @app.route('/exploitation', methods=["GET", "POST"])
@@ -106,10 +133,12 @@ def exploitation():
                 # save file
                 exploitationSetData.save(os.path.join(app.config["USING_DATA_PATH"], filename))
                 # use classifier
-                filenameWithResults = startClassify(app.config["USING_DATA_PATH"], app.config["COLUMN_NAMES"][-1])
+                filenameWithResults = startClassify(os.path.join(app.config["USING_DATA_PATH"], filename), \
+                                                    app.config["COLUMN_NAMES"], app.config["RESULT_VALUES"], \
+                                                    app.config["DOWNLOAD_PATH"])
                 # allow to user download file with Results
-                filePath = app.config["DOWNLOAD_PATH"] + filenameWithFeatures
-                return send_file(filePath)
+                filePath = app.config["DOWNLOAD_PATH"] + filenameWithResults
+                return send_file(filePath, attachment_filename=filenameWithResults)
         else:
             rawDataFiles = request.files.getlist('rawData')
             if rawDataFiles:
@@ -121,7 +150,7 @@ def exploitation():
                 filenameWithFeatures = findFeatures(app.config["RAW_DATA_PATH"], app.config["DOWNLOAD_PATH"], app.config["COLUMN_NAMES"][:-1])
                 # allow to user download file with Features
                 filePath = app.config["DOWNLOAD_PATH"] + filenameWithFeatures
-                return send_file(filePath)
+                return send_file(filePath, attachment_filename=filenameWithFeatures)
 
         return redirect(request.url)
     return render_template('exploitation.html')

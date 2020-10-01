@@ -1,0 +1,7 @@
+This course is intended to teach you x86 assembly programming. This course teaches you how processors work and how machine code is possible. We start the course using an emulator for the legacy Intel 8086 processor.
+
+Since we start the course with an emulator it allows me to pause the machine at any moment in time and show you exactly what is going on.
+
+After you learn all about the legacy 8086 processor and how to program assembly for it we then move to the modern processors of today and start writing assembly for those. You are taught how to write 32 bit programs for Windows machine's and most importantly how to communicate with C programs using assembly language.
+
+This course recommends that you have some prior experience in the C programming language or at the very least some programming experience in another language. The reason for this is because part two of the course when I teach modern assembly I reference the C programming language quite a lot since we write assembly that can talk with C.

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root><context>http://schema.org/
+</context><id>https://www.skillshare.com/classes/Android-App-Development-for-Complete-Beginners/1191726640undefined</id>undefined<name>Android App Development for Complete Beginners</name>undefined<description> Whether you have priorÂ experience programming or not, this class will take you step-by-step through the process of creating your very first Android app. You'll learn how to get up and running with Android Studio, how to create a basic user interface, and how to make the application interactive. I'll also show you how to install and test your app on your own Android device. Once you finish this class, check out part 2 below:</description>undefined<image>https://static.skillshare.com/uploads/video/thumbnails/11febe039789beda6b3ee03056974f75/448-252</image>undefined<provider>
+<name>Skillshare</name>
+<sameAs>https://www.skillshare.com</sameAs>
+<logo>https://static.skillshare.com/assets/images/hands_logo_2x.png</logo><type>Organizationundefined</type>undefined</provider>undefined<author>undefined<name>Lee Falin</name>undefined<sameAs>https://www.skillshare.com/user/leefalin</sameAs>undefined<image>https://static.skillshare.com/uploads/users/597976/user-image-medium.jpg?356552253</image><type>Personundefined</type>undefined</author><type>Courseundefined</type>undefined</root>

@@ -1,0 +1,341 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="BASIC Programming language" />
+  <meta name="description" content="Powerful BASIC programming language for Windows, Linux and OS X generating small and fast 32-bit or 64-bit native executables, without external dependencies.">
+
+  <title>PureBasic - A powerful BASIC programming language</title>
+
+  <!-- Retina Bookmark Icon -->
+  <link rel="apple-touch-icon-precomposed" href="/apple-icon.png" />
+
+  <!-- Reset CSS -->
+  <link href="/css/reset.css" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link href="/css/whhg.css" rel="stylesheet" />
+  <link href="/css/foundstrap.css" rel="stylesheet" />
+
+  <!-- CSS Plugin -->
+  <link href="/css/mediaplayer.css" rel="stylesheet" />
+
+  <!-- epicon stylesheet -->
+  <link href="/css/style.css" rel="stylesheet" />
+  <link href="/css/epicon-responsive.css" rel="stylesheet" />
+
+  <!-- Theme Option -->
+  <link href="/css/theme/purebasic.css" id="theme" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/img/favicon.png" />
+
+  <script src="/js/modernizr.js"></script>
+  <script src="/js/md5.js"></script>
+
+
+  <script type="text/javascript">
+  <!--
+  function hash_password(form)
+  {
+    if (form.password.value != '')
+    {
+      form.md5password.value = md5(form.password.value);
+      form.password.value = '';
+    }
+  }
+  //-->
+  </script>
+  
+  
+</head>
+<body>
+
+  <!-- main-container -->
+  <div id="main-container">
+
+    <!-- headaer -->
+    <header>
+      <div class="row">
+        <div class="large-12 column">
+          <div class="header-info">
+            <ul class="right-info no-bullet inline-list">
+              <li class="language-flag">
+                
+                                
+                  <a href="/french"><img src="/img/language-flag/fr.png" alt="French Flag"></a>
+                  <a href="/german"><img src="/img/language-flag/de.png" alt="German Flag"></a>
+                
+                                
+              </li>
+              
+              <li class="login-container">
+                <a class="login" id="loginpopup" href="#loginform"><i class="icon-enter"></i> Login</a>
+                <!-- login panel -->
+                <div id="loginform" class="login-form-container">
+                  <h4><strong class="epicon-strong">Login</strong> to your account</h4>
+                  <form action="/securedownload/do-login.php" method="post" onsubmit="hash_password(this);">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="icon-user"></i></span>
+                      <input type="text" class="form-control" placeholder="Enter your email" name="login">
+                    </div>
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="icon-lock"></i></span>
+                      <input type="password" class="form-control" placeholder="Enter your password" name="password">
+                    </div>
+
+                    <input type="hidden" name="md5password">
+
+                    <div class="input-group">
+                      <button type="submit" class="button button-block">Login</button>
+                    </div>
+                  </form>
+                  <br>
+                  <a href="securedownload/retreivepassword.php">Password lost ?</a>
+                </div>
+                <!-- login panel end here -->
+              </li>
+
+                          </ul>
+          </div>
+
+          <div class="header-container">
+            <div class="logo-container">
+              <a href="/index.php">
+                <img class="retina" src="/img/pb-logo-white.png">
+                PureBasic
+              </a>
+            </div>
+
+           <div class="navigation-container">
+             <div class="menu-trigger">
+                <img src="/img/hamburger-nav.png" alt="burger menu">
+             </div>
+           </div>
+           
+           <div class="social-icon social-header">
+             <ul class="no-bullet inline-list">
+             </ul>
+           </div>
+
+            <!-- menu navigation -->
+            <nav class="menu-container">
+              <ul id="menu" class="sm epicon-menu">
+                <li class="active"><a href="/index.php">Introduction</a></li>
+                <li ><a href="/news.php">News</a></li>
+                <li ><a href="/download.php">Download</a></li>
+                <li ><a href="/pricing.php">Ordering</a></li>
+                <li ><a href="/showcase.php">Showcase</a></li>
+                <li ><a href="/support.php">Support</a></li>
+                <li ><a href="/faq.php">FAQ</a></li>
+              </ul>
+            </nav>
+            
+
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- header end here -->
+
+<!-- page header here -->
+<section class="container" id="page-header">
+  <div class="row">
+    <div class="inner-container">
+      <div class="large-12 column text-right epic-animate" data-animate="fadeInDown">
+        <h1>Introduction<span class="epicon-color">.</span></h1>
+        <ol class="breadcrumb">
+          <li><a href="#">Home</a></li>
+          <li class="active">Introduction</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- page header end here -->
+
+<section class="container no-padding">
+  <div class="row">
+    <div class="inner-container" data-animate="fadeInDown">
+      <div class="large-10 large-push-1 column text-center">
+        <div class="heading-title bottom-line">
+          <h3 class="title"><strong class="epicon-strong">PureBasic</strong></h3>
+          <span>feel the pure power</span>
+        </div>
+      </div>
+      <div class="large-10 large-push-1 column">
+
+        <p>
+          PureBasic is a modern BASIC programming language.
+          The key features of PureBasic are portability (Windows, Linux and OS X supported with the same source code), 
+          the production of very fast and optimized native 32-bit or 64-bit executables and, of course, the very simple BASIC language syntax. 
+          PureBasic has been created for the beginner and expert alike. We have put a lot of effort into its conception 
+          to produce a fast, reliable system and friendly BASIC compiler.
+          The full documentation can be found <a href='http://www.purebasic.com/documentation/'>here</a>.<br>
+          <br>
+          Despite its beginner-friendly syntax, the possibilities are endless with PureBasic's advanced features 
+          such as pointers, structures, procedures, dynamically linked lists and much more. Experienced coders will 
+          have no problem gaining access to any of the legal OS structures or API objects and PureBasic even allows inline assembly.<br><br><br>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container no-padding">
+  <div class="row">
+
+    <div class="inner-container" data-animate="fadeInDown" id="features">
+      <div class="large-4 medium-4 medium-potrait-12 small-12 column">
+        <div class="box-icon left small">
+          <div class="icon-container">
+            <div class="icon-shape circle">
+              <i class="icon-lightning"></i>
+            </div>
+          </div>
+          <div class="text-container">
+            <h4 class="title-box"><strong class="epicon-strong">Modern</strong></h4>
+            <p>
+              State of the art built-in commandset to quickly build any application
+              or game. IDE includes sophisticated debugger, profiler, form designer and
+              lightning fast compilation.            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="large-4 medium-4 medium-potrait-12 small-12 column">
+        <div class="box-icon left small">
+          <div class="icon-container">
+            <div class="icon-shape circle">
+              <i class="icon-handexpand"></i>
+            </div>
+          </div>
+          <div class="text-container">
+            <h4 class="title-box"><strong class="epicon-strong">Easy</strong></h4>
+            <p>
+              Using PureBasic is no brainer: you install the program, run the IDE and start
+              developing your application. Generates small 32-bit or 64-bit executables similar to C/C++ programs
+              without DLL dependencies.            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="large-4 medium-4 medium-potrait-12 small-12 column">
+        <div class="box-icon left small">
+          <div class="icon-container">
+            <div class="icon-shape circle">
+              <i class="icon-refresh"></i>
+            </div>
+          </div>
+          <div class="text-container">
+            <h4 class="title-box"><strong class="epicon-strong">Portable</strong></h4>
+            <p>
+              Available on Windows, Linux and OS X. The source code
+              is compatiable across these platforms and the generated programs use 
+              native API to have maximum performance and integration.            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container no-padding">
+  <div class="row">
+
+    <div class="inner-container" data-animate="fadeInDown" id="features">
+      <div class="large-12 medium-4 medium-potrait-12 small-12 column">
+        <div class="text-container">
+          <h4 class="title-box"><strong class="epicon-strong">Features</strong></h4>
+          <ul class="list-arrow-circle">
+            <li>Huge set of internal commands (1600+) to quickly and easily build applications or games</li>
+            <li>Windows (x86 - x64), Linux (x86 - x64) and OS X (x86 - x64) support</li>
+            <li>BASIC programming language based keywords</li>
+            <li>Very fast BASIC compiler which creates highly optimized executables</li>
+            <li>No external DLLs, runtime interpreter or anything else required when creating executables</li>
+            <li>Procedure and structure support for advanced programming</li>
+            <li>Full unicode support</li>
+            <li>Built-in containers like array, list and map</li>
+            <li>Strong types, strong syntax to avoid programming mistakes</li>
+            <li>Namespace support for easy code reuse</li>
+            <li>Access to full OS API for advanced programmers</li>
+            <li>Easy but very fast 2D game support through dedicated libraries (DirectX, OpenGL)</li>
+            <li>Easy and high quality 3D support based on OGRE</li>
+            <li>Optimal use of the available hardware by using highly optimized (assembly) commands</li>
+            <li>Source code is portable between Windows, MacOS X and Linux</li>
+            <li>Dedicated editor and development environment</li>
+            <li>Powerful integrated debugger and profiler to easily trace and analyze code</li>          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+
+
+<footer>
+
+  <div class="footer-info">
+        <div class="row">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Looking for a BASIC programming language for Web, Android and iOS Apps ? Checkout our new product: <a href='https://www.spiderbasic.com'>SpiderBasic</a>
+    </div>
+    
+    <div class="row">
+      <div class="large-5 medium-5 medium-potrait-12 small-12 column">
+        <div>
+          Copyright &copy; 2020 Fantaisie Software
+        </div>
+      </div>
+
+      <div class="large-7 medium-7 medium-potrait-12 small-12 column text-right" id="footer-menu-container">
+        <ul class="inline-list footer-menu">
+          <li><a href="mailto:support@purebasic.com">support@purebasic.com</a></li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+</footer>
+<!-- footer end here -->
+
+</div>
+<!-- main-container end here -->
+
+<!-- javascript -->
+<script src="/js/jquery.min.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/jquery.fancybox.js"></script>
+<script src="/js/jquery.fancybox-media.js"></script>
+<script src="/js/jquery.waypoints.min.js"></script>
+<script src="/js/jquery.smartmenus.min.js"></script>
+<script src="/js/jquery.scrollUp.js"></script>
+<script src="/js/jquery.retina.js"></script>
+<script src="/js/jquery.cookie.js"></script>
+<script src="/js/icheck.js"></script>
+
+<!-- javascript core -->
+<script src="/js/theme-script.js"></script>
+
+<script type="text/javascript">
+jQuery(document).ready(function($){
+  // your script here
+});
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-94052-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-94052-1');
+</script>
+
+
+</body>
+</html>

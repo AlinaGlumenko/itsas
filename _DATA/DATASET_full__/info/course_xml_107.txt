@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root><context>http://schema.org/
+</context><id>https://www.skillshare.com/classes/Create-your-first-repository-on-Github-from-scratch/807278219undefined</id>undefined<name>Create your first repository on Github, from scratch!</name>undefined<description>In this course you will learn:What cloning, pushing, staging and committing areHow to create a repo from scratch Make changes to your code Save that code on Github.comÂ Make more modifications and save it to Github.com </description>undefined<image>https://static.skillshare.com/uploads/video/thumbnails/1336b416094eab08825d0bb6a821129d/448-252</image>undefined<provider>
+<name>Skillshare</name>
+<sameAs>https://www.skillshare.com</sameAs>
+<logo>https://static.skillshare.com/assets/images/hands_logo_2x.png</logo><type>Organizationundefined</type>undefined</provider>undefined<author>undefined<name>Kalob Taulien</name>undefined<sameAs>https://www.skillshare.com/user/kalobtaulien</sameAs>undefined<image>https://static.skillshare.com/uploads/users/378680/user-image-medium.png?672236983</image><type>Personundefined</type>undefined</author><type>Courseundefined</type>undefined</root>

@@ -1,0 +1,979 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Destruction Introduction &mdash; NVIDIA APEX Documentation</title>
+    <link rel="stylesheet" href="../_static/nvidia.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="NVIDIA APEX Documentation" href="../index.html" />
+    <link rel="up" title="APEX Destruction Module" href="Index.html" />
+    <link rel="next" title="Destruction Authoring with PhysXLab" href="Destruction_Authoring_with_PhysXLab.html" />
+    <link rel="prev" title="APEX Destruction Module" href="Index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="Destruction_Authoring_with_PhysXLab.html" title="Destruction Authoring with PhysXLab"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="Index.html" title="APEX Destruction Module"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">NVIDIA APEX Documentation</a> &raquo;</li>
+          <li><a href="Index.html" accesskey="U">APEX Destruction Module</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="destruction-introduction">
+<h1>Destruction Introduction<a class="headerlink" href="#destruction-introduction" title="Permalink to this headline">¶</a></h1>
+<img alt="../_images/DM_API_Cover.png" src="../_images/DM_API_Cover.png" />
+<p>The Apex Destruction module deals primarily with three kinds of objects:</p>
+<ul class="simple">
+<li>Destructible assets (class DestructibleAsset), which are destructible template objects that may be generated using tools such as PhysXLab (see the PhysXLab documentation), FractureTool, or in your own application using the fracturing API in DestructibleAssetAuthoring,</li>
+<li>Destructible actors (class DestructibleActor), which are instances of DestructibleAssets, and</li>
+<li>Destructible actor joints (class DestructibleActorJoint), which are special wrappers for PhysX joints which may be used to join an DestructibleActor to another DestructibleActor, a PhysX actor, or to the static global reference frame.</li>
+</ul>
+<p>After loading an DestructibleAsset, you may use it to instance DestructibleActors.
+The DestructibleAsset carries with it a template of fracture parameters, the
+DestructibleParameter structure.  These parameters are used by default with an
+DestructibleActor instance, and you may customize these parameters per-instance.
+These parameters allow you to specify how much damage it takes to fracture
+a chunk, whether chunks take damage via impact, whether or not they can deform before
+breaking, and more.</p>
+<p>DestructibleActors may start off life static or dynamic.  If static, you may define
+certain pieces (chunks) to be &#8220;support&#8221; pieces in various ways.  This emulates being
+&#8220;held&#8221; by the environment.  For example, a destructible wall fixture might have support
+chunks where it touches the wall.  When you break off pieces of the fixture, as long as
+there is a connected path from a given chunk to a support chunk, then it will remain fixed.
+Otherwise, the disconnected chunks will break free and become dynamic.  A powerful feature
+of this module is &#8220;inter-actor support.&#8221;  This means that if a static destructible with
+support touches another static destructible, the support may be extend across the destructibles.
+In this way you may effectively build large destructible structures out of smaller destructible
+&#8220;building blocks.&#8221;</p>
+<p>(Note: &#8220;static&#8221; destructible actors actually create kinematic PhysX actors, instead of truly
+static PhysX actors.  In this way the actors may be easily made dynamic when a fracture event
+knocks chunks loose.)</p>
+<p>The DestructibleActor comes with a damage API, allowing the application to apply damage
+directly or through impacts (collisions).  Scene query functions are also supplied (ray
+casts and obb sweeps).</p>
+<p>The DestructibleActorJoints are intended to act just as you&#8217;d expect a PhysX joint to act,
+when attached to a PhysX actor.  They hide the fact that the PhysX actors which compose an
+DestructibleActor may be changing &#8220;under the hood&#8221; while fracturing is occuring.</p>
+<p>A callback mechanism is provided which notifies the user when chunks are fractured or
+destroyed, so that sound and graphical effects may be played.</p>
+<p>An APEX particle system (see the documentation for the particle system module) may be used
+by the DestructibleActor to emulate debris when the smallest chunks are broken.</p>
+<p>Finally, LOD parameters are supplied to scale the physics computation for a given scene.
+These parameters are:</p>
+<ul class="simple">
+<li>Smallest chunk size</li>
+<li>Maximum number of dynamic chunk islands</li>
+<li>Maximum number of chunks</li>
+<li>Lifetime and maximum distance from place of origin that chunks may exist</li>
+<li>Chunk benefit weights: per-chunk, lifetime, and screen area</li>
+</ul>
+<p>Through the various parameters and interfaces described above, the destruction module
+provides a rich variety of physical behaviors to enhance game play experience.</p>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>A good place to start is the SimpleDestruction sample application in APEX/samples.
+This demonstrates asset loading, instancing, fluid debris specification, and very
+importantly has a sample user renderer implementation (see the APEX Framework
+documentation).</p>
+<p>This section highlights the main points of the SimpleDestruction sample.</p>
+<p>An Apex application needs to first initialize PhysX.  In what follows, it will be assumed
+that a PhysX SDK has been created (see the PhysX documentation):</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">PxPhysics</span><span class="o">*</span> <span class="n">m_physxSDK</span><span class="p">;</span>
+<span class="n">PxFoundation</span><span class="o">*</span> <span class="n">m_foundation</span><span class="p">;</span>
+<span class="n">m_foundation</span> <span class="o">=</span> <span class="n">PxCreateFoundation</span><span class="p">(</span><span class="n">PX_PHYSICS_VERSION</span><span class="p">,</span> <span class="p">...);</span>
+<span class="n">m_physxSDK</span> <span class="o">=</span> <span class="n">PxCreatePhysics</span><span class="p">(</span> <span class="p">...</span> <span class="p">);</span>
+<span class="n">PxInitExtensions</span><span class="p">(</span><span class="o">*</span><span class="n">m_physxSDK</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>... and that we have a cooking library:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">PxCookingParams</span> <span class="n">params</span><span class="p">;</span>
+<span class="n">PxCooking</span><span class="o">*</span> <span class="n">m_cooking</span><span class="p">;</span>
+<span class="n">m_cooking</span> <span class="o">=</span> <span class="n">PxCreateCooking</span><span class="p">(</span><span class="n">PX_PHYSICS_VERSION</span><span class="p">,</span> <span class="n">m_physicsSDK</span><span class="o">-&gt;</span><span class="n">getFoundation</span><span class="p">(),</span> <span class="n">params</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>After initializing the PhysX SDK, an APEX application needs to initialize the Apex SDK.
+See the APEX Framework documentation.</p>
+<p>This is done as follows:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="cm">/* Fill out the Apex SDK descriptor */</span>
+<span class="n">ApexSDKDesc</span> <span class="n">apexDesc</span><span class="p">;</span>
+
+<span class="cm">/* Apex needs an allocator and error stream.  By default it uses those of the PhysX SDK. */</span>
+
+<span class="cm">/* Let Apex know about our PhysX SDK and cooking library */</span>
+<span class="n">apexDesc</span><span class="p">.</span><span class="n">physXSDK</span>              <span class="o">=</span> <span class="n">m_physxSDK</span><span class="p">;</span>
+<span class="n">apexDesc</span><span class="p">.</span><span class="n">cooking</span>               <span class="o">=</span> <span class="n">m_physxCooking</span><span class="p">;</span>
+<span class="n">apexDesc</span><span class="p">.</span><span class="n">outputStream</span>          <span class="o">=</span> <span class="n">pxErrorStream</span><span class="p">;</span>
+
+<span class="cm">/* Our custom render resource manager */</span>
+<span class="n">apexDesc</span><span class="p">.</span><span class="n">renderResourceManager</span> <span class="o">=</span> <span class="n">m_renderResourceManager</span><span class="p">;</span>
+
+<span class="cm">/* Our custom named resource handler */</span>
+<span class="n">apexDesc</span><span class="p">.</span><span class="n">resourceCallback</span>      <span class="o">=</span> <span class="n">m_resourceCallback</span><span class="p">;</span>
+
+<span class="cm">/* Some debug renderer materials */</span>
+<span class="n">apexDesc</span><span class="p">.</span><span class="n">wireframeMaterial</span> <span class="o">=</span> <span class="s">&quot;materials/simple_unlit.xml&quot;</span><span class="p">;</span>
+<span class="n">apexDesc</span><span class="p">.</span><span class="n">solidShadedMaterial</span> <span class="o">=</span> <span class="s">&quot;materials/simple_lit_color.xml&quot;</span><span class="p">;</span>
+
+<span class="cm">/* Finally, create the Apex SDK */</span>
+<span class="n">m_apexSDK</span> <span class="o">=</span> <span class="n">CreateApexSDK</span><span class="p">(</span><span class="n">apexDesc</span><span class="p">);</span>
+<span class="n">PX_ASSERT</span><span class="p">(</span><span class="n">m_apexSDK</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>In the block above we assume we have a named resource provider <strong>m_renderResourceManager</strong>.
+SimpleDestruction is built on top of SampleFramework, which provides a class
+SampleApexRenderResourceManager for this purpose.  It provides a name-to-object look-up
+for various resources, including destructible assets, apex render mesh assets, and
+material IDs.</p>
+<p>Also, the render resource manager <strong>m_resourceCallback</strong> is used.  This is also provided
+in SampleFramework.  This class allows the user to customize the creation of render
+resources (such as vertex buffers).  If you are using apex in an application that does not
+render (such as a commandline conversion utility), you may use the APEX-provided class
+<strong>NullRenderResourceManager</strong> in shared/external/include/NullRenderer.h.</p>
+<p>You must also create an Scene, to hold APEX actors and renderables.  This is
+initialized using the PhysX scene.  The PhysX scene is created in the usual manner:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">PxScene</span><span class="o">*</span> <span class="n">m_physxScene</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="cm">/* Create PhysX scene */</span>
+<span class="n">physx</span><span class="o">::</span><span class="n">PxSceneDesc</span> <span class="n">sceneDesc</span><span class="p">(</span><span class="n">scale</span><span class="p">);</span>
+<span class="n">sceneDesc</span><span class="p">.</span><span class="n">gravity</span> <span class="o">=</span> <span class="n">physx</span><span class="o">::</span><span class="n">PxVec3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mf">9.8f</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">...</span>
+<span class="n">m_physxScene</span> <span class="o">=</span> <span class="n">m_physxSDK</span><span class="o">-&gt;</span><span class="n">createScene</span><span class="p">(</span><span class="n">sceneDesc</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>... and the APEX scene:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="cm">/* Create an APEX scene from a PhysX scene */</span>
+<span class="n">Scene</span><span class="o">*</span> <span class="n">m_apexScene</span><span class="p">;</span>
+
+<span class="p">...</span>
+
+<span class="n">SceneDesc</span> <span class="n">sceneDesc</span><span class="p">;</span>
+<span class="n">sceneDesc</span><span class="p">.</span><span class="n">scene</span> <span class="o">=</span> <span class="n">m_physxScene</span><span class="p">;</span>
+<span class="n">m_apexScene</span> <span class="o">=</span> <span class="n">gApexSDK</span><span class="o">-&gt;</span><span class="n">createScene</span><span class="p">(</span> <span class="n">sceneDesc</span> <span class="p">);</span>
+</pre></div>
+</div>
+<p>An Apex application then needs to create the Apex modules it will use.  These modules
+will populate the APEX scene with representations of their objects, and also populate
+the PhysX scene with corresponding physics objects.</p>
+</div>
+<div class="section" id="the-destruction-module">
+<h2>The Destruction Module<a class="headerlink" href="#the-destruction-module" title="Permalink to this headline">¶</a></h2>
+<p>This link describles all of the <a class="reference external" href="../_static/build_params/structDestructibleModuleParameters.html">Destruction Module Parameters</a>.</p>
+<p>Create the destruction module (class ModuleDestructible) using</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">ModuleDestructible</span><span class="o">*</span> <span class="n">m_apexDestructibleModule</span><span class="p">;</span>
+
+<span class="p">...</span>
+
+<span class="n">m_apexDestructibleModule</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">ModuleDestructible</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">m_apexSDK</span><span class="o">-&gt;</span><span class="n">createModule</span><span class="p">(</span><span class="s">&quot;Destructible&quot;</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>and then initialize it using its default parameters:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">NvParameterized</span><span class="o">::</span><span class="n">Interface</span><span class="o">*</span> <span class="n">params</span> <span class="o">=</span> <span class="n">m_apexDestructibleModule</span><span class="o">-&gt;</span><span class="n">getDefaultModuleDesc</span><span class="p">();</span>
+<span class="n">m_apexDestructibleModule</span><span class="o">-&gt;</span><span class="n">init</span><span class="p">(</span><span class="o">*</span><span class="n">params</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Note, if you wish to set some parameters to non-default values, you may do so using
+the NvParameterized interface.</p>
+<p>Destructible actors (DestructibleActor) may use the APEX Particles for particle system
+debris.  This is initialized using the particle, iofx, and emitter modules:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">m_apexParticlesModule</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">ModuleParticles</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">m_apexSDK</span><span class="o">-&gt;</span><span class="n">createModule</span><span class="p">(</span><span class="s">&quot;BasicIOS&quot;</span><span class="p">));</span>
+<span class="n">NvParameterized</span><span class="o">::</span><span class="n">Interface</span><span class="o">*</span> <span class="n">params</span> <span class="o">=</span> <span class="n">m_apexParticlesModule</span><span class="o">-&gt;</span><span class="n">getDefaultModuleDesc</span><span class="p">();</span>
+<span class="n">m_apexParticlesModule</span><span class="o">-&gt;</span><span class="n">init</span><span class="p">(</span><span class="o">*</span><span class="n">params</span><span class="p">);</span>
+
+<span class="n">m_apexIofxModule</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">ModuleIofx</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">m_apexSDK</span><span class="o">-&gt;</span><span class="n">createModule</span><span class="p">(</span><span class="s">&quot;IOFX&quot;</span><span class="p">));</span>
+<span class="n">NvParameterized</span><span class="o">::</span><span class="n">Interface</span><span class="o">*</span> <span class="n">params</span> <span class="o">=</span> <span class="n">m_apexIofxModule</span><span class="o">-&gt;</span><span class="n">getDefaultModuleDesc</span><span class="p">();</span>
+<span class="n">m_apexIofxModule</span><span class="o">-&gt;</span><span class="n">init</span><span class="p">(</span><span class="o">*</span><span class="n">params</span><span class="p">);</span>
+
+<span class="n">m_apexEmitterModule</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">ModuleEmitter</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">m_apexSDK</span><span class="o">-&gt;</span><span class="n">createModule</span><span class="p">(</span><span class="s">&quot;Emitter&quot;</span><span class="p">));</span>
+<span class="n">NvParameterized</span><span class="o">::</span><span class="n">Interface</span><span class="o">*</span> <span class="n">params</span> <span class="o">=</span> <span class="n">m_apexEmitterModule</span><span class="o">-&gt;</span><span class="n">getDefaultModuleDesc</span><span class="p">();</span>
+<span class="n">m_apexEmitterModule</span><span class="o">-&gt;</span><span class="n">init</span><span class="p">(</span><span class="o">*</span><span class="n">params</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>With that, the Apex Destruction is ready to use.</p>
+</div>
+<div class="section" id="destructible-assets">
+<h2>Destructible Assets<a class="headerlink" href="#destructible-assets" title="Permalink to this headline">¶</a></h2>
+<p>This link describles all of the <a class="reference external" href="../_static/build_params/structDestructibleAssetParameters.html">Destructible asset parameters</a>.</p>
+<p>To create a destructible, first a destructible asset (DestructibleAsset) needs to
+be created or loaded.  PhysXLab provides an easy way to create DestructibleAssets.
+These can then be saved in either a binary or an ASCII (XML) format.  The asset type may be
+determined by peeking into the file stream, so the file extension does not matter.
+The current file name convention is that the .apb extension is used for binary format, and
+.apx for the ASCII format.</p>
+<p>In this example we will load an DestructibleAsset from the file &#8220;<strong>Wall.apb</strong>&#8221;.
+To load APEX assets, create an PxFileBuf using the ApexSDK::createStream method.
+Assuming we have our working directory set up so that &#8220;fullpath&#8221; is the path to our
+asset directory,</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">physx</span><span class="o">::</span><span class="n">PxFileBuf</span><span class="o">*</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">m_apexSDK</span><span class="o">-&gt;</span><span class="n">createStream</span><span class="p">(</span> <span class="s">&quot;fullpath/Wall.apb&quot;</span><span class="p">,</span> <span class="n">physx</span><span class="o">::</span><span class="n">PxFileBuf</span><span class="o">::</span><span class="n">OPEN_READ_ONLY</span> <span class="p">);</span>
+</pre></div>
+</div>
+<p>... creates the necessary stream.  This function returns NULL if the stream cannot
+be created.  To determine the format from the stream, peek into it using:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="kt">char</span> <span class="n">peekData</span><span class="p">[</span><span class="mi">32</span><span class="p">];</span>
+<span class="n">stream</span><span class="o">-&gt;</span><span class="n">peek</span><span class="p">(</span><span class="n">peekData</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
+<span class="n">NvParameterized</span><span class="o">::</span><span class="n">Serializer</span><span class="o">::</span><span class="n">SerializeType</span> <span class="n">iSerType</span> <span class="o">=</span> <span class="n">m_apexSDK</span><span class="o">-&gt;</span><span class="n">getSerializeType</span><span class="p">(</span><span class="n">peekData</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Then create a serializer for the serialization type iSerType:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">NvParameterized</span><span class="o">::</span><span class="n">Serializer</span><span class="o">*</span> <span class="n">ser</span> <span class="o">=</span> <span class="n">m_apexSDK</span><span class="o">-&gt;</span><span class="n">createSerializer</span><span class="p">(</span><span class="n">iSerType</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>And load the asset using the deserialize method:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">NvParameterized</span><span class="o">::</span><span class="n">Serializer</span><span class="o">::</span><span class="n">DeserializedData</span> <span class="n">data</span><span class="p">;</span>
+<span class="n">NvParameterized</span><span class="o">::</span><span class="n">Serializer</span><span class="o">::</span><span class="n">ErrorType</span> <span class="n">serError</span> <span class="o">=</span> <span class="n">ser</span><span class="o">-&gt;</span><span class="n">deserialize</span><span class="p">(</span><span class="o">*</span><span class="n">stream</span><span class="p">,</span> <span class="n">data</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The <strong>data</strong> structure now contains pointers to one or more APEX assets, depending on how many were in the stream.
+Assuming there is only one in the stream, use</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">NvParameterized</span><span class="o">::</span><span class="n">Interface</span> <span class="o">*</span><span class="n">params</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="n">Asset</span><span class="o">*</span> <span class="n">asset</span> <span class="o">=</span> <span class="n">m_apexSDK</span><span class="o">-&gt;</span><span class="n">createAsset</span><span class="p">(</span> <span class="n">params</span><span class="p">,</span> <span class="s">&quot;Asset Name&quot;</span> <span class="p">);</span>
+</pre></div>
+</div>
+<p>The second parameter a name you can used to refer to the asset later.  To use the destructible asset api for this
+asset, cast the pointer to an DestructibleAsset:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">DestructibleAsset</span><span class="o">*</span> <span class="n">destructibleAsset</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">DestructibleAsset</span><span class="o">*&gt;</span><span class="p">(</span> <span class="n">asset</span> <span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="destructible-actors">
+<h2>Destructible Actors<a class="headerlink" href="#destructible-actors" title="Permalink to this headline">¶</a></h2>
+<p>This link describles all of the <a class="reference external" href="../_static/build_params/structDestructibleActorParam.html">Destructible actor parameters</a>.</p>
+<p>Creating a destructible actor from a destructible asset is very simple if you use the
+default parameters (class DestructibleParameters) that are stored with the destructible asset.</p>
+<p>One piece of additional information that you&#8217;re almost certainly going to want to change is
+the initial global pose for the destructible, which we&#8217;ll assume we have in the PxMat44 <strong>pose</strong>.</p>
+<p>First, get the default actor description parameters from the asset:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">NvParameterized</span><span class="o">::</span><span class="n">Interface</span><span class="o">*</span> <span class="n">descParams</span> <span class="o">=</span> <span class="n">destructibleAsset</span><span class="o">-&gt;</span><span class="n">getDefaultActorDesc</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>To modify the global pose, use</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">NvParameterized</span><span class="o">::</span><span class="n">setParamMat44</span><span class="p">(</span> <span class="o">*</span><span class="n">descParams</span><span class="p">,</span> <span class="s">&quot;globalPose&quot;</span><span class="p">,</span> <span class="n">pose</span> <span class="p">);</span>
+</pre></div>
+</div>
+<p>Then simply use the descriptor, along with the APEX scene, to create an
+DestructibleActor instance of the DestructibleAsset:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">Actor</span><span class="o">*</span> <span class="n">actor</span> <span class="o">=</span> <span class="n">asset</span><span class="o">-&gt;</span><span class="n">createApexActor</span><span class="p">(</span> <span class="o">*</span><span class="n">descParams</span><span class="p">,</span> <span class="n">apexScene</span> <span class="p">);</span>
+</pre></div>
+</div>
+<p>Again, to use the DestructibleActor API, typecast actor:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">DestructibleActor</span><span class="o">*</span> <span class="n">destructibleActor</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">DestructibleActor</span><span class="o">*&gt;</span><span class="p">(</span> <span class="n">actor</span> <span class="p">);</span>
+</pre></div>
+</div>
+<p>In general, you&#8217;ll need to set more fields of the Destructible actor parameters.  Notably,</p>
+<ul class="simple">
+<li><strong>dynamic</strong> (BOOL) determines if the destructible starts off life as dynamic (in which case it cannot take
+part in any support structure).  Default is false, giving a static destructible.</li>
+<li><strong>scale</strong> (PxVec3) scales the DestructibleActor instance, possibly non-uniformly.  Default is PxVec3(1,1,1),
+the identity scaling.  You&#8217;ll probably want to have all scales that the application will use set in the
+DestructibleAsset&#8217;s precached cooking scales before the asset is serialized to file or stream.
+The Destruction authoring tool can set these scales for you.  If you don&#8217;t precache the cooking scales,
+destruction will still work, but the cooking for the collision hulls will happen during run time.</li>
+</ul>
+<p>Finally, there are many parameters you may set in <strong>destructibleParameters</strong>.  These
+set how much damage it takes to fracture a destructible, whether or not damage can
+come from impact, and many more things.  A full description is given in the PhysXLab documentation.</p>
+<div class="section" id="actor-serialization-and-deserialization">
+<h3>Actor Serialization and Deserialization<a class="headerlink" href="#actor-serialization-and-deserialization" title="Permalink to this headline">¶</a></h3>
+<p>At times it may be desirable to save and/or load the state of a destructible actor; saving a fracture
+sequence for subsequent replay and synchronizing fractured actor states between different PCs are
+two such scenarios.  Serialization and deserialization provide a convenient approach to this end.</p>
+<p>Each destructible actor exposes a parameterized interface</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="k">const</span> <span class="n">NvParameterized</span><span class="o">::</span><span class="n">Interface</span><span class="o">*</span> <span class="n">stateParams</span> <span class="o">=</span> <span class="n">actor</span><span class="o">-&gt;</span><span class="n">getNvParameterized</span><span class="p">(</span> <span class="n">DestructibleParameterizedType</span><span class="o">::</span><span class="n">State</span> <span class="p">);</span>
+</pre></div>
+</div>
+<p>with which we can easily serialize and store the actor&#8217;s state:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">NvParameterized</span><span class="o">::</span><span class="n">Serializer</span><span class="o">*</span> <span class="n">ser</span> <span class="o">=</span> <span class="n">m_apexSDK</span><span class="o">-&gt;</span><span class="n">createSerializer</span><span class="p">(</span> <span class="n">NvParameterized</span><span class="o">::</span><span class="n">SerializeType</span><span class="o">::</span><span class="n">NST_BINARY</span> <span class="p">);</span>
+<span class="p">...</span>
+<span class="n">physx</span><span class="o">::</span><span class="n">PxFileBuf</span><span class="o">*</span> <span class="n">outStream</span>      <span class="o">=</span> <span class="n">m_apexSDK</span><span class="o">-&gt;</span><span class="n">createStream</span><span class="p">(</span> <span class="s">&quot;fullpath/ActorSavedState.apb&quot;</span><span class="p">,</span> <span class="n">physx</span><span class="o">::</span><span class="n">PxFileBuf</span><span class="o">::</span><span class="n">OPEN_WRITE_ONLY</span> <span class="p">);</span>
+<span class="p">...</span>
+<span class="n">NvParameterized</span><span class="o">::</span><span class="n">Serializer</span><span class="o">::</span><span class="n">ErrorType</span> <span class="n">serError</span> <span class="o">=</span> <span class="n">ser</span><span class="o">-&gt;</span><span class="n">serialize</span><span class="p">(</span> <span class="o">*</span><span class="n">outStream</span><span class="p">,</span> <span class="n">stateParams</span><span class="p">,</span> <span class="mi">1</span> <span class="p">);</span>
+</pre></div>
+</div>
+<p>For deserialization, there are several options.  Rather than creating the actor
+with a default set of parameters, we can pass the deserialized actor&#8217;s state handle
+to the creation method. We first construct our serializer and an input stream from the serialized actor&#8217;s state:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">NvParameterized</span><span class="o">::</span><span class="n">Serializer</span><span class="o">*</span> <span class="n">ser</span> <span class="o">=</span> <span class="n">m_apexSDK</span><span class="o">-&gt;</span><span class="n">createSerializer</span><span class="p">(</span> <span class="n">NvParameterized</span><span class="o">::</span><span class="n">SerializeType</span><span class="o">::</span><span class="n">NST_BINARY</span> <span class="p">);</span>
+<span class="p">...</span>
+<span class="n">physx</span><span class="o">::</span><span class="n">PxFileBuf</span><span class="o">*</span> <span class="n">inStream</span>       <span class="o">=</span> <span class="n">m_apexSDK</span><span class="o">-&gt;</span><span class="n">createStream</span><span class="p">(</span> <span class="s">&quot;fullpath/ActorSavedState.apb&quot;</span><span class="p">,</span> <span class="n">physx</span><span class="o">::</span><span class="n">PxFileBuf</span><span class="o">::</span><span class="n">OPEN_READ_ONLY</span> <span class="p">);</span>
+</pre></div>
+</div>
+<p>We then deserialize the input stream and provide the parameterized handle to the actor creation method:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">NvParameterized</span><span class="o">::</span><span class="n">Serializer</span><span class="o">::</span><span class="n">DeserializedData</span> <span class="n">data</span><span class="p">;</span>
+<span class="n">NvParameterized</span><span class="o">::</span><span class="n">Serializer</span><span class="o">::</span><span class="n">ErrorType</span> <span class="n">serError</span> <span class="o">=</span> <span class="n">ser</span><span class="o">-&gt;</span><span class="n">deserialize</span><span class="p">(</span> <span class="o">*</span><span class="n">inStream</span><span class="p">,</span> <span class="n">data</span> <span class="p">);</span>
+<span class="p">...</span>
+<span class="n">NvParameterized</span><span class="o">::</span><span class="n">Interface</span><span class="o">*</span> <span class="n">stateParams</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="n">Actor</span><span class="o">*</span> <span class="n">actor</span> <span class="o">=</span> <span class="n">asset</span><span class="o">-&gt;</span><span class="n">createApexActor</span><span class="p">(</span> <span class="o">*</span><span class="n">stateParams</span><span class="p">,</span> <span class="n">apexScene</span> <span class="p">);</span>
+<span class="p">...</span>
+<span class="n">stateParams</span><span class="o">-&gt;</span><span class="n">destroy</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>With deserialization, a provided optimization allows the created destructible actor to take ownership of the provided
+parameterized interface.  An additional method has been provided that creates the actor while consuming the specified
+handle:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">Actor</span><span class="o">*</span> <span class="n">actor</span> <span class="o">=</span> <span class="n">asset</span><span class="o">-&gt;</span><span class="n">createDestructibleActor</span><span class="p">(</span> <span class="n">stateParams</span><span class="p">,</span> <span class="n">apexScene</span> <span class="p">);</span>
+</pre></div>
+</div>
+<p>The alternative to creating a new destructible actor from state is to explicitly set the state an an existing actor:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">actor</span><span class="o">-&gt;</span><span class="n">setNvParameterized</span><span class="p">(</span> <span class="n">stateParams</span> <span class="p">);</span>
+</pre></div>
+</div>
+<p>Note that the actor takes ownership of the provided state handle.</p>
+<p>Several guidelines should help the user make the most of these features:</p>
+<ul class="simple">
+<li>In general, destructible actors that form islands with other destructible actors should be
+serialized and deserialized in the same frame. Otherwise, no guarantees can be made
+that the island structure will be reformed properly.</li>
+<li>Prefer recreating an actor from it&#8217;s deserialized state to setting the actor&#8217;s state
+explicitly. Internally, setting the state via setNvParameterized() does a more
+or less complete actor recreation from scratch.  Recreating the actor manually makes this
+state change explicit. For lighter weight state synchronization, use explicit damage event,
+fracture event or pose synchronization.</li>
+</ul>
+</div>
+<div class="section" id="setting-the-default-physx-descriptors">
+<h3>Setting the default PhysX descriptors<a class="headerlink" href="#setting-the-default-physx-descriptors" title="Permalink to this headline">¶</a></h3>
+<p>Once the DestructibleActor is in the APEX scene, it will generate PhysX actors and shapes
+in the PhysX scene as it sees fit.  However, the user may want some control over some
+of the parameters of the generated actors and shapes.  For this purpose, fields which
+are used in the construction of PhysX actors and shapes are represented in the destructible
+actor descriptor.</p>
+<p>Let&#8217;s say we wish to specify the shapes&#8217; groupsMask, and the actors&#8217; density.  An
+example of this is:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="cm">/* Set the shapes&#39; groupsMask */</span>
+<span class="n">NvParameterized</span><span class="o">::</span><span class="n">setParamU32</span><span class="p">(</span> <span class="o">*</span><span class="n">descParams</span><span class="p">,</span> <span class="s">&quot;p3ShapeDescTemplate.simulationFilterData.word0&quot;</span><span class="p">,</span> <span class="mi">2</span> <span class="p">);</span>
+<span class="n">NvParameterized</span><span class="o">::</span><span class="n">setParamU32</span><span class="p">(</span> <span class="o">*</span><span class="n">descParams</span><span class="p">,</span> <span class="s">&quot;p3ShapeDescTemplate.simulationFilterData.word0&quot;</span><span class="p">,</span> <span class="o">~</span><span class="mi">0</span> <span class="p">);</span>
+
+<span class="cm">/* Set the shapes&#39; density */</span>
+<span class="n">NvParameterized</span><span class="o">::</span><span class="n">setParamF32</span><span class="p">(</span> <span class="o">*</span><span class="n">descParams</span><span class="p">,</span> <span class="s">&quot;p3BodyDescTemplate.density&quot;</span><span class="p">,</span> <span class="mf">10.0f</span> <span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="destructible-synchronization">
+<h2>Destructible Synchronization<a class="headerlink" href="#destructible-synchronization" title="Permalink to this headline">¶</a></h2>
+<p>For the purpose of allowing synchronization of the destructed state of actors across different processes in real-time, APEX Destruction
+presents a scaled-down alternative to full actor state serialization and deserialization. This method exposes only enough data to
+synchronize between actors at a customizable combination of detail.</p>
+<div class="section" id="module-level-semantics">
+<h3>Module-level semantics<a class="headerlink" href="#module-level-semantics" title="Permalink to this headline">¶</a></h3>
+<p>At the module level, the application must implement the type-parameterized interface class provided: class UserDestructibleSyncHandler
+The type argument would be of the data type that the application wants to synchronize between. There are 3 synchronizable types.</p>
+<p>The application should then instantiate and set these callback(s) for APEX via</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">module</span><span class="o">-&gt;</span><span class="n">setSyncParams</span><span class="p">(</span> <span class="n">userDamageEventHandler</span><span class="p">,</span> <span class="n">userFractureEventHandler</span><span class="p">,</span> <span class="n">userChunkMotionHandler</span> <span class="p">);</span>
+</pre></div>
+</div>
+<p>Typically, the application should only use one of either userDamageEventHandler or userFractureEventHandler, plus userChunkMotionHandler
+optionally.
+This is the main way by which APEX passes synchronization data back to the application. Note that any shared resource used by the
+callback classes must be thread-safe.</p>
+<p>For write operations (passing data to the application), APEX will call the following 2 methods whenever such data becomes available.
+This is a request for a writable memory buffer which APEX will use, followed by a notification when APEX is done writing:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">callbackFoo</span><span class="o">-&gt;</span><span class="n">onWriteBegin</span><span class="p">(</span> <span class="n">bufferStart</span><span class="p">,</span> <span class="n">bufferSize</span> <span class="p">);</span>
+<span class="n">callbackFoo</span><span class="o">-&gt;</span><span class="n">onWriteDone</span><span class="p">(</span> <span class="n">headerCount</span> <span class="p">);</span>
+</pre></div>
+</div>
+<p>APEX does not cache this information - they are computed, used, and then discarded. This information is only available to the application
+during this window.</p>
+<p>For read operations (passing data to APEX), APEX will call the following 4 methods whenever such data is about to be processed.
+2 of the methods are used for preparing the memory buffer into a state usable by APEX:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">callbackFoo</span><span class="o">-&gt;</span><span class="n">onPreProcessReadBegin</span><span class="p">(</span> <span class="n">bufferStart</span><span class="p">,</span> <span class="n">bufferSize</span><span class="p">,</span> <span class="n">continuePointerSwizzling</span> <span class="p">);</span>
+<span class="n">callbackFoo</span><span class="o">-&gt;</span><span class="n">onPreProcessReadDone</span><span class="p">(</span> <span class="n">headerCount</span> <span class="p">);</span>
+</pre></div>
+</div>
+<p>These methods serve 2 functions. Firstly, to update the pointers into valid values for this memory space, and secondly, to provide a
+convenient outlet for the application to chain together multiple buffers.</p>
+<p>Following that, the actual read request is made through the following 2 methods.
+This is a request for a readable memory buffer which APEX will use, followed by a notification when APEX is done reading:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">callbackFoo</span><span class="o">-&gt;</span><span class="n">onReadBegin</span><span class="p">(</span> <span class="n">bufferStart</span> <span class="p">);</span>
+<span class="n">callbackFoo</span><span class="o">-&gt;</span><span class="n">onReadDone</span><span class="p">(</span> <span class="n">debugMessage</span> <span class="p">);</span>
+</pre></div>
+</div>
+<p>APEX will only reference this information during this window.</p>
+<p>These callbacks contain data for all actors that are marked for synchronization. Marking an actor for synchronization is done at the actor
+level.</p>
+</div>
+<div class="section" id="actor-level-semantics">
+<h3>Actor-level semantics<a class="headerlink" href="#actor-level-semantics" title="Permalink to this headline">¶</a></h3>
+<p>At the actor level, the application needs to mark them as participating synchronizable actors:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">actor</span><span class="o">-&gt;</span><span class="n">setSyncParams</span><span class="p">(</span> <span class="n">userActorID</span><span class="p">,</span> <span class="n">actorSyncFlags</span><span class="p">,</span> <span class="n">actorSyncState</span><span class="p">,</span> <span class="n">chunkSyncState</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The userActorID is used to match actors across processes to synchronize data between. It must be a non-zero value.
+For every matched userActorID, the client must set a readFoo flag for every copyFoo flag set by the source, to be passed in as actorSyncFlags.
+Flag options are presented in the struct DestructibleActorSyncFlags.
+Using actorSyncState and chunkSyncState will allow for even more fine-grained control over the data to synchronize between.</p>
+<p>Additionally, at the per-actor level, APEX also provides an even lower-cost way to track and use chunks that were ever impacted. This
+is especially useful in situations where detail mattered the least - such as when an actor is far away or when an actor is required to be
+quickly synchronized to the current environment. Minimizing of computation time and bandwidth used is the goal here.
+This method also represents a departure from how the other data are synchronized - this data is cached by APEX and is fetchable via an API call,
+thus relieving the application from the burden of having to save this information until they actually need to use it.
+There are 4 API calls relating to this feature:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">actor</span><span class="o">-&gt;</span><span class="n">setHitChunkTrackingParams</span><span class="p">(</span> <span class="n">flushHistory</span><span class="p">,</span> <span class="n">startTracking</span><span class="p">,</span> <span class="n">trackingDepth</span> <span class="p">);</span>
+<span class="n">actor</span><span class="o">-&gt;</span><span class="n">getHitChunkHistory</span><span class="p">(</span> <span class="n">hitChunkContainer</span><span class="p">,</span> <span class="n">hitChunkCount</span> <span class="p">);</span>
+<span class="n">actor</span><span class="o">-&gt;</span><span class="n">forceChunkHits</span><span class="p">(</span> <span class="n">hitChunkContainer</span><span class="p">,</span> <span class="n">hitChunkCount</span> <span class="p">,</span> <span class="n">removeChunks</span> <span class="p">);</span>
+<span class="n">actor</span><span class="o">-&gt;</span><span class="n">setDeleteFracturedChunks</span><span class="p">(</span> <span class="n">inDeleteChunkMode</span> <span class="p">);</span>
+</pre></div>
+</div>
+<p>The actor-level parameters can be safely tweaked anytime during runtime. This is in contrast to the callback methods, where memory must be
+&#8220;locked&#8221; during the short FooBegin() - FooDone() window.</p>
+</div>
+<div class="section" id="example-use-cases">
+<h3>Example use-cases<a class="headerlink" href="#example-use-cases" title="Permalink to this headline">¶</a></h3>
+<p>Here are some sample use-cases for actor synchronization. Please refer to the sections under Module-level semantics and Actor-level semantics
+for the how-tos in setting up actors for synchronization. This section only serves to identify and reconcile the tweaking of the parameters
+responsible for the different use-cases.</p>
+<ol class="arabic">
+<li><p class="first">Client joining late - updating the client via hit chunk history list.</p>
+<p>1.1) On the source-side, be sure to have the actor track its chunk history:</p>
+</li>
+</ol>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">actor</span><span class="o">-&gt;</span><span class="n">setHitChunkTrackingParams</span><span class="p">(</span> <span class="n">flushHistory</span><span class="p">,</span> <span class="n">startTracking</span><span class="p">,</span> <span class="n">trackingDepth</span> <span class="p">);</span>
+</pre></div>
+</div>
+<p>Here, startTracking must be set to true. The trackingDepth should be set at a level less than or equal to the maximum chunk depth for the asset.</p>
+<blockquote>
+1.2) Just before the actor on the destination-side is to be deleted, retrieve the chunk history list for the actor on the source-side:</blockquote>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">actor</span><span class="o">-&gt;</span><span class="n">getHitChunkHistory</span><span class="p">(</span> <span class="n">hitChunkContainer</span><span class="p">,</span> <span class="n">hitChunkCount</span> <span class="p">);</span>
+</pre></div>
+</div>
+<p>The application should then use the returned arguments to supply the destination-side.</p>
+<blockquote>
+1.3) On the destination-side, apply the chunk history list.</blockquote>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">actor</span><span class="o">-&gt;</span><span class="n">forceChunkHits</span><span class="p">(</span> <span class="n">hitChunkContainer</span><span class="p">,</span> <span class="n">hitChunkCount</span> <span class="p">,</span> <span class="n">removeChunks</span> <span class="p">);</span>
+</pre></div>
+</div>
+<p>Here, removeChunks must be set to true.</p>
+<ol class="arabic" start="2">
+<li><p class="first">Actor out-of-sight - Turning on / off actor delete mode in runtime.</p>
+<p>2.1) On the local-side, simply set the actor to delete-mode to have it delete its chunks instead of simulating them when hit:</p>
+</li>
+</ol>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">actor</span><span class="o">-&gt;</span><span class="n">setDeleteFracturedChunks</span><span class="p">(</span> <span class="n">inDeleteChunkMode</span> <span class="p">);</span>
+</pre></div>
+</div>
+<p>Here, inDeleteChunkMode must be set to true. Use this same API to have it return back to the normal simulating state.</p>
+<ol class="arabic" start="3">
+<li><p class="first">Level-of-detail - Changing the filter depth for damage/fracture events in runtime.</p>
+<p>3.1) On the source-side, be sure to set the optional parameters for the actor:</p>
+</li>
+</ol>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">actor</span><span class="o">-&gt;</span><span class="n">setSyncParams</span><span class="p">(</span> <span class="n">userActorID</span><span class="p">,</span> <span class="n">actorSyncFlags</span><span class="p">,</span> <span class="n">actorSyncState</span><span class="p">,</span> <span class="n">chunkSyncState</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Here, be sure that the requisite flag is set in actorSyncFlags for the corresponding actorSyncState and/or chunkSyncState parameter.
+Define and set values for actorSyncState and/or chunkSyncState.
+For example, if we are filtering the depth of damage events, be sure to have the CopyDamageEvents flag included (OR-ed) as well.</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">actorSyncFlags</span> <span class="o">|=</span> <span class="n">CopyDamageEvents</span><span class="p">;</span>
+<span class="n">actorSyncState</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DestructibleActorSyncState</span><span class="p">;</span>
+<span class="n">actorSyncState</span><span class="o">-&gt;</span><span class="n">damageEventFilterDepth</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The optional parameters actorSyncState and chunkSyncState can be tweaked without having to re-call setSyncParams after the first time
+it is set.</p>
+<blockquote>
+3.2) On the destination-side, be sure to have the corresponding readFoo flag set.</blockquote>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">actor</span><span class="o">-&gt;</span><span class="n">setSyncParams</span><span class="p">(</span> <span class="n">userActorID</span><span class="p">,</span> <span class="n">actorSyncFlags</span><span class="p">,</span> <span class="n">actorSyncState</span><span class="p">,</span> <span class="n">chunkSyncState</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Here, be sure that the corresponding read flag is set in actorSyncFlags. actorSyncState and chunkSyncState are inconsequential here, thus can
+be left as NULL.
+For example, include (OR) the flag ReadDamageEvents if CopyDamageEvents was used in step 3.1).</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">actorSyncFlags</span> <span class="o">|=</span> <span class="n">ReadDamageEvents</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="guidelines-and-caveats">
+<h3>Guidelines and Caveats<a class="headerlink" href="#guidelines-and-caveats" title="Permalink to this headline">¶</a></h3>
+<p>In this section we discuss some of the potential quirkiness associated with destructible synchronization.</p>
+<ul>
+<li><p class="first">Filtering is a source-side (write-side / send-side / server) decision. The destination-side (read-side / receive-side / client) actor has no control over filtering.</p>
+</li>
+<li><p class="first">Actor delete-mode is a local decision. The source-side has no control over deletion on the destination-side.</p>
+</li>
+<li><p class="first">Overruled filter level / graphical LOD due to simulation LOD - filter level mismatches</p>
+<blockquote>
+<ul>
+<li><p class="first">Overruled filter level:</p>
+<dl class="docutils">
+<dt>For example,</dt>
+<dd><p class="first last">sending-side actor LOD = 2,
+filter = 3,</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Only up till and including level 2 chunks will go into the outgoing synchronization buffer.</p>
+<ul>
+<li><p class="first">Overruled graphical LOD:</p>
+<dl class="docutils">
+<dt>For example,</dt>
+<dd><p class="first last">receiving-side actor LOD = 2,
+sending-side actor LOD = 3,
+sending-side filter level = 3</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>The level 3 chunks on the receiving-side actor will break off too.</p>
+<p>A simple guideline is to have the filter levels set to the lowest actor LOD level across machines.</p>
+</blockquote>
+</li>
+<li><p class="first">Ignored chunk deletion during runtime</p>
+</li>
+</ul>
+<p>If an actor had already been fractured into smaller pieces (as can happen midway in a game), the smaller chunks will not be deleted when
+the deletion list is applied on the actor. This is because only chunks at the tracking depth are tracked as a &#8220;hit chunk&#8221; in the &#8220;hit chunk
+history&#8221; of an actor. This is for cost-savings purposes, consistent with the spirit of minimizing computation costs and bandwidth usage for
+such usage.</p>
+<ul class="simple">
+<li>Ignored damage events / inaccurate fracture events due to non-determinism of generated dynamic chunk poses.</li>
+</ul>
+<p>Due to the non-deterministic nature of physX generating poses (orientation and position), dynamic chunks&#8217; poses will not match on different
+machines, given the same damage event. As a consequence, due to the way damage events are applied (chunk poses are a factor), this may cause
+some dynamic chunks to ignore the damage events coming in from synchronization buffer. Similar challenges apply for fracture events. However,
+they are much less pronounced.</p>
+<p>A simplistic guideline is to use fracture events instead of damage events to get a better match across machines. This will come at a higher
+bandwidth cost though.</p>
+<ul class="simple">
+<li>Local fractures prioritised over synchronization</li>
+</ul>
+<p>Fractures initiated by the application locally always takes precedent over synchronized fractures. For any given tick, fractures could be
+postponed over to the next frame if the computation limit for fracturing is breached. In that event, fractures initiated remotely through
+synchronization will take a backseat. They will still be processed eventually, but only after all locally-initiated fractures are processed.
+APEX will make a copy of the outstanding remotely-initiated fracture events (They are usually only being referenced if they can all be
+processed this frame). This behaviour is by design, so as to allow for better responsiveness to locally-initiated events.</p>
+<ul class="simple">
+<li>Invalid synchronization data (eg. applying further damage on a chunk that has already been destructed) will be skipped over by APEX.</li>
+<li>Stacked synchronization data (eg. applying damage on the same chunk that has already been damaged in the same frame) does not cause overwrite. They are always being processed FIFO.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="runtime-fracturing">
+<h2>Runtime Fracturing<a class="headerlink" href="#runtime-fracturing" title="Permalink to this headline">¶</a></h2>
+<p>In APEX 1.3 and later, the destruction module includes an option for runtime fracturing.  That is, fracturing is performed on the fly, with no precalculation of the fractured pieces.
+To enable runtime fracturing, set both the CRUMBLE_SMALLEST_CHUNKS and CRUMBLE_VIA_RUNTIME_FRACTURE flags in the destructible parameters.  With these flags set, the deepest-level
+prefractured chunks (those with no children) will continue to be fractured using the runtime system.</p>
+<p>If you want the entire destructible to runtime fractured, simple create a destructible asset from a mesh, with no prefracturing, and set the aforementioned flags.
+One thing to note, however, is that the runtime fracture system is activated exactly when crumbles would be, that is, only when a deepest-level chunk takes enough
+damage to be fractured further.  When there is only one chunk, this means the chunk would need to first take enough damage to break free (if it&#8217;s static), then enough
+to fracture further to crumbles or runtime fracture.  This essentially doubles the damage it needs to take to fracture.  To prevent this, you may set the
+minimumFractureDepth (in the destructible parameters) to one <em>more</em> than the deepest depth, meaning fracturing will begin with crumbles or runtime fracture.
+So, if you import a single-chunk destructible for runtime fracture, set minimumFractureDepth to 1 (since there is only a depth-0 chunk).</p>
+<p>This fracture mode also comes in two types: full and partial.  Since a fracture pattern is a decomposition of all of space, when applied to a mesh it will cut the entire mesh
+into pieces.  Partial fracture means that beyond a given radius, the pieces are sewn back together, so that the only fragments seen are the ones within the given radius.  We have
+merged this into the prefracture system by using the radius obtained from applyRadiusDamage.  This radius is used for the partial fracture mode in realtime fracturing of chunks.</p>
+<p>Scene 9 in SimpleDestruction demonstrates runtime fracture on a thin sheet, with a glass fracture pattern.</p>
+<div class="section" id="fracture-patterns">
+<h3>Fracture Patterns<a class="headerlink" href="#fracture-patterns" title="Permalink to this headline">¶</a></h3>
+<p>Runtime fracturing is based upon precomputed fracture patterns that may be applied anywhere (and with any orientation or scale) within a mesh.  We plan to support a variety of fracture patterns in subsequent releases of APEX.  In the current release we only have one pattern available, a glass fracture pattern.</p>
+</div>
+<div class="section" id="parameters">
+<h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
+<p>In addition to the flags which enable this feature, mentioned above, there are a number of parameters that control its behavior. these are listed here.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="8%" />
+<col width="7%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Parameter name</th>
+<th class="head">Type</th>
+<th class="head">Default value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>destructibleParameters.runtimeFracture.sheetFracture</td>
+<td>bool</td>
+<td>true</td>
+<td>If true, align fracture pattern to largest face.  If false, the fracture pattern will be aligned to the hit normal with each fracture.</td>
+</tr>
+<tr><td>destructibleParameters.runtimeFracture.depthLimit</td>
+<td>unsigned</td>
+<td>2</td>
+<td>How many times pieces can be recursively fractured using the runtime fracture system.</td>
+</tr>
+<tr><td>destructibleParameters.runtimeFracture.destroyIfAtDepthLimit</td>
+<td>bool</td>
+<td>false</td>
+<td>If true, destroy chunks when they hit their depth limit.</td>
+</tr>
+<tr><td>destructibleParameters.runtimeFracture.minConvexSize</td>
+<td>float</td>
+<td>0.02</td>
+<td>Minimum size of convex piece produced by a fracture.</td>
+</tr>
+<tr><td>destructibleParameters.runtimeFracture.impulseScale</td>
+<td>float</td>
+<td>1.0</td>
+<td>Scales impulse applied by a fracture.</td>
+</tr>
+<tr><td>destructibleParameters.runtimeFracture.glass</td>
+<td>FractureGlass</td>
+<td>&nbsp;</td>
+<td>Glass fracture pattern settings. See the table below.</td>
+</tr>
+<tr><td>destructibleParameters.runtimeFracture.attachment</td>
+<td>FractureAttachment</td>
+<td>&nbsp;</td>
+<td>Attachment Settings. Allows the sides of a runtime fracture chunk to be kinematic rather than dynamic. See the description below.</td>
+</tr>
+</tbody>
+</table>
+<p>The FractureGlass parameters are described in the following table.  The pattern is described by a number of &#8216;sectors&#8217; and &#8216;segments&#8217;.  Sectors are the radial slices, segments the cross-slices within the sectors.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="12%" />
+<col width="9%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Parameter name</th>
+<th class="head">Type</th>
+<th class="head">Default value</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>numSectors</td>
+<td>unsigned</td>
+<td>10</td>
+<td>Number of angular slices in the glass fracture pattern.</td>
+</tr>
+<tr><td>sectorRand</td>
+<td>float</td>
+<td>0.3</td>
+<td>Creates variance in the angle of slices. A value of zero results in all angular slices having the same angle.</td>
+</tr>
+<tr><td>firstSegmentSize</td>
+<td>float</td>
+<td>0.06</td>
+<td>The minimum shard size. Shards below this size will not be created and thus not visible.</td>
+</tr>
+<tr><td>segmentScale</td>
+<td>float</td>
+<td>1.4</td>
+<td>Scales the radial spacing in the glass fracture pattern. A larger value results in radially longer shards.</td>
+</tr>
+<tr><td>segmentRand</td>
+<td>float</td>
+<td>0.3</td>
+<td>Creates variance in the radial size of shards. A value of zero results in a low noise circular pattern.</td>
+</tr>
+</tbody>
+</table>
+<p>The FractureAttachment parameters are simply a set of six bools, describing which sides of the destructible are attached to the world.  This description is in the
+local space of the destructible.  The fields are posX, negX, posY, etc.  In this way, when a local fracture (using radius damage) is done, pieces outside of the damage
+radius will remain attached if they are joined to an attachment side.</p>
+</div>
+</div>
+<div class="section" id="fracture-callbacks">
+<h2>Fracture Callbacks<a class="headerlink" href="#fracture-callbacks" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes it is useful to have information about chunks which are fractured loose, or destroyed completely.
+For example the user may wish to generate sound or particle effects associated with the fracture event.  APEX
+Destruction facilitates this with the UserChunkReport.  The user must derive their own class from this virtual
+base class and implement the onDamageNotify function.  After doing this, pass an instance of the derived
+class to the destruction module using the ModuleDestructible method</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="k">virtual</span> <span class="kt">void</span>         <span class="n">setChunkReport</span><span class="p">(</span><span class="n">UserChunkReport</span><span class="o">*</span> <span class="n">chunkReport</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Once a frame, if fractures occurred since the last frame, then the onDamageNotify function will be called with
+information stored in an DamageEventReportData structure.  (See DamageEventReportData.)  This gives
+general information about the chunks which broke free or were destroyed, as well as a detailed list of chunks
+if the chunks&#8217; hierarchical depth is at or below a maximum depth set by the ModuleDestructible method</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="k">virtual</span> <span class="kt">void</span>         <span class="n">setChunkReportMaxFractureEventDepth</span><span class="p">(</span><span class="n">physx</span><span class="o">::</span><span class="n">PxU32</span> <span class="n">chunkReportMaxFractureEventDepth</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Chunks contribute to the DamageEventReportData for various reasons, enumerated in the ChunkFlag::Enum enum.  This
+not only allows the user to respond to the fracture event based upon the reason (the ChunkFlag is in the ChunkData
+for each explicitly-listed chunk), but it also allows for filtering of the chunks which contribute to the report.  By setting
+a flag mask using the ModuleDestructible method</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="k">virtual</span> <span class="kt">void</span>         <span class="n">setChunkReportSendChunkStateEvents</span><span class="p">(</span><span class="kt">bool</span> <span class="n">chunkReportSendChunkStateEvents</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>If enabled, once a frame during simulate, the onStateChangeNotify callback is called with a list of chunks that have changed
+their visibility state, including their current state. This allows for event based updates of the chunk representation in
+the application.</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="k">virtual</span> <span class="kt">void</span>         <span class="n">setChunkReportBitMask</span><span class="p">(</span><span class="n">physx</span><span class="o">::</span><span class="n">PxU32</span> <span class="n">chunkReportBitMask</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>only fracture events with ChunkFlag flags that overlap (boolean &#8216;and&#8217;) the given mask will contribute.</p>
+</div>
+<div class="section" id="automatic-lod-destructible-benefit-and-cost-functions">
+<h2>Automatic LOD - Destructible Benefit and Cost Functions<a class="headerlink" href="#automatic-lod-destructible-benefit-and-cost-functions" title="Permalink to this headline">¶</a></h2>
+<p>See the APEX Framework documentation section &#8220;APEX Automatic LOD&#8221; for the general introduction to APEX LOD.</p>
+<p>The destruction module uses two factors to determine an DestructibleActor&#8217;s benefit: angular size, and age.
+Unlike the &#8220;solid angle&#8221; importance function described in the LOD section of the framework documentation,
+the angular size calculation only takes into account a linear arc size subtended by the actor from the point
+of view of the camera location.  In this way the importance falls off linearly with distance, not with the
+square of the distance as with the solid angle, and therefore the benefit does not fall off as quickly.</p>
+<p>The age benefit is calculated using the linear ramp-down described in the framework LOD section.</p>
+<p>The LOD parameters are set through the DestructibleActor function</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="k">virtual</span> <span class="kt">void</span> <span class="n">setLODWeights</span><span class="p">(</span><span class="n">PxF32</span> <span class="n">maxDistance</span><span class="p">,</span> <span class="n">PxF32</span> <span class="n">distanceWeight</span><span class="p">,</span> <span class="n">PxF32</span> <span class="n">maxAge</span><span class="p">,</span> <span class="n">PxF32</span> <span class="n">ageWeight</span><span class="p">,</span> <span class="n">PxF32</span> <span class="n">bias</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The parameters are described below.</p>
+<ul class="simple">
+<li>maxDistance: beyond this distance, the distance importance function D(r) is zero.  D(r) is clamped for decreasing r so that it never grows above 1.</li>
+<li>distanceWeight: the coefficient in front of the distance importance function D(r).</li>
+<li>maxAge: beyond this time, the distance importance function A(t) is zero.  A(t) is clamped so that A(t) = 1.</li>
+<li>ageWeight: the coefficient in front of the age importance function A(t).</li>
+<li>bias: a constant bias to increase or decrease an actor&#8217;s benefit.</li>
+</ul>
+<p>The total benefit for an actor is calculated using:</p>
+<blockquote>
+B(r,t) = distanceWeight*D(r) + ageWeight*A(t) + bias.</blockquote>
+<p>The weights should total 1, and the bias should be kept in the unit [0,1] range.  This keeps the benefit function B(r,t) &#8220;normalized,&#8221; so that it&#8217;s on the order
+of one or less.</p>
+</div>
+<div class="section" id="rendering-considerations">
+<h2>Rendering Considerations<a class="headerlink" href="#rendering-considerations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="render-proxy">
+<h3>Render Proxy<a class="headerlink" href="#render-proxy" title="Permalink to this headline">¶</a></h3>
+<p>The DestructibleActor derives from the APEX rendering API (see Renderable), so that you may simply render the destructible using this API.  However, many
+applications use a separate rendering thread that runs concurrently with a simulation thread that ticks the APEX scene.  It&#8217;s possible that during this tick, a destructible
+may be deleted, but a reference to it or its rendering data could still be waiting in the rendering thread.  To accomodate this usage, the destructible actor uses
+a render proxy object to hold all of its rendering data.  This object exists separately from the DestructibleActor, and so the actor may be deleted without deleting the render proxy.
+This way, the rendering thread can hold a reference to the render proxy instead of the actor, and if the actor is deleted the render thread is unaffected.</p>
+<p>To acquire a handle to the render proxy, use</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="k">virtual</span> <span class="n">DestructibleRenderable</span><span class="o">*</span> <span class="n">acquireRenderableReference</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The object DestructibleRenderable is also derived from Renderable, so you may use it to render in exactly the same way as you would have rendered the DestructibleActor.  This
+object is reference counted, and the DestructibleActor holds a reference to it while it exists.  Once you are through with the proxy, you may use the DestructibleRenderable::release()
+method to decrement the reference count.  If the reference count goes to zero, the proxy is actually deleted.  This way the proxy will be properly deleted if the DestructibleActor
+is deleted before the render thread is through with the proxy.</p>
+<p>If there are any external references to the proxy, the DestructibleActor&#8217;s render API will no longer function.  You must then use the proxy to render the destructible.  Once you release
+all external references, the DestructibleActor&#8217;s render API will operate normally.</p>
+</div>
+<div class="section" id="vtf-rendering">
+<h3>VTF Rendering<a class="headerlink" href="#vtf-rendering" title="Permalink to this headline">¶</a></h3>
+<p>When we use skinning method to render the destructible chunks, each chunk is associated with one bone. Traditional skinning method limits the number of bones per draw call. Therefore
+the rendering performance is CPU bounded when the number of chunks increase. The Vertex Texture Fetch, known as VTF, rendering method deposits a destructible&#8217;s entire rendering bone buffer in a texture
+whose width is 4 and height is the maximum number of bones of the actor. Thus each row of the texture represents a 4x4 tranform matrix. The vertex shader reads the bones from a texture instead of the constant buffer.
+In this way, all dynamic chunks require only one draw call per rendering pass and greatly reduce the CPU cycles. Note that this technique only applies to GPUs with shader model 3.0 or later versions. For earlier
+GPUs that don&#8217;t support this feature, the traditional skinning technique is still supported in the sample and can be toggled with the following code in SampleDestructible.cpp</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="k">switch</span><span class="p">(</span><span class="n">renderer</span><span class="o">-&gt;</span><span class="n">getDriverType</span><span class="p">())</span>
+<span class="p">{</span>
+<span class="k">case</span> <span class="n">SampleRenderer</span><span class="o">::</span><span class="n">Renderer</span><span class="o">::</span><span class="nl">DRIVER_DIRECT3D9:</span>
+<span class="k">case</span> <span class="n">SampleRenderer</span><span class="o">::</span><span class="n">Renderer</span><span class="o">::</span><span class="nl">DRIVER_DIRECT3D11:</span>
+        <span class="n">renderer</span><span class="o">-&gt;</span><span class="n">setEnableVTF</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="debug-visualization">
+<h2>Debug Visualization<a class="headerlink" href="#debug-visualization" title="Permalink to this headline">¶</a></h2>
+<p>All APEX modules come with debug visualization rendering, to help understand what is happening in an APEX scene.  When you hit the
+V key in SimpleDestruction, default APEX visualization rendering is turned on, as well as default PhysX SDK visualization.  In addition
+to the default settings, APEX Destruction LOD benefits and support visualization are shown.</p>
+<p><a class="reference external" href="../_static/build_params/structDestructibleDebugRenderParams.html">Click here for a list of the Destructible debug visualization parameters</a></p>
+<p>For general information on how to use debug visualization within APEX, please see
+<a class="reference internal" href="../APEX_Framework/APEX_PG_Debug_Visualization.html#debug-visualization-label"><em>Debug Visualization</em></a>.</p>
+<p>Starting SimpleDestruction and repeatedly hitting &#8216;V&#8217; (for visualization) and &#8216;G&#8217; (to hide meshes) will show a subset of the debug
+visualization options for APEX render meshes and destructible actors.  The sample may look slightly different in its current form,
+but the debug visualization walk-through offered here is still valuable.</p>
+<img alt="../_images/destruction_debugvis_support1.png" src="../_images/destruction_debugvis_support1.png" />
+<p>Here you see the PhysX collision representation of the scene, as well as the destructible&#8217;s support structure.  The white circles on
+the ground represent the collision plane, while the orange box represents the collision volume of the wall.  It is a single volume
+since the wall is not yet damaged.  The blue boxes on the ground outline the support chunks in the wall.  The support depth for this asset
+is set at depth = 2, and the outlined chunks are the depth-2 chunks that touch a static actor (the ground plane) in the PhysX scene.
+Since &#8220;World overlap&#8221; support is selected in the asset, these chunks become support chunks.  All chunks touching them, and chunks
+touching those chunks, and so on, are supported.  This is represented by the network of blue lines, drawn between the centers of each chunk
+that gains support from a supported neighbor, and that supported neighbor&#8217;s center.</p>
+<p>Once we apply some damage to the wall, freeing chunks at depth 2 or deeper, those chunks cease to be supported, and this modifies the
+support network:</p>
+<img alt="../_images/destruction_debugvis_support2.png" src="../_images/destruction_debugvis_support2.png" />
+<p>Once enough chunks have been removed from the support network to form an island of chunks that don&#8217;t contain a supported chunk, that island
+becomes free, and breaks off whole:</p>
+<img alt="../_images/destruction_debugvis_support3.png" src="../_images/destruction_debugvis_support3.png" />
+<p>Level of Detail (LOD) benefit and cost are also displayed.  The green squares represent the benefit of a chunk island.  The benefit is
+proportional to the area.  If the square is large enough, the benefit value is shown in the square.  Braking off some chunks you can see
+the benefits changing as the chunk islands age, and as they fill different areas of the screen:</p>
+<img alt="../_images/destruction_debugvis_benefit.png" src="../_images/destruction_debugvis_benefit.png" />
+<p>Chunk island benefit is a function of both the age of chunk and the screen area percentage it fills.  Both have adjustable prefactors,
+as well as an exponential decay factor for the age.  Therefore each new chunk island that forms starts with a certain benefit which
+decays over time, settling on a benefit that only depends on screen area percentage.</p>
+<p>In LOD calculations the benefit of each chunk is weighed against its cost.  The cost is simply the calculated as the number of chunks
+times a factor which can be set by the user.  This cost is compared with a total budget given to the destruction module.  That budget
+and the total cost of the chunks in the scene are plotted in the bar on the bottom.  The bar is scaled so that half the width of the
+screen represents the total budget.  Chunk costs are summed up (stacked) on that bar.  The cost of all &#8220;essential&#8221; chunks is shown
+as a blue bar.  These are the chunks that are not deeper than the &#8220;essential depth&#8221; set for the destructible asset.  Essential chunks
+will never be removed from the scene from LOD considerations.  For example, game play logic or experience may require this.</p>
+<p>On top of the essential chunk cost is a yellow bar representing the non-essential chunk cost.  If the total cost is less than the budget,
+the remainder of the budget bar is plotted in white.  If the total cost exceeds the budget, the overrun is plotted in red and will
+extend to the right-half of the screen.  Budget overrun can occur if the essential chunk cost exceeds the budget.  Also, miscalculations
+(due to approximations in budget prediction) may cause a temporary budget overrun, which will be corrected in subsequent frames.</p>
+<p>If the budget is exceeded by non-essential chunks, or is predicted to be (due to a new fracture event), then the destruction LOD system
+goes to work and either reduces the detail of fracturing from the fracture event, or removes low-benefit chunks.  This is done in order
+of increasing benefit/cost, until the budget is satisfied or all chunks are essential.</p>
+<p>When a chunks is removed to satisfy resource budget, a red square with an &#8220;X&#8221; across it is displayed temporarily in its place, to show
+where the removal occurred.</p>
+<p>Other visualization options are available.  For example, you can view the chunk island poses (local coordinate systems), if you set
+the VISUALIZE_DESTRUCTIBLE_FRAGMENT_POSE visualizer flag.  An example of this is shown here:</p>
+<img alt="../_images/destruction_debugvis_poses.png" src="../_images/destruction_debugvis_poses.png" />
+</div>
+<div class="section" id="errors-and-warnings">
+<h2>Errors and Warnings<a class="headerlink" href="#errors-and-warnings" title="Permalink to this headline">¶</a></h2>
+<p>APEX Destruction outputs the following error and warning messages using the standard APEX error stream.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="7%" />
+<col width="36%" />
+<col width="57%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">ERROR CODE</th>
+<th class="head">MESSAGE</th>
+<th class="head">Explanation</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>APEX_INVALID_PARAMETER</td>
+<td>The NvParameterized::Interface object is the wrong type</td>
+<td>The parameterized descriptor passed into ModuleDestructible::init(...) was not a destructible module descriptor.</td>
+</tr>
+<tr><td>APEX_INVALID_OPERATION</td>
+<td>DestructibleActor does not support this operation</td>
+<td>An LOD operation (getLodRange, getActiveLod, or forceLod) has been called which APEX destruction does not support.</td>
+</tr>
+<tr><td>APEX_INTERNAL_ERROR</td>
+<td>Destructible actors need EmitterExplicitGeom emitters.</td>
+<td>A crumble or dust emitter was assigned to a destructible actor which was not an EmitterExplicitGeom emitter.</td>
+</tr>
+<tr><td>APEX_INTERNAL_ERROR</td>
+<td>DestructibleAssetAuthoring::cookChunks: cookingDesc invalid.</td>
+<td>Destructible authoring: DestructibleAssetAuthoring::cookChunks(...) was called with an invalid descriptor.</td>
+</tr>
+<tr><td>APEX_INTERNAL_ERROR</td>
+<td>Destructible asset render mesh uninitialized or wrong part count.</td>
+<td>Destructible authoring: DestructibleAssetAuthoring::cookChunks(...) was called without assigning an RenderMeshAssetAuthoring, or it does not have the correct number of parts.</td>
+</tr>
+<tr><td>APEX_DEBUG_WARNING</td>
+<td>APEX Destruction physx::PxFileBuf (de)serialization is obsolete.  You must use NvParameterized (de)serialization.</td>
+<td>A call was made to destructible asset serialize() or deserialize().  This should no longer occur.</td>
+</tr>
+<tr><td>APEX_DEBUG_WARNING</td>
+<td>Deprecated interface, use ApexSDK::{create,release}Asset or ApexSDK::{create,release}AssetAuthoring.</td>
+<td>A call was made to a deprecated asset create or release method.  Asset creation and release is handled through the APEX SDK now.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Destruction Introduction</a><ul>
+<li><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li><a class="reference internal" href="#the-destruction-module">The Destruction Module</a></li>
+<li><a class="reference internal" href="#destructible-assets">Destructible Assets</a></li>
+<li><a class="reference internal" href="#destructible-actors">Destructible Actors</a><ul>
+<li><a class="reference internal" href="#actor-serialization-and-deserialization">Actor Serialization and Deserialization</a></li>
+<li><a class="reference internal" href="#setting-the-default-physx-descriptors">Setting the default PhysX descriptors</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#destructible-synchronization">Destructible Synchronization</a><ul>
+<li><a class="reference internal" href="#module-level-semantics">Module-level semantics</a></li>
+<li><a class="reference internal" href="#actor-level-semantics">Actor-level semantics</a></li>
+<li><a class="reference internal" href="#example-use-cases">Example use-cases</a></li>
+<li><a class="reference internal" href="#guidelines-and-caveats">Guidelines and Caveats</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#runtime-fracturing">Runtime Fracturing</a><ul>
+<li><a class="reference internal" href="#fracture-patterns">Fracture Patterns</a></li>
+<li><a class="reference internal" href="#parameters">Parameters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#fracture-callbacks">Fracture Callbacks</a></li>
+<li><a class="reference internal" href="#automatic-lod-destructible-benefit-and-cost-functions">Automatic LOD - Destructible Benefit and Cost Functions</a></li>
+<li><a class="reference internal" href="#rendering-considerations">Rendering Considerations</a><ul>
+<li><a class="reference internal" href="#render-proxy">Render Proxy</a></li>
+<li><a class="reference internal" href="#vtf-rendering">VTF Rendering</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#debug-visualization">Debug Visualization</a></li>
+<li><a class="reference internal" href="#errors-and-warnings">Errors and Warnings</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Index.html"
+                        title="previous chapter">APEX Destruction Module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Destruction_Authoring_with_PhysXLab.html"
+                        title="next chapter">Destruction Authoring with PhysXLab</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="Destruction_Authoring_with_PhysXLab.html" title="Destruction Authoring with PhysXLab"
+             >next</a></li>
+        <li class="right" >
+          <a href="Index.html" title="APEX Destruction Module"
+             >previous</a> |</li>
+        <li><a href="../index.html">NVIDIA APEX Documentation</a> &raquo;</li>
+          <li><a href="Index.html" >APEX Destruction Module</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012-2017, NVIDIA Corporation, All Rights Reserved.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.2.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,714 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Max_Retopo 1.5 | ScriptSpot</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="/cdn-cgi/apps/head/kNO_YeXV3Q6AeCYGZ_--NvxSfsE.js"></script><script type='text/javascript' src='//s7.addthis.com/js/250/addthis_widget.js#async=1'></script>
+<link rel="shortcut icon" href="/./favicon.ico" type="image/x-icon" />
+<link type="text/css" rel="stylesheet" media="all" href="http://www.scriptspot.com/files/css/css_037448fc5c954f0205d3289460c30a82.css" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/fusion/fusion_core/css/grid16-fluid.css?n" />
+<!--[if IE 8]>
+  <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/fusion/fusion_core/css/ie8-fixes.css?n" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/acquia_prosper/css/ie8-fixes.css?n" />
+  <![endif]-->
+<!--[if IE 7]>
+  <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/fusion/fusion_core/css/ie7-fixes.css?n" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/acquia_prosper/css/ie7-fixes.css?n" />
+  <![endif]-->
+<!--[if lte IE 6]>
+  <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/fusion/fusion_core/css/ie6-fixes.css?n"/>
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/acquia_prosper/css/ie6-fixes.css?n"/>
+  <![endif]-->
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/acquia_prosper/css/local.css?n" />
+<script type="text/javascript" src="http://www.scriptspot.com/files/js/js_a79d002ed8f6fc823797632c4144e7d4.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","addthis":{"config_default":{"services_toolbox":"email,facebook,twitter,compact","services_compact":"","services_expanded":"","ui_cobrand":"ScriptSpot","ui_header_color":"#000000","ui_header_background":"#FFFFFF","ui_click":0,"ui_delay":"","ui_use_addressbook":0,"pubid":"scriptspot","data_track_clickback":0,"data_ga_tracker":0,"ui_use_css":true,"data_use_cookies":false,"ui_language":"en","data_use_flash":false},"share_default":{"templates":{"twitter":""}}},"CToolsUrlIsAjaxTrusted":{"\/3ds-max\/scripts\/max-retopo-1-5":[true,true,true]},"googleanalytics":{"trackOutbound":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|avi|csv|doc|exe|flv|gif|gz|jpe?g|js|mp(3|4|e?g)|mov|pdf|phps|png|ppt|rar|sit|tar|torrent|txt|wma|wmv|xls|xml|zip|ms|mcr|mzp|mse|rb|py"}});
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+addthis_config = Drupal.settings.addthis.config_default; addthis_share = Drupal.settings.addthis.share_default;
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","/files/googleanalytics/analytics.js?n","ga");ga("create", "UA-921095-1", {"cookieDomain":"auto"});ga("send", "pageview");
+//--><!]]>
+</script>
+</head>
+<body id="pid-3ds-max-scripts-max-retopo-1-5" class="not-front not-logged-in page-node node-type-script no-sidebars full-node layout-first-main-last sidebars-split font-size-12 grid-type-fluid grid-width-16 fluid-100">
+
+<script type="text/javascript">
+(function(){
+  var bsa = document.createElement('script');
+     bsa.type = 'text/javascript';
+     bsa.async = true;
+     bsa.src = '//s3.buysellads.com/ac/bsa.js';
+  (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
+})();
+</script>
+
+<div id="page" class="page">
+<div id="page-inner" class="page-inner">
+<div id="skip">
+<a href="#main-content-area">Skip to Main Content Area</a>
+</div>
+
+<div id="header-top-wrapper" class="header-top-wrapper full-width">
+<div id="header-top" class="header-top-search header-top row grid16-16">
+<div id="header-top-inner" class="header-top-inner inner clearfix">
+<div id="secondary-menu" class="secondary-menu block">
+<div id="secondary-menu-inner" class="secondary-menu-inner inner clearfix">
+<ul class="links"><li class="menu-1658 first last"><a href="/user" title="Login to ScriptSpot">Login</a></li>
+</ul></div>
+</div>
+<div id="search-box" class="search-box block">
+<div id="search-box-inner" class="search-box-inner inner clearfix">
+<form action="/3ds-max/scripts/max-retopo-1-5" accept-charset="UTF-8" method="post" id="search-theme-form">
+<div>
+<div id="search">
+<div id="search-input">
+<input type="text" maxlength="128" name="search_theme_form" id="edit-search-theme-form-header" size="15" title="Enter the terms you wish to search for." value="Search..." onblur="if(this.value=='') this.value='Search...';" onfocus="if(this.value=='Search...') this.value='';" class="form-text" />
+</div>
+<div id="search-button">
+<input type="image" name="op" value="search" id="edit-submit-2" src="/sites/all/themes/acquia_prosper/images/search-icon.png" class="searchButtonPng" alt="Search" />
+</div>
+<input type="hidden" name="form_build_id" id="form-9HgloTPA9kOMr5Tf7G7GDNuC5R3lWrJiGCVuB7qX4LQ" value="form-9HgloTPA9kOMr5Tf7G7GDNuC5R3lWrJiGCVuB7qX4LQ" />
+<input type="hidden" name="form_id" id="edit-search-theme-form" value="search_theme_form" />
+</div>
+</div></form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="header-group-wrapper" class="header-group-wrapper full-width">
+<div id="header-group" class="header-group row grid16-16">
+<div id="header-group-inner" class="header-group-inner inner clearfix">
+<div id="header-site-info" class="header-site-info block">
+<div id="header-site-info-inner" class="header-site-info-inner inner clearfix">
+<div id="logo">
+<a href="/" title="Home"><img src="http://www.scriptspot.com/files/acquia_prosper_logo.gif" alt="Home" /></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="header-primary-menu-wrapper" class="header-primary-menu-wrapper full-width">
+<div id="header-primary-menu" class="header-primary-menu row grid16-16">
+<div id="header-primary-menu-inner" class="header-primary-menu-inner inner clearfix">
+<div id="primary-menu" class="primary-menu block">
+<div id="primary-menu-inner" class="primary-menu-inner inner clearfix">
+<ul class="menu sf-menu"><li class="leaf first"><a href="/" title="ScriptSpot home page">Home</a></li>
+<li class="expanded last"><a href="/3ds-max" title="3ds Max">3ds Max</a><ul class="menu"><li class="leaf first"><a href="/3ds-max/scripts" title="Scripts">Scripts</a></li>
+<li class="leaf"><a href="/3ds-max/mcg" title="Max Creation Graph (MCG)">MCG</a></li>
+<li class="leaf"><a href="/3ds-max/plugins" title="Plugins">Plugins</a></li>
+<li class="leaf"><a href="/3ds-max/tutorials" title="Tutorials">Tutorials</a></li>
+<li class="leaf"><a href="/3ds-max/news" title="News">News</a></li>
+<li class="leaf last"><a href="/forums/3ds-max" title="3ds Max Forums">Forums</a></li>
+</ul></li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="main-wrapper" class="main-wrapper full-width">
+<div id="main" class="main row grid16-16">
+<div id="main-inner" class="main-inner inner clearfix">
+<div id="sidebar-first" class="sidebar-first row nested grid16-3">
+<div id="sidebar-first-inner" class="sidebar-first-inner inner clearfix">
+<div id="block-block-10" class="block block-block odd first prosper-lightgraybackground-border grid16-16">
+<div class="inner clearfix">
+<h2 class="title block-title">About this site</h2>
+<div class="content clearfix">
+<p>ScriptSpot is a diverse online community of artists and developers who come together to find and share scripts that empower their creativity with 3ds Max. Our users come from all parts of the world and work in everything from visual effects to gaming, architecture, students or hobbyists. </p>
+<p><a href="/user/register">Register for free and be part of the community!</a></p>
+</div>
+</div>
+</div>
+<div id="block-apachesolr-mlt-004" class="block block-apachesolr even  last prosper-gray-rounded-style prosper-rounded-title grid16-16">
+<div class="inner clearfix">
+<h2 class="title block-title">More like this</h2>
+<div class="content clearfix">
+<div class="item-list"><ul><li class="first"><a href="/3ds-max/scripts/instant-meshes-bridge">Instant Meshes Bridge</a></li>
+<li><a href="/3ds-max/scripts/topologik">TopoLogiK</a></li>
+<li><a href="/3ds-max/scripts/box-creator">Box Creator</a></li>
+<li><a href="/3ds-max/scripts/resizeafterzbrush">ResizeAfterZBrush</a></li>
+<li><a href="/3ds-max/scripts/dynamax">Dynamax</a></li>
+<li class="last"><a href="/3ds-max/scripts/box-between-two-points">box between two points</a></li>
+</ul></div> </div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="main-group" class="main-group row nested grid16-13">
+<div id="main-group-inner" class="main-group-inner inner">
+<div id="main-content" class="main-content row nested">
+<div id="main-content-inner" class="main-content-inner inner">
+
+<div id="content-group" class="content-group row nested " style="width:69.23%">
+<div id="content-group-inner" class="content-group-inner inner">
+<div id="breadcrumbs" class="breadcrumbs block">
+<div id="breadcrumbs-inner" class="breadcrumbs-inner inner clearfix">
+<div class="breadcrumb"><a href="/">Home</a> &rarr; <a href="/3ds-max">3ds-max</a> &rarr; <a href="/3ds-max/scripts">Scripts</a> &rarr; Max_Retopo 1.5</div></div>
+</div>
+<div id="content-region" class="content-region row nested">
+<div id="content-region-inner" class="content-region-inner inner">
+<a name="main-content-area" id="main-content-area"></a>
+<div id="content-inner" class="content-inner block">
+<div id="content-inner-inner" class="content-inner-inner inner">
+<h1 class="title">Max_Retopo 1.5</h1>
+<div id="content-content" class="content-content">
+<div id="node-5100" class="node odd full-node node-type-script">
+<div class="inner">
+<div class="meta">
+<span class="submitted">Submitted by cyfer on Wed, 2009-04-08 16:46</span>
+</div>
+<div class="content clearfix">
+<div class="vud-widget vud-widget-updown" id="widget-node-5100">
+<div class="updown-score">
+<span class="updown-current-score">120</span>
+votes </div>
+</div>
+<div class="field field-type-text field-field-version">
+<div class="field-items">
+<div class="field-item odd">
+<div class="field-label-inline-first">
+Version:&nbsp;</div>
+1.5 </div>
+</div>
+</div>
+<div class="field field-type-text field-field-author-name">
+<div class="field-items">
+<div class="field-item odd">
+<div class="field-label-inline-first">
+Author Name:&nbsp;</div>
+Mohab Gamal </div>
+</div>
+</div>
+<p>
+<img src="/files/u761/untitled.png" alt="" width="638" height="595" />
+</p>
+<p>
+Videos : 
+</p>
+<p>
+<a href="http://www.youtube.com/watch?v=n724G7uMuPE" title="http://www.youtube.com/watch?v=n724G7uMuPE">http://www.youtube.com/watch?v=n724G7uMuPE</a>
+</p>
+<p>
+<a href="http://www.youtube.com/watch?v=u-icAsOZbJc" title="http://www.youtube.com/watch?v=u-icAsOZbJc">http://www.youtube.com/watch?v=u-icAsOZbJc</a>
+</p>
+<p>
+<a href="http://www.youtube.com/watch?v=SrhOiCHd-To" title="http://www.youtube.com/watch?v=SrhOiCHd-To">http://www.youtube.com/watch?v=SrhOiCHd-To</a>
+</p>
+<p>
+&nbsp;
+</p>
+<div class="field field-type-text field-field-additional-info">
+<div class="field-label">Additional Info:&nbsp;</div>
+<div class="field-items">
+<div class="field-item odd">
+<p>1.5 version<br />
+Should've been uploaded at least 3 years ago<br />
+Sorry for that </p>
+<p> --------Under Brush Mode -----------------</p>
+<p>-press alt and click near the verts to move them<br />
+-select Edge by pressing Shift<br />
+-Click after Selecting and it will extend the edge<br />
+-Selecting an Edge and then pressing Ctrl and selecting another one will bridge or<br />
+weld them<br />
+-Smart E is a feature to auto select the suitable edges for extending and<br />
+then clicking will extend them all<br />
+-there is a vertex color option to aid in working ... try it :)<br />
+-press F2 to toggle "Shade selected faces" or this option will not be helpful<br />
+-modifier keys at the bottom change the functions of alt , Ctrl , Shft<br />
+play with them .. some of them for collapsing edge rings and for removing edge loop</p>
+</div>
+</div>
+</div>
+<div class="field field-type-text field-field-requirement-version">
+<div class="field-items">
+<div class="field-item odd">
+<div class="field-label-inline-first">
+Version Requirement:&nbsp;</div>
+2008,2009 </div>
+</div>
+</div>
+<table id="attachments" class="sticky-enabled">
+<thead><tr><th>Attachment</th><th>Size</th> </tr></thead>
+<tbody>
+<tr class="odd"><td><a href="http://www.scriptspot.com/files/max_retopo_1.5__beta_4.rar">max_retopo_1.5__beta.rar</a></td><td>94.63 KB</td> </tr>
+<tr class="even"><td><a href="http://www.scriptspot.com/files/Max_Retopo.rar">Max_Retopo.rar</a></td><td>95.27 KB</td> </tr>
+</tbody>
+</table>
+</div>
+<div class="terms">
+<ul class="links inline"><li class="taxonomy_term_404 first"><a href="/software/3ds-max/scripts" rel="tag" title="3ds Max Script">Scripts</a></li>
+<li class="taxonomy_term_1326"><a href="/3ds-max/scripts/tags/mudbox" rel="tag" title="">MudBox</a></li>
+<li class="taxonomy_term_1324"><a href="/3ds-max/scripts/tags/remesh" rel="tag" title="">Remesh</a></li>
+<li class="taxonomy_term_1323"><a href="/3ds-max/scripts/tags/retopology" rel="tag" title="">Retopology</a></li>
+<li class="taxonomy_term_1325 last"><a href="/3ds-max/scripts/tags/zbrush" rel="tag" title="">Zbrush</a></li>
+</ul> </div>
+<div class="links">
+<ul class="links inline"><li class="comment_forbidden first"><span><a href="/user/login?destination=node%2F5100%23comment-form">Login</a> or <a href="/user/register?destination=node%2F5100%23comment-form">register</a> to post comments</span></li>
+<li class="addthis last"><span><div class='addthis_toolbox addthis_default_style addthis_32x32_style' addthis:url='http://www.scriptspot.com/3ds-max/scripts/max-retopo-1-5' addthis:title='Max_Retopo 1.5'><a class='addthis_toolbox_item addthis_button_email'></a><a class='addthis_toolbox_item addthis_button_facebook'></a><a class='addthis_toolbox_item addthis_button_twitter'></a><a class='addthis_toolbox_item addthis_button_compact'></a></div></span></li>
+</ul> </div>
+</div>
+</div>
+<div id="comments" class="comments block prosper-comments-edgy">
+<h2 class="comments-header">
+Comments </h2>
+<form action="/3ds-max/scripts/max-retopo-1-5" accept-charset="UTF-8" method="post" id="comment-controls">
+<div>
+<div class="box">
+<h2 class="title">Comment viewing options</h2>
+<div class="content"><div class="container-inline"><input type="hidden" name="form_build_id" id="form-VoxwzA9Bfi0grjRXNmYWWaL6vlPtcb0tOCtKoXz3Vrg" value="form-VoxwzA9Bfi0grjRXNmYWWaL6vlPtcb0tOCtKoXz3Vrg" />
+<input type="hidden" name="form_id" id="edit-comment-controls" value="comment_controls" />
+<div class="form-item" id="edit-mode-wrapper">
+<select name="mode" class="form-select" id="edit-mode"><option value="1">Flat list - collapsed</option><option value="2" selected="selected">Flat list - expanded</option><option value="3">Threaded list - collapsed</option><option value="4">Threaded list - expanded</option></select>
+</div>
+<div class="form-item" id="edit-order-wrapper">
+<select name="order" class="form-select" id="edit-order"><option value="1" selected="selected">Date - newest first</option><option value="2">Date - oldest first</option></select>
+</div>
+<div class="form-item" id="edit-comments-per-page-wrapper">
+<select name="comments_per_page" class="form-select" id="edit-comments-per-page"><option value="10" selected="selected">10 comments per page</option><option value="30">30 comments per page</option><option value="50">50 comments per page</option><option value="70">70 comments per page</option><option value="90">90 comments per page</option><option value="150">150 comments per page</option><option value="200">200 comments per page</option><option value="250">250 comments per page</option><option value="300">300 comments per page</option></select>
+</div>
+<input type="submit" name="op" id="edit-submit" value="Save settings" class="form-submit" />
+</div><div class="description">Select your preferred way to display the comments and click "Save settings" to activate your changes.</div></div>
+</div>
+</div></form>
+<a id="comment-28309"></a>
+<div class="comment-wrapper">
+<div class="comment odd clear-block withpicture">
+<div class="withpicture-column-left">
+<div class="picture">
+<img src="http://www.scriptspot.com/files/pictures/default_user_pic.png" alt="AndyW&#039;s picture" title="AndyW&#039;s picture" /></div>
+</div>
+<div class="withpicture-column-right">
+<div class="submitted">
+Submitted by AndyW on Mon, 2014-09-01 09:55. </div>
+<div class="content">
+<div class="comment-top-left"></div>
+<div class="content-inner">
+<h3 class="title"><a href="/3ds-max/scripts/max-retopo-1-5#comment-28309" class="active">error when installing</a></h3>
+<p>it works on 2014 but I do not have 2012 to test. Is there any way to get a different version to test on 2011? ... 2011 does not have nitrous viewport but your old script works, is this a requirement for this version of the script?</p>
+<div class="links">
+<ul class="links"><li class="comment_forbidden first last"><span><a href="/user/login?destination=node%2F5100%23comment-form">Login</a> or <a href="/user/register?destination=node%2F5100%23comment-form">register</a> to post comments</span></li>
+</ul> </div>
+</div>
+</div>
+</div>
+</div>
+</div><a id="comment-28207"></a>
+<div class="comment-wrapper">
+<div class="comment even comment-by-author clear-block withpicture">
+<div class="withpicture-column-left">
+<div class="picture">
+<img src="http://www.scriptspot.com/files/pictures/default_user_pic.png" alt="cyfer&#039;s picture" title="cyfer&#039;s picture" /></div>
+</div>
+<div class="withpicture-column-right">
+<div class="submitted">
+Submitted by cyfer on Thu, 2014-08-21 11:02. </div>
+<div class="content">
+<div class="comment-top-left"></div>
+<div class="content-inner">
+<h3 class="title"><a href="/3ds-max/scripts/max-retopo-1-5#comment-28207" class="active">2012v
+this is must be due to</a></h3>
+<p>2012v<br />
+this is must be due to Nitrous viewPort<br />
+I don't have 2011 any more , could you please test it on 2012 and tell me if it<br />
+has the same issue ?</p>
+<div class="links">
+<ul class="links"><li class="comment_forbidden first last"><span><a href="/user/login?destination=node%2F5100%23comment-form">Login</a> or <a href="/user/register?destination=node%2F5100%23comment-form">register</a> to post comments</span></li>
+</ul> </div>
+</div>
+</div>
+</div>
+</div>
+</div><a id="comment-28182"></a>
+<div class="comment-wrapper">
+<div class="comment odd clear-block withpicture">
+<div class="withpicture-column-left">
+<div class="picture">
+<img src="http://www.scriptspot.com/files/pictures/default_user_pic.png" alt="AndyW&#039;s picture" title="AndyW&#039;s picture" /></div>
+</div>
+<div class="withpicture-column-right">
+<div class="submitted">
+Submitted by AndyW on Wed, 2014-08-20 02:34. </div>
+<div class="content">
+<div class="comment-top-left"></div>
+<div class="content-inner">
+<h3 class="title"><a href="/3ds-max/scripts/max-retopo-1-5#comment-28182" class="active">install error.</a></h3>
+<p>Hi,</p>
+<p>Great script, I use the old version, however the latest version(1.5) gives an error when installing. I drag onto the viewport or use run script and I get the error message below.<br />
+(using max2011 32bit)</p>
+<p>---------------------------<br />
+MAXScript FileIn Exception<br />
+---------------------------<br />
+-- Unknown property: "isEnabled" in undefined<br />
+---------------------------<br />
+OK<br />
+---------------------------</p>
+<div class="links">
+<ul class="links"><li class="comment_forbidden first last"><span><a href="/user/login?destination=node%2F5100%23comment-form">Login</a> or <a href="/user/register?destination=node%2F5100%23comment-form">register</a> to post comments</span></li>
+</ul> </div>
+</div>
+</div>
+</div>
+</div>
+</div><a id="comment-27990"></a>
+<div class="comment-wrapper">
+<div class="comment even clear-block withpicture">
+<div class="withpicture-column-left">
+<div class="picture">
+<img src="http://www.scriptspot.com/files/pictures/picture-20183.jpg" alt="Nevil&#039;s picture" title="Nevil&#039;s picture" /></div>
+</div>
+<div class="withpicture-column-right">
+<div class="submitted">
+Submitted by Nevil on Thu, 2014-07-31 10:03. </div>
+<div class="content">
+<div class="comment-top-left"></div>
+<div class="content-inner">
+<h3 class="title"><a href="/3ds-max/scripts/max-retopo-1-5#comment-27990" class="active">Cool</a></h3>
+<p>Tank you for update ;)</p>
+<div class="links">
+<ul class="links"><li class="comment_forbidden first last"><span><a href="/user/login?destination=node%2F5100%23comment-form">Login</a> or <a href="/user/register?destination=node%2F5100%23comment-form">register</a> to post comments</span></li>
+</ul> </div>
+</div>
+</div>
+</div>
+</div>
+</div><a id="comment-27776"></a>
+<div class="comment-wrapper">
+<div class="comment odd comment-by-author clear-block withpicture">
+<div class="withpicture-column-left">
+<div class="picture">
+<img src="http://www.scriptspot.com/files/pictures/default_user_pic.png" alt="cyfer&#039;s picture" title="cyfer&#039;s picture" /></div>
+</div>
+<div class="withpicture-column-right">
+<div class="submitted">
+Submitted by cyfer on Fri, 2014-07-04 14:21. </div>
+<div class="content">
+<div class="comment-top-left"></div>
+<div class="content-inner">
+<h3 class="title"><a href="/3ds-max/scripts/max-retopo-1-5#comment-27776" class="active">there is undo mechanism..</a></h3>
+<p>there is undo mechanism.. sometimes max internal undo system doesn't allow it</p>
+<div class="links">
+<ul class="links"><li class="comment_forbidden first last"><span><a href="/user/login?destination=node%2F5100%23comment-form">Login</a> or <a href="/user/register?destination=node%2F5100%23comment-form">register</a> to post comments</span></li>
+</ul> </div>
+</div>
+</div>
+</div>
+</div>
+</div><a id="comment-26471"></a>
+<div class="comment-wrapper">
+<div class="comment even clear-block withpicture">
+<div class="withpicture-column-left">
+<div class="picture">
+<img src="http://www.scriptspot.com/files/pictures/picture-20183.jpg" alt="Nevil&#039;s picture" title="Nevil&#039;s picture" /></div>
+</div>
+<div class="withpicture-column-right">
+<div class="submitted">
+Submitted by Nevil on Sat, 2014-03-01 02:24. </div>
+<div class="content">
+<div class="comment-top-left"></div>
+<div class="content-inner">
+<h3 class="title"><a href="/3ds-max/scripts/max-retopo-1-5#comment-26471" class="active">Can you ?</a></h3>
+<p>Can you add Undo function for your great tool ?</p>
+<div class="links">
+<ul class="links"><li class="comment_forbidden first last"><span><a href="/user/login?destination=node%2F5100%23comment-form">Login</a> or <a href="/user/register?destination=node%2F5100%23comment-form">register</a> to post comments</span></li>
+</ul> </div>
+</div>
+</div>
+</div>
+</div>
+</div><a id="comment-22129"></a>
+<div class="comment-wrapper">
+<div class="comment odd clear-block withpicture">
+<div class="withpicture-column-left">
+<div class="picture">
+<img src="http://www.scriptspot.com/files/pictures/picture-20183.jpg" alt="Nevil&#039;s picture" title="Nevil&#039;s picture" /></div>
+</div>
+<div class="withpicture-column-right">
+<div class="submitted">
+Submitted by Nevil on Fri, 2013-05-10 22:51. </div>
+<div class="content">
+<div class="comment-top-left"></div>
+<div class="content-inner">
+<h3 class="title"><a href="/3ds-max/scripts/max-retopo-1-5#comment-22129" class="active">Greate </a></h3>
+<p>This is even better then the Topogun. faster and easer. but i think a regular close and Help button is better than attached text file for tutorial.</p>
+<p>thank you ;)</p>
+<div class="links">
+<ul class="links"><li class="comment_forbidden first last"><span><a href="/user/login?destination=node%2F5100%23comment-form">Login</a> or <a href="/user/register?destination=node%2F5100%23comment-form">register</a> to post comments</span></li>
+</ul> </div>
+</div>
+</div>
+</div>
+</div>
+</div><a id="comment-20709"></a>
+<div class="comment-wrapper">
+<div class="comment even clear-block withpicture">
+<div class="withpicture-column-left">
+<div class="picture">
+<img src="http://www.scriptspot.com/files/pictures/picture-43328.gif" alt="Nik&#039;s picture" title="Nik&#039;s picture" /></div>
+</div>
+<div class="withpicture-column-right">
+<div class="submitted">
+Submitted by Nik on Fri, 2013-02-15 05:31. </div>
+<div class="content">
+<div class="comment-top-left"></div>
+<div class="content-inner">
+<h3 class="title"><a href="/3ds-max/scripts/max-retopo-1-5#comment-20709" class="active">Useful script!</a></h3>
+<p>Useful script!<br />
+But:<br />
+1)It is strange why you have not created mcr file that registers these tools in 3dsmax?<br />
+Now, who needs - I created him<br />
+So: Max_Retopo.mse copy to Scripts folder<br />
+And Max_Retopo.ms drop to viewport<br />
+to find - category "Max Retopo"<br />
+Author, can include this file in the archive.<br />
+2)Did not immediately find a way to close the tools. Helps shotcut Alt + F4<br />
+Enjoy :)</p>
+<p>In the 2012 version of 3dsmax normal flight.</p>
+<table class="comment-upload-attachments">
+<thead>
+<tr><th>Attachment</th><th>Size</th></tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td class="attachment-description"><a href="http://www.scriptspot.com/files/max_retopo.ms">max_retopo.ms</a></td>
+<td class="attachment-size">272 bytes</td>
+</tr>
+</tbody>
+</table>
+<div class="links">
+<ul class="links"><li class="comment_forbidden first last"><span><a href="/user/login?destination=node%2F5100%23comment-form">Login</a> or <a href="/user/register?destination=node%2F5100%23comment-form">register</a> to post comments</span></li>
+</ul> </div>
+</div>
+</div>
+</div>
+</div>
+</div><a id="comment-13694"></a>
+<div class="comment-wrapper">
+<div class="comment odd clear-block withpicture">
+<div class="withpicture-column-left">
+<div class="picture">
+<img src="http://www.scriptspot.com/files/pictures/picture-27710.gif" alt="camorsildecarper&#039;s picture" title="camorsildecarper&#039;s picture" /></div>
+</div>
+<div class="withpicture-column-right">
+<div class="submitted">
+Submitted by camorsildecarper on Fri, 2011-10-07 01:14. </div>
+<div class="content">
+<div class="comment-top-left"></div>
+<div class="content-inner">
+<h3 class="title"><a href="/3ds-max/scripts/max-retopo-1-5#comment-13694" class="active">where 1.5?</a></h3>
+<p>i´m looking forward to 1.5 version</p>
+<div class="links">
+<ul class="links"><li class="comment_forbidden first last"><span><a href="/user/login?destination=node%2F5100%23comment-form">Login</a> or <a href="/user/register?destination=node%2F5100%23comment-form">register</a> to post comments</span></li>
+</ul> </div>
+</div>
+</div>
+</div>
+</div>
+</div><a id="comment-13007"></a>
+<div class="comment-wrapper">
+<div class="comment even comment-by-author clear-block withpicture">
+<div class="withpicture-column-left">
+<div class="picture">
+<img src="http://www.scriptspot.com/files/pictures/default_user_pic.png" alt="cyfer&#039;s picture" title="cyfer&#039;s picture" /></div>
+</div>
+<div class="withpicture-column-right">
+<div class="submitted">
+Submitted by cyfer on Fri, 2011-08-26 15:32. </div>
+<div class="content">
+<div class="comment-top-left"></div>
+<div class="content-inner">
+<h3 class="title"><a href="/3ds-max/scripts/max-retopo-1-5#comment-13007" class="active">2-3 weeks maximum and v1.5</a></h3>
+<p>2-3 weeks maximum and v1.5 will be published<br />
+i'm sorry , i got busy and forgot about publishing v1.5</p>
+<p>thank you all for the kind words</p>
+<p>Mohab</p>
+<div class="links">
+<ul class="links"><li class="comment_forbidden first last"><span><a href="/user/login?destination=node%2F5100%23comment-form">Login</a> or <a href="/user/register?destination=node%2F5100%23comment-form">register</a> to post comments</span></li>
+</ul> </div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="item-list"><ul class="pager"><li class="pager-current first">1</li>
+<li class="pager-item"><a href="/3ds-max/scripts/max-retopo-1-5?page=1" title="Go to page 2" class="active">2</a></li>
+<li class="pager-item"><a href="/3ds-max/scripts/max-retopo-1-5?page=2" title="Go to page 3" class="active">3</a></li>
+<li class="pager-item"><a href="/3ds-max/scripts/max-retopo-1-5?page=3" title="Go to page 4" class="active">4</a></li>
+<li class="pager-next"><a href="/3ds-max/scripts/max-retopo-1-5?page=1" title="Go to next page" class="active">next ›</a></li>
+<li class="pager-last last"><a href="/3ds-max/scripts/max-retopo-1-5?page=3" title="Go to last page" class="active">last »</a></li>
+</ul></div><form action="/3ds-max/scripts/max-retopo-1-5" accept-charset="UTF-8" method="post" id="comment-controls-1">
+<div>
+<div class="box">
+<h2 class="title">Comment viewing options</h2>
+<div class="content"><div class="container-inline"><input type="hidden" name="form_build_id" id="form-P001oAottmCVkgVOovd-Bx44DZ6hAOkCXvN6c_KHmeg" value="form-P001oAottmCVkgVOovd-Bx44DZ6hAOkCXvN6c_KHmeg" />
+<input type="hidden" name="form_id" id="edit-comment-controls-1" value="comment_controls" />
+<div class="form-item" id="edit-mode-1-wrapper">
+<select name="mode" class="form-select" id="edit-mode-1"><option value="1">Flat list - collapsed</option><option value="2" selected="selected">Flat list - expanded</option><option value="3">Threaded list - collapsed</option><option value="4">Threaded list - expanded</option></select>
+</div>
+<div class="form-item" id="edit-order-1-wrapper">
+<select name="order" class="form-select" id="edit-order-1"><option value="1" selected="selected">Date - newest first</option><option value="2">Date - oldest first</option></select>
+</div>
+<div class="form-item" id="edit-comments-per-page-1-wrapper">
+<select name="comments_per_page" class="form-select" id="edit-comments-per-page-1"><option value="10" selected="selected">10 comments per page</option><option value="30">30 comments per page</option><option value="50">50 comments per page</option><option value="70">70 comments per page</option><option value="90">90 comments per page</option><option value="150">150 comments per page</option><option value="200">200 comments per page</option><option value="250">250 comments per page</option><option value="300">300 comments per page</option></select>
+</div>
+<input type="submit" name="op" id="edit-submit-1" value="Save settings" class="form-submit" />
+</div><div class="description">Select your preferred way to display the comments and click "Save settings" to activate your changes.</div></div>
+</div>
+</div></form>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="sidebar-last" class="sidebar-last row nested " style="width:30.77%">
+<div id="sidebar-last-inner" class="sidebar-last-inner inner clearfix">
+<div id="block-tagadelic-0" class="block block-tagadelic odd first fusion-list-vertical-spacing prosper-gray-rounded-plain prosper-rounded-title grid16-16">
+<div class="inner clearfix">
+<h2 class="title block-title">Tagged With</h2>
+<div class="content clearfix">
+<div class="item-list"><h3><a href="/tagadelic/chunk/1">3ds Max Script Tags</a></h3><ul><li class="first"><a href="/3ds-max/scripts/tags/mudbox" title="view all posts tagged with &quot;MudBox&quot;">MudBox</a></li>
+<li><a href="/3ds-max/scripts/tags/remesh" title="view all posts tagged with &quot;Remesh&quot;">Remesh</a></li>
+<li><a href="/3ds-max/scripts/tags/retopology" title="view all posts tagged with &quot;Retopology&quot;">Retopology</a></li>
+<li class="last"><a href="/3ds-max/scripts/tags/zbrush" title="view all posts tagged with &quot;Zbrush&quot;">Zbrush</a></li>
+</ul></div> </div>
+</div>
+</div>
+<div id="block-tagadelic-1" class="block block-tagadelic even  fusion-list-vertical-spacing prosper-gray-rounded-plain prosper-rounded-title grid16-16">
+<div class="inner clearfix">
+<h2 class="title block-title">Tags</h2>
+<div class="content clearfix">
+<a href="/3ds-max/scripts/tags/3ds-max" class="tagadelic level2" rel="tag" title="">3ds max</a>
+<a href="/3ds-max/scripts/tags/3dsmax" class="tagadelic level3" rel="tag" title="">3dsmax</a>
+<a href="/3ds-max/scripts/tags/align" class="tagadelic level2" rel="tag" title="">align</a>
+<a href="/3ds-max/scripts/tags/animation" class="tagadelic level6" rel="tag" title="">Animation</a>
+<a href="/3ds-max/scripts/tags/anubis" class="tagadelic level2" rel="tag" title="">anubis</a>
+<a href="/3ds-max/scripts/tags/camera" class="tagadelic level2" rel="tag" title="">camera</a>
+<a href="/3ds-max/scripts/tags/cameras" class="tagadelic level2" rel="tag" title="">Cameras</a>
+<a href="/3ds-max/scripts/tags/characters" class="tagadelic level4" rel="tag" title="">Characters</a>
+<a href="/3ds-max/scripts/tags/color" class="tagadelic level1" rel="tag" title="">Color</a>
+<a href="/3ds-max/scripts/tags/controllers" class="tagadelic level1" rel="tag" title="">Controllers</a>
+<a href="/3ds-max/scripts/tags/export" class="tagadelic level1" rel="tag" title="">export</a>
+<a href="/3ds-max/scripts/tags/i/o" class="tagadelic level3" rel="tag" title="">I/O</a>
+<a href="/3ds-max/scripts/tags/import" class="tagadelic level1" rel="tag" title="">import</a>
+<a href="/3ds-max/scripts/tags/lights" class="tagadelic level2" rel="tag" title="">Lights</a>
+<a href="/3ds-max/scripts/tags/manager" class="tagadelic level1" rel="tag" title="">manager</a>
+<a href="/3ds-max/scripts/tags/material" class="tagadelic level5" rel="tag" title="">Material</a>
+<a href="/3ds-max/scripts/tags/materials" class="tagadelic level1" rel="tag" title="">materials</a>
+<a href="/3ds-max/scripts/tags/max-0" class="tagadelic level1" rel="tag" title="">max</a>
+<a href="/3ds-max/scripts/tags/maxscript" class="tagadelic level2" rel="tag" title="">maxscript</a>
+<a href="/3ds-max/scripts/tags/mental-ray" class="tagadelic level1" rel="tag" title="">mental ray</a>
+<a href="/3ds-max/scripts/tags/misc" class="tagadelic level4" rel="tag" title="">Misc</a>
+<a href="/3ds-max/scripts/tags/modeling" class="tagadelic level6" rel="tag" title="">modeling</a>
+<a href="/3ds-max/scripts/tags/modifier" class="tagadelic level3" rel="tag" title="">modifier</a>
+<a href="/3ds-max/scripts/tags/object" class="tagadelic level2" rel="tag" title="">object</a>
+<a href="/3ds-max/scripts/tags/objects" class="tagadelic level3" rel="tag" title="">Objects</a>
+<a href="/3ds-max/scripts/tags/particles" class="tagadelic level1" rel="tag" title="">Particles</a>
+<a href="/3ds-max/scripts/tags/plugin" class="tagadelic level1" rel="tag" title="">plugin</a>
+<a href="/3ds-max/scripts/tags/poly" class="tagadelic level2" rel="tag" title="">Poly</a>
+<a href="/3ds-max/scripts/tags/random" class="tagadelic level1" rel="tag" title="">random</a>
+<a href="/3ds-max/scripts/tags/render" class="tagadelic level4" rel="tag" title="">render</a>
+<a href="/3ds-max/scripts/tags/rendering" class="tagadelic level5" rel="tag" title="">Rendering</a>
+<a href="/3ds-max/scripts/tags/rig" class="tagadelic level1" rel="tag" title="">Rig</a>
+<a href="/3ds-max/scripts/tags/rigging" class="tagadelic level1" rel="tag" title="">rigging</a>
+<a href="/3ds-max/scripts/tags/scale" class="tagadelic level1" rel="tag" title="">scale</a>
+<a href="/3ds-max/scripts/tags/script" class="tagadelic level3" rel="tag" title="">script</a>
+<a href="/3ds-max/scripts/tags/select" class="tagadelic level1" rel="tag" title="">select</a>
+<a href="/3ds-max/scripts/tags/selection" class="tagadelic level2" rel="tag" title="">selection</a>
+<a href="/3ds-max/scripts/tags/skin" class="tagadelic level1" rel="tag" title="">skin</a>
+<a href="/3ds-max/scripts/tags/spline" class="tagadelic level4" rel="tag" title="">spline</a>
+<a href="/3ds-max/scripts/tags/texture" class="tagadelic level1" rel="tag" title="">texture</a>
+<a href="/3ds-max/scripts/tags/tool" class="tagadelic level2" rel="tag" title="">tool</a>
+<a href="/3ds-max/scripts/tags/tools" class="tagadelic level4" rel="tag" title="">Tools</a>
+<a href="/3ds-max/scripts/tags/transform" class="tagadelic level2" rel="tag" title="">transform</a>
+<a href="/3ds-max/scripts/tags/ui" class="tagadelic level1" rel="tag" title="">UI</a>
+<a href="/3ds-max/scripts/tags/utility" class="tagadelic level1" rel="tag" title="">utility</a>
+<a href="/3ds-max/scripts/tags/uvw" class="tagadelic level3" rel="tag" title="">UVW</a>
+<a href="/3ds-max/scripts/tags/vertex" class="tagadelic level1" rel="tag" title="">vertex</a>
+<a href="/3ds-max/scripts/tags/viewport" class="tagadelic level2" rel="tag" title="">viewport</a>
+<a href="/3ds-max/scripts/tags/vray" class="tagadelic level4" rel="tag" title="">VRay</a>
+<a href="/3ds-max/scripts/tags/workflow" class="tagadelic level2" rel="tag" title="">workflow</a>
+<div class='more-link'><a href="/tagadelic/chunk/1">more tags</a></div> </div>
+</div>
+</div>
+<div id="block-block-20" class="block block-block odd   grid16-16">
+<div class="inner clearfix">
+<div class="content clearfix">
+
+<div id="bsap_1246374" class="bsarocks bsap_457dd1eb85bb82e0a7a5fa8772ece7e0"></div>
+ </div>
+</div>
+</div>
+<div id="block-block-28" class="block block-block even  last  grid16-16">
+<div class="inner clearfix">
+<div class="content clearfix">
+
+<div id="bsap_1293035" class="bsarocks bsap_457dd1eb85bb82e0a7a5fa8772ece7e0"></div>
+ </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="footer-wrapper" class="footer-wrapper full-width">
+<div id="footer" class="footer row grid16-16">
+<div id="footer-inner" class="footer-inner inner clearfix">
+<div id="block-block-1" class="block block-block odd first last  grid16-16">
+<div class="inner clearfix">
+<div class="content clearfix">
+<p><a href="/">Home</a> | <a href="/about">About</a> | <a href="http://buysellads.com/buy/detail/23468">Advertise</a> | <a href="/disclaimer">Disclaimer</a> | <a href="/site-map">Site Map</a> | <a href="/contact">Contact</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="footer-message-wrapper" class="footer-message-wrapper full-width">
+<div id="footer-message" class="footer-message row grid16-16">
+<div id="footer-message-inner" class="footer-message-inner inner clearfix">
+<div id="footer-message-text" class="footer-message-text block">
+<div id="footer-message-text-inner" class="footer-message-text-inner inner clearfix">
+ScriptSpot was created by <a href='http://www.christophergrant.com'>Christopher Grant</a> - powered by <a href='http://www.drupal.org'>Drupal</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+if (typeof addthis != "undefined") {addthis.init();}
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"CToolsAJAX":{"scripts":{"\/misc\/jquery.js":true,"\/misc\/drupal.js":true,"\/misc\/tableheader.js":true,"\/sites\/all\/modules\/ctools\/js\/ajax-responder.js":true,"\/sites\/all\/modules\/google_analytics\/googleanalytics.js":true},"css":{"\/modules\/node\/node.css":true,"\/modules\/poll\/poll.css":true,"\/modules\/system\/defaults.css":true,"\/modules\/system\/system.css":true,"\/modules\/system\/system-menus.css":true,"\/modules\/user\/user.css":true,"\/sites\/all\/modules\/cck\/theme\/content-module.css":true,"\/sites\/all\/modules\/ctools\/css\/ctools.css":true,"\/sites\/all\/modules\/date\/date.css":true,"\/sites\/all\/modules\/filefield\/filefield.css":true,"\/sites\/all\/modules\/follow\/follow.css":true,"\/sites\/all\/modules\/geshifilter\/geshifilter.css":true,"\/sites\/all\/modules\/tagadelic\/tagadelic.css":true,"\/modules\/forum\/forum.css":true,"\/sites\/all\/modules\/cck\/modules\/fieldgroup\/fieldgroup.css":true,"\/sites\/all\/modules\/views\/css\/views.css":true,"\/sites\/all\/modules\/vote_up_down\/widgets\/updown\/updown.css":true,"\/modules\/comment\/comment.css":true,"\/sites\/all\/themes\/fusion\/fusion_core\/css\/style.css":true,"\/sites\/all\/themes\/fusion\/fusion_core\/css\/typography.css":true,"\/sites\/all\/themes\/fusion\/fusion_core\/css\/superfish.css":true,"\/sites\/all\/themes\/fusion\/fusion_core\/css\/superfish-navbar.css":true,"\/sites\/all\/themes\/fusion\/fusion_core\/css\/superfish-vertical.css":true,"\/sites\/all\/themes\/acquia_prosper\/css\/acquia-prosper-style.css":true,"\/sites\/all\/themes\/acquia_prosper\/design_packs\/gray\/gray.css":true}}});
+//--><!]]>
+</script>
+</body>
+</html>

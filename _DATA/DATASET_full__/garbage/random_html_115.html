@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+	<meta charset="UTF-8" />
+	<title>UE4 - Make AI Rotate Smoothly (Avoid Snapping) - Dream Bot Studios</title>
+			
+	
+	<link rel="pingback" href="http://www.dreambotstudios.com/xmlrpc.php" />
+
+		<!--[if lt IE 9]>
+		<script src="http://www.dreambotstudios.com/wp-content/themes/Fusion/js/html5.js&quot;" type="text/javascript"></script>
+	<![endif]-->
+
+	<script type="text/javascript">
+		document.documentElement.className = 'js';
+	</script>
+
+	
+<!-- This site is optimized with the Yoast SEO plugin v11.7 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="http://www.dreambotstudios.com/ue4-make-ai-rotate-smoothly-avoid-snapping/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="UE4 - Make AI Rotate Smoothly (Avoid Snapping) - Dream Bot Studios" />
+<meta property="og:description" content="Purpose: The Purpose of this procedure is to understand how to make an AI character in Unreal Engine 4, rotate smoothly to avoid snapping when the AI character changes direction. In The Character Component &#8211; Uncheck Orient to Rotation Movement In The Characters Movement Component &#8211; Check Orient Rotation To Movement Below are the steps &hellip;" />
+<meta property="og:url" content="http://www.dreambotstudios.com/ue4-make-ai-rotate-smoothly-avoid-snapping/" />
+<meta property="og:site_name" content="Dream Bot Studios" />
+<meta property="article:section" content="Procedures" />
+<meta property="article:published_time" content="2015-11-27T22:30:24+00:00" />
+<meta property="article:modified_time" content="2015-12-08T15:47:03+00:00" />
+<meta property="og:updated_time" content="2015-12-08T15:47:03+00:00" />
+<meta property="og:image" content="http://www.dreambotstudios.com/wp-content/uploads/2015/11/UE4_AI_Smooth_Rotation-1024x532.gif" />
+<meta property="og:image:width" content="1024" />
+<meta property="og:image:height" content="532" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"http://www.dreambotstudios.com/#website","url":"http://www.dreambotstudios.com/","name":"Dream Bot Studios","potentialAction":{"@type":"SearchAction","target":"http://www.dreambotstudios.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"http://www.dreambotstudios.com/ue4-make-ai-rotate-smoothly-avoid-snapping/#primaryimage","url":"http://www.dreambotstudios.com/wp-content/uploads/2015/11/UE4_AI_Smooth_Rotation.gif","width":2545,"height":1321},{"@type":"WebPage","@id":"http://www.dreambotstudios.com/ue4-make-ai-rotate-smoothly-avoid-snapping/#webpage","url":"http://www.dreambotstudios.com/ue4-make-ai-rotate-smoothly-avoid-snapping/","inLanguage":"en-US","name":"UE4 - Make AI Rotate Smoothly (Avoid Snapping) - Dream Bot Studios","isPartOf":{"@id":"http://www.dreambotstudios.com/#website"},"primaryImageOfPage":{"@id":"http://www.dreambotstudios.com/ue4-make-ai-rotate-smoothly-avoid-snapping/#primaryimage"},"datePublished":"2015-11-27T22:30:24+00:00","dateModified":"2015-12-08T15:47:03+00:00","author":{"@id":"http://www.dreambotstudios.com/#/schema/person/483afee174d1e78f712a4e3758d722ba"}},{"@type":["Person"],"@id":"http://www.dreambotstudios.com/#/schema/person/483afee174d1e78f712a4e3758d722ba","name":"Markus","image":{"@type":"ImageObject","@id":"http://www.dreambotstudios.com/#authorlogo","url":"http://1.gravatar.com/avatar/46daafe6fb3155dceddc9d3430485e19?s=96&d=mm&r=g","caption":"Markus"},"description":"Serial entrepreneur who created the League of Extra Ordinary Entrepreneurs.","sameAs":[]}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Dream Bot Studios &raquo; Feed" href="http://www.dreambotstudios.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Dream Bot Studios &raquo; Comments Feed" href="http://www.dreambotstudios.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Dream Bot Studios &raquo; UE4 &#8211; Make AI Rotate Smoothly (Avoid Snapping) Comments Feed" href="http://www.dreambotstudios.com/ue4-make-ai-rotate-smoothly-avoid-snapping/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.dreambotstudios.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.7"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<meta content="ElegantFusion v.2.3" name="generator"/><style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='http://www.dreambotstudios.com/wp-includes/css/dist/block-library/style.min.css?ver=5.2.7' type='text/css' media='all' />
+<link rel='stylesheet' id='fusion-fonts-css'  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,800italic,400,300,700,800&#038;subset=latin,latin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='et-gf-source-sans-pro-css'  href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900,900italic&#038;subset=latin,latin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='fusion-style-css'  href='http://www.dreambotstudios.com/wp-content/themes/Fusion/style.css?ver=5.2.7' type='text/css' media='all' />
+<link rel='stylesheet' id='et_lb_modules-css'  href='http://www.dreambotstudios.com/wp-content/plugins/elegantbuilder/style.css?ver=2.4' type='text/css' media='all' />
+<link rel='stylesheet' id='et-shortcodes-css-css'  href='http://www.dreambotstudios.com/wp-content/themes/Fusion/epanel/shortcodes/css/shortcodes.css?ver=3.0' type='text/css' media='all' />
+<link rel='stylesheet' id='et-shortcodes-responsive-css-css'  href='http://www.dreambotstudios.com/wp-content/themes/Fusion/epanel/shortcodes/css/shortcodes_responsive.css?ver=3.0' type='text/css' media='all' />
+<link rel='stylesheet' id='fancybox-css'  href='http://www.dreambotstudios.com/wp-content/themes/Fusion/epanel/page_templates/js/fancybox/jquery.fancybox-1.3.4.css?ver=1.3.4' type='text/css' media='screen' />
+<link rel='stylesheet' id='et_page_templates-css'  href='http://www.dreambotstudios.com/wp-content/themes/Fusion/epanel/page_templates/page_templates.css?ver=1.8' type='text/css' media='screen' />
+<script type='text/javascript' src='http://www.dreambotstudios.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp'></script>
+<script type='text/javascript' src='http://www.dreambotstudios.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='http://www.dreambotstudios.com/wp-content/plugins/wp-hide-post/public/js/wp-hide-post-public.js?ver=2.0.10'></script>
+<link rel='https://api.w.org/' href='http://www.dreambotstudios.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.dreambotstudios.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.dreambotstudios.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.2.7" />
+<link rel='shortlink' href='http://www.dreambotstudios.com/?p=1139' />
+<link rel="alternate" type="application/json+oembed" href="http://www.dreambotstudios.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.dreambotstudios.com%2Fue4-make-ai-rotate-smoothly-avoid-snapping%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://www.dreambotstudios.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.dreambotstudios.com%2Fue4-make-ai-rotate-smoothly-avoid-snapping%2F&#038;format=xml" />
+		<style>
+			#breadcrumbs, .read-more span, .testimonial span.title, .entry .meta-info, .entry .meta-info a, .entry .meta-info a:hover, .subtitle, .comment_date, .comment-reply-link:before, .bottom-nav li.current_page_item a, #content .wp-pagenavi .nextpostslink, #content .wp-pagenavi .previouspostslink { color: #c3e54b; }
+			.mobile_nav { border-color: #c3e54b; }
+			#top-menu a .menu-highlight, #mobile_menu  .menu-highlight { background-color: #c3e54b; }
+			a { color: #FFA300; }
+			body, .footer-widget { color: #454545; }
+			h1, h2, h3, h4, h5, h6, .testimonial h2, #recent-updates h2, .recent-update h3 a, .footer-widget h4.widgettitle, .widget h4.widgettitle, .entry h2.title a, h1.title, #comments, #reply-title { color: #454545; }
+
+		h1, h2, h3, h4, h5, h6, .read-more, .testimonial .title, .entry .meta-info, .subtitle, .wp-pagenavi, .comment_postinfo, .comment-reply-link, .form-submit #submit { font-family: 'Source Sans Pro', Helvetica, Arial, Lucida, sans-serif; }body { font-family: 'Source Sans Pro', Helvetica, Arial, Lucida, sans-serif; }		</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />	<style>
+		#top-area, #footer-bottom { background-image: url(http://www.dreambotstudios.com/wp-content/uploads/2013/09/Space.png); }
+	</style>
+<!-- Google Analytics DBS Account -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-33916334-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+<meta name="google-site-verification" content="1iGzR8HiaCQ778-9BpKXa_wwZz4phOBbCaMEw4ZNsJE" />
+
+<!-- TradeDoubler site verification 2262714 -->
+
+<!-- Pinterest Site Verifier -->
+<meta name="p:domain_verify" content="06145f209d5142ffd829700edbb48682"/>
+
+<!-- Cross Domain jQuery -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function() {
+// Add onClick _link to all <a> elements on page where href contains example-B.co.uk
+$("a[href*='secure.ultracart.com']").click(function() {
+_gaq.push(['_link', this.href]);
+return false;
+});
+
+// Add onSubmit _linkByPost to all <form> elements on page where action contains example-B.co.uk
+$("form[action*='secure.ultracart.com']").attr("onSubmit","_gaq.push(['_linkByPost', this])");
+});
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount','UA-31318309-7']);
+_gaq.push(['_setAllowLinker', true]);
+ga('require', 'displayfeatures');
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+//]]>
+</script>
+
+<!-- Index Games from Google Play -->
+<meta name="google-site-verification" content="D2Kqh_MXUB8lBLb7m5UA6AMzCW3PfEE6v_4Zw18TRGM" /><style type="text/css" id="et-custom-css">
+.page-title-area {
+display: none;
+}
+#top-area {
+padding-bottom: 10px;
+}
+#content {padding-top: 15px;}
+</style></head>
+<body class="post-template-default single single-post postid-1139 single-format-standard chrome et_includes_sidebar">
+		<header id="main-header">
+		<div id="top-area">
+			<div class="top-content container clearfix">
+								<a href="http://www.dreambotstudios.com/"><img src="http://www.dreambotstudios.com/wp-content/uploads/2013/09/dbs_logo-e1378499144200.png" alt="Dream Bot Studios" id="logo"/></a>
+
+				<div id="et_mobile_nav_menu"><a href="#" class="mobile_nav closed">Navigation Menu<span></span></a></div>
+				<div id="menu-wrap">
+					<nav id="top-menu">
+					<ul id="menu-main-nav-bar" class="nav"><li id="menu-item-30" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-30"><a href="http://dreambotstudios.com">Home</a></li>
+<li id="menu-item-31" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31"><a href="http://www.dreambotstudios.com/games/">Games</a></li>
+<li id="menu-item-200" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-200"><a href="http://www.dreambotstudios.com/blog/">Blog</a></li>
+<li id="menu-item-690" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-690"><a href="http://www.dreambotstudios.com/indie-insights/">Indie Insights</a></li>
+<li id="menu-item-33" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33"><a href="http://www.dreambotstudios.com/company/">Company</a></li>
+<li id="menu-item-34" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34"><a href="http://www.dreambotstudios.com/support/">Contact</a></li>
+</ul>					</nav> <!-- #top-menu -->
+
+					<ul id="social-icons">
+					<li><a href="http://Twitter.com/DreamBotStudios" target="_blank"><img src="http://www.dreambotstudios.com/wp-content/themes/Fusion/images/twitter.png" alt="Twitter" /></a></li><li><a href="http://www.dreambotstudios.com/feed/" target="_blank"><img src="http://www.dreambotstudios.com/wp-content/themes/Fusion/images/rss.png" alt="Rss" /></a></li><li><a href="http://Facebook.com/DreamBotStudios" target="_blank"><img src="http://www.dreambotstudios.com/wp-content/themes/Fusion/images/facebook.png" alt="Facebook" /></a></li>					</ul> <!-- #social-icons -->
+				</div> <!-- #menu-wrap -->
+			<div class="page-title-area">
+	<h1>UE4 &#8211; Make AI Rotate Smoothly (Avoid Snapping)</h1>
+</div> <!-- .page-title-area -->			</div> <!-- .container -->
+		</div> <!-- #top-area -->
+
+		
+			<div id="breadcrumbs-wrapper">
+			<div class="container clearfix">
+				<div id="et-search-form">
+					<form method="get" class="searchform" action="http://www.dreambotstudios.com//">
+						<input type="text" value="Search This Site..." name="s" id="search_input" />
+						<input type="image" alt="Submit" src="http://www.dreambotstudios.com/wp-content/themes/Fusion/images/search-icon.png" id="search_submit" />
+					</form>
+				</div> <!-- #et-search-form -->
+
+				<div id="breadcrumbs">
+					<a href="http://www.dreambotstudios.com/" class="breadcrumbs_home">Home</a> <span class="raquo">&raquo;</span>
+
+									<a href="http://www.dreambotstudios.com/category/procedures/">Procedures</a> <span class="raquo">&raquo;</span> UE4 &#8211; Make AI Rotate Smoothly (Avoid Snapping)					</div> <!-- #breadcrumbs -->			</div> <!-- .container -->
+		</div> <!-- #breadcrumbs-wrapper -->
+		</header> <!-- #main-header -->
+
+<div id="content">
+	<div class="container clearfix">
+		<div id="left-area">
+			
+			
+				
+<article id="post-1139" class="clearfix entry entry-content post-1139 post type-post status-publish format-standard has-post-thumbnail hentry category-procedures category-unreal-engine">
+	<h1 class="title">UE4 &#8211; Make AI Rotate Smoothly (Avoid Snapping)</h1>
+<p class="meta-info">Posted  by <a href="http://www.dreambotstudios.com/author/admin/" title="Posts by Markus" rel="author">Markus</a></p>
+
+<p><strong>Purpose: </strong>The Purpose of this procedure is to understand how to make an AI character in Unreal Engine 4, rotate smoothly to avoid snapping when the AI character changes direction.</p>
+<ol>
+<li>In The <strong>Character Component</strong> &#8211; Uncheck <strong>Orient to Rotation Movement</strong></li>
+<li>In The Characters <strong>Movement Component</strong> &#8211; Check <strong>Orient Rotation To Movement</strong></li>
+</ol>
+<p>Below are the steps on how to do the process in a AI Enemy Character.</p>
+<p><a href="http://www.dreambotstudios.com/wp-content/uploads/2015/11/UE4_AI_Smooth_Rotation.gif"><img class="aligncenter wp-image-1140 size-full" src="http://www.dreambotstudios.com/wp-content/uploads/2015/11/UE4_AI_Smooth_Rotation.gif" alt="UE4_AI_Smooth_Rotation" width="2545" height="1321" /></a></p>
+<p>&nbsp;</p>
+</article> <!-- end .post-->
+				<!-- You can start editing here. -->
+
+<section id="comment-wrap">
+			
+					<ol class="commentlist clearfix">
+				<h1 id="comments" class="page_title">2 Comments</h1>
+					<li class="comment even thread-even depth-1" id="li-comment-22679">
+		<article id="comment-22679" class="comment-body clearfix">
+			<div class="comment_avatar">
+				<img alt='' src='http://1.gravatar.com/avatar/426d0443388f4e2915465137800cfc70?s=60&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/426d0443388f4e2915465137800cfc70?s=120&#038;d=mm&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			</div> <!-- end .comment_avatar -->
+
+			<div class="comment_postinfo">
+				<span class="fn">CCODE</span>				<span class="comment_date">
+					February 27, 2017				</span>
+							</div> <!-- end .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+					<p>Thank you, this is work perfectly and solve my problem !!</p>
+
+					<div class="reply-container"><a rel='nofollow' class='comment-reply-link' href='#comment-22679' data-commentid="22679" data-postid="1139" data-belowelement="comment-22679" data-respondelement="respond" aria-label='Reply to CCODE'>Reply</a></div>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- end comment-body -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-22699">
+		<article id="comment-22699" class="comment-body clearfix">
+			<div class="comment_avatar">
+				<img alt='' src='http://1.gravatar.com/avatar/11b08a0467b4096c37fc06449e3e4ea2?s=60&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/11b08a0467b4096c37fc06449e3e4ea2?s=120&#038;d=mm&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />			</div> <!-- end .comment_avatar -->
+
+			<div class="comment_postinfo">
+				<span class="fn">miloslavsky</span>				<span class="comment_date">
+					June 5, 2019				</span>
+							</div> <!-- end .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+					<p>ty dude</p>
+
+					<div class="reply-container"><a rel='nofollow' class='comment-reply-link' href='#comment-22699' data-commentid="22699" data-postid="1139" data-belowelement="comment-22699" data-respondelement="respond" aria-label='Reply to miloslavsky'>Reply</a></div>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- end comment-body -->
+</li><!-- #comment-## -->
+			</ol>
+		
+		
+							<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title"><span>Post a Reply</span> <small><a rel="nofollow" id="cancel-comment-reply-link" href="/ue4-make-ai-rotate-smoothly-avoid-snapping/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="http://www.dreambotstudios.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Submit Comment" /> <input type='hidden' name='comment_post_ID' value='1139' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p>
+<!-- Anti-spam plugin v.5.5 wordpress.org/plugins/anti-spam/ -->
+		<p class="antispam-group antispam-group-q" style="clear: both;">
+			<label>Current ye@r <span class="required">*</span></label>
+			<input type="hidden" name="antspm-a" class="antispam-control antispam-control-a" value="2020" />
+			<input type="text" name="antspm-q" class="antispam-control antispam-control-q" value="5.5" autocomplete="off" />
+		</p>
+		<p class="antispam-group antispam-group-e" style="display: none;">
+			<label>Leave this field empty</label>
+			<input type="text" name="antspm-e-email-url-website" class="antispam-control antispam-control-e" value="" autocomplete="off" />
+		</p>
+			</form>
+			</div><!-- #respond -->
+		
+</section>
+			
+			
+			
+		</div> <!-- end #left-area -->
+
+			<div id="sidebar">
+				<div id="recent-posts-2" class="widget widget_recent_entries">		<h4 class="widgettitle">Recent Posts</h4>		<ul>
+											<li>
+					<a href="http://www.dreambotstudios.com/ue4-rotate-character-to-look-at-mouse-location/">UE4 &#8211; Rotate Character To Look At Mouse Location (Top Down)</a>
+									</li>
+											<li>
+					<a href="http://www.dreambotstudios.com/ue4-make-ai-rotate-smoothly-avoid-snapping/">UE4 &#8211; Make AI Rotate Smoothly (Avoid Snapping)</a>
+									</li>
+											<li>
+					<a href="http://www.dreambotstudios.com/tavern-tycoon-taking-orders/">Taking Our Tavern Game A Bit Deeper</a>
+									</li>
+											<li>
+					<a href="http://www.dreambotstudios.com/80s-arcade-classic-early-development/">80&#8217;s Arcade Classic &#8211; Early Development</a>
+									</li>
+											<li>
+					<a href="http://www.dreambotstudios.com/new-rpg-title/">New RPG Title for 2015</a>
+									</li>
+					</ul>
+		</div> <!-- end .widget --><div id="nav_menu-3" class="widget widget_nav_menu"><h4 class="widgettitle">Game Industry Procedures</h4><div class="menu-procedures-container"><ul id="menu-procedures" class="menu"><li id="menu-item-1148" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-1148"><a href="http://www.dreambotstudios.com/category/procedures/unreal-engine/">Unreal Engine</a></li>
+</ul></div></div> <!-- end .widget --><div id="tlb_widget-5" class="widget tlb_widget"><h4 class="widgettitle">Tweet Me</h4>		<style type="text/css">
+			 #tlb_container {
+				 box-sizing: border-box;
+			 }
+			 #tlb_container * {
+				box-sizing: content-box;
+				-moz-box-sizing: content-box;
+				-webkit-box-sizing: content-box;
+			}
+			#tlb_container {
+				border:1px solid #AAA;
+				background:transparent; 
+				border-top-color:#315C99;
+				padding:5px 5px 0 5px; 
+				font-family:'Lucida grande',tahoma,verdana,arial,sans-serif;
+				
+			}
+			#tlb_header {
+				color:#555;
+				border-bottom:1px solid #D8DFEA;
+				color:#555; 
+				height:60px; 
+				position:relative;
+			}
+			#tlb_profile_img{
+				position:absolute;
+				top:5px;
+				left:5px;
+			}
+			#tlb_name{
+				position:absolute;
+				top:5px;
+				left:59px;
+				font-size:14px;
+				line-height:14px;
+				font-weight:bold;
+			}
+			#tlb_name a{
+				color:#3B5998;
+			}
+			#tlb_name a span{
+				font-weight:normal;
+				font-size:10px;
+			}
+			#tlb_follow{
+				position:absolute;
+				top:30px;
+				left:59px;
+			}
+			#tlb_follow_total{
+				padding:5px 5px 0px 5px;
+				font-size:11px;
+			}
+			.tlb_user_item{
+				line-height:1;
+				padding:5px 0px 3px 5px;
+				width:48px;
+				float:left;
+				text-align: center;
+			}
+			.tlb_user_item a{
+				color:gray;
+			}
+			.tlb_user_item span{
+				font-family:Arial;
+				font-size:10px;
+			}
+			#tlb_container {
+	
+}
+#tlb_header {
+
+}
+#tlb_profile_img{
+
+}
+#tlb_name{
+
+}
+#tlb_name a{
+	
+}
+#tlb_name a span{
+
+}
+#tlb_follow{
+
+}
+#tlb_follow_total{
+
+}
+.tlb_user_item{
+
+}
+.tlb_user_item a{
+
+}
+.tlb_user_item span{
+
+}
+		</style>
+
+		<div id="tlb_container" style="width: 100%">
+				
+				<div id="tlb_header">
+					<div id="tlb_profile_img">
+						<a target="_blank" href="http://twitter.com/MarkusSkupeika">
+							<img src="http://pbs.twimg.com/profile_images/53377744/mjs_normal.png" width="44" height="44" alt="MarkusSkupeika">
+						</a>
+					</div>
+					<div id="tlb_name">
+						<a target="_blank" href="http://twitter.com/MarkusSkupeika">
+							MarkusSkupeika<span> on Twitter</span>
+						</a>
+					</div>
+					<div id="tlb_follow">
+						<a href="https://twitter.com/MarkusSkupeika" class="twitter-follow-button" data-show-count="false" data-width="65px" data-show-screen-name="false">Follow @MarkusSkupeika</a>
+					</div>
+				</div>
+			<div style="padding:0;">
+				<div id="tlb_follow_total">
+					934 people follow <strong>MarkusSkupeika</strong>	
+				</div>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/jtraderc" title="jtraderc" rel="nofollow">
+						
+							<img src="http://pbs.twimg.com/profile_images/1303099273400246274/Q5m9m3R6_normal.jpg" width="48" height="48" alt="jtraderc">
+							<span>jtraderc</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/smarter411" title="smarter411" rel="nofollow">
+						
+							<img src="http://pbs.twimg.com/profile_images/3205720971/4f1036e139e9ec79fe13fca69627b49b_normal.png" width="48" height="48" alt="smarter411">
+							<span>smarter4</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/LLewellyan" title="LLewellyan" rel="nofollow">
+						
+							<img src="http://pbs.twimg.com/profile_images/1307410843735384071/7CioU532_normal.jpg" width="48" height="48" alt="LLewellyan">
+							<span>LLewelly</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/twinsight_io" title="twinsight_io" rel="nofollow">
+						
+							<img src="http://pbs.twimg.com/profile_images/1103806939106992128/9oi728_A_normal.png" width="48" height="48" alt="twinsight_io">
+							<span>twinsigh</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/PeteAllaway365" title="PeteAllaway365" rel="nofollow">
+						
+							<img src="http://pbs.twimg.com/profile_images/717789291443851265/UdrqfVLf_normal.jpg" width="48" height="48" alt="PeteAllaway365">
+							<span>PeteAlla</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/MoMoBagholder" title="MoMoBagholder" rel="nofollow">
+						
+							<img src="http://pbs.twimg.com/profile_images/1246617486210084864/UG3RG1Yc_normal.jpg" width="48" height="48" alt="MoMoBagholder">
+							<span>MoMoBagh</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/MarginCall3" title="MarginCall3" rel="nofollow">
+						
+							<img src="http://pbs.twimg.com/profile_images/1278338821139116032/bXdo7SBB_normal.jpg" width="48" height="48" alt="MarginCall3">
+							<span>MarginCa</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/1EMTRADING" title="1EMTRADING" rel="nofollow">
+						
+							<img src="http://pbs.twimg.com/profile_images/1242517811370446849/9ibMJBTL_normal.jpg" width="48" height="48" alt="1EMTRADING">
+							<span>1EMTRADI</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/Nyakahuma7" title="Nyakahuma7" rel="nofollow">
+						
+							<img src="http://pbs.twimg.com/profile_images/1244231574377422848/k1888Qih_normal.jpg" width="48" height="48" alt="Nyakahuma7">
+							<span>Nyakahum</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/staff_evolution" title="staff_evolution" rel="nofollow">
+						
+							<img src="http://pbs.twimg.com/profile_images/1206013428055396360/aOdt2945_normal.jpg" width="48" height="48" alt="staff_evolution">
+							<span>staff_ev</span>
+							
+						</a>
+							
+					</span>
+							<br style="clear:both">
+			</div>
+	
+							</div>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+		</script>
+	</div> <!-- end .widget --><div id="tlb_widget-4" class="widget tlb_widget"><h4 class="widgettitle">Tweet Us</h4>		<style type="text/css">
+			 #tlb_container {
+				 box-sizing: border-box;
+			 }
+			 #tlb_container * {
+				box-sizing: content-box;
+				-moz-box-sizing: content-box;
+				-webkit-box-sizing: content-box;
+			}
+			#tlb_container {
+				border:1px solid #AAA;
+				background:transparent; 
+				border-top-color:#315C99;
+				padding:5px 5px 0 5px; 
+				font-family:'Lucida grande',tahoma,verdana,arial,sans-serif;
+				
+			}
+			#tlb_header {
+				color:#555;
+				border-bottom:1px solid #D8DFEA;
+				color:#555; 
+				height:60px; 
+				position:relative;
+			}
+			#tlb_profile_img{
+				position:absolute;
+				top:5px;
+				left:5px;
+			}
+			#tlb_name{
+				position:absolute;
+				top:5px;
+				left:59px;
+				font-size:14px;
+				line-height:14px;
+				font-weight:bold;
+			}
+			#tlb_name a{
+				color:#3B5998;
+			}
+			#tlb_name a span{
+				font-weight:normal;
+				font-size:10px;
+			}
+			#tlb_follow{
+				position:absolute;
+				top:30px;
+				left:59px;
+			}
+			#tlb_follow_total{
+				padding:5px 5px 0px 5px;
+				font-size:11px;
+			}
+			.tlb_user_item{
+				line-height:1;
+				padding:5px 0px 3px 5px;
+				width:48px;
+				float:left;
+				text-align: center;
+			}
+			.tlb_user_item a{
+				color:gray;
+			}
+			.tlb_user_item span{
+				font-family:Arial;
+				font-size:10px;
+			}
+			#tlb_container {
+	
+}
+#tlb_header {
+
+}
+#tlb_profile_img{
+
+}
+#tlb_name{
+
+}
+#tlb_name a{
+	
+}
+#tlb_name a span{
+
+}
+#tlb_follow{
+
+}
+#tlb_follow_total{
+
+}
+.tlb_user_item{
+
+}
+.tlb_user_item a{
+
+}
+.tlb_user_item span{
+
+}
+		</style>
+
+		<div id="tlb_container" style="width: 100%">
+				
+				<div id="tlb_header">
+					<div id="tlb_profile_img">
+						<a target="_blank" href="http://twitter.com/DreamBotStudios">
+							<img src="http://pbs.twimg.com/profile_images/2305355094/bsp5d2cf6x34eb9h7t57_normal.png" width="44" height="44" alt="DreamBotStudios">
+						</a>
+					</div>
+					<div id="tlb_name">
+						<a target="_blank" href="http://twitter.com/DreamBotStudios">
+							DreamBotStudios<span> on Twitter</span>
+						</a>
+					</div>
+					<div id="tlb_follow">
+						<a href="https://twitter.com/DreamBotStudios" class="twitter-follow-button" data-show-count="false" data-width="65px" data-show-screen-name="false">Follow @DreamBotStudios</a>
+					</div>
+				</div>
+			<div style="padding:0;">
+				<div id="tlb_follow_total">
+					614 people follow <strong>DreamBotStudios</strong>	
+				</div>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/Nitro609" title="Nitro609" rel="nofollow">
+						
+							<img src="http://pbs.twimg.com/profile_images/1273280933592879104/6B_4diAO_normal.jpg" width="48" height="48" alt="Nitro609">
+							<span>Nitro609</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/PrinceofTHUNDER" title="PrinceofTHUNDER" rel="nofollow">
+						
+							<img src="http://pbs.twimg.com/profile_images/49201582/Zach_THUNDER_halo_normal.jpg" width="48" height="48" alt="PrinceofTHUNDER">
+							<span>Princeof</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/mdc_93" title="mdc_93" rel="nofollow">
+						
+							<img src="http://pbs.twimg.com/profile_images/479151093406892032/ox5sIbKd_normal.jpeg" width="48" height="48" alt="mdc_93">
+							<span>mdc_93</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/TheReal_MGLive" title="TheReal_MGLive" rel="nofollow">
+						
+							<img src="http://pbs.twimg.com/profile_images/1304820203814035456/tGTOgBeH_normal.jpg" width="48" height="48" alt="TheReal_MGLive">
+							<span>TheReal_</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/Dsainthilaire" title="Dsainthilaire" rel="nofollow">
+						
+							<img src="http://pbs.twimg.com/profile_images/782385366246559744/HO5T42nG_normal.jpg" width="48" height="48" alt="Dsainthilaire">
+							<span>Dsainthi</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/cdoddy14" title="cdoddy14" rel="nofollow">
+						
+							<img src="http://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png" width="48" height="48" alt="cdoddy14">
+							<span>cdoddy14</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/kstro_may" title="kstro_may" rel="nofollow">
+						
+							<img src="http://pbs.twimg.com/profile_images/1307443565480611842/lnZmx5IU_normal.jpg" width="48" height="48" alt="kstro_may">
+							<span>kstro_ma</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/Josiane36579589" title="Josiane36579589" rel="nofollow">
+						
+							<img src="http://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png" width="48" height="48" alt="Josiane36579589">
+							<span>Josiane3</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/timhenrys25_tim" title="timhenrys25_tim" rel="nofollow">
+						
+							<img src="http://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png" width="48" height="48" alt="timhenrys25_tim">
+							<span>timhenry</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/Yasminzuniga4" title="Yasminzuniga4" rel="nofollow">
+						
+							<img src="http://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png" width="48" height="48" alt="Yasminzuniga4">
+							<span>Yasminzu</span>
+							
+						</a>
+							
+					</span>
+							<br style="clear:both">
+			</div>
+	
+							</div>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+		</script>
+	</div> <!-- end .widget -->	</div> <!-- end #sidebar -->
+	</div> <!-- .container -->
+</div> <!-- #content -->
+
+	
+<div id="footer-widgets">
+	<div class="clearfix container">
+	<div class="footer-widget"><div id="text-6" class="f_widget widget_text">			<div class="textwidget"><a href="https://plus.google.com/100458675260497885872" rel="publisher">Find us on Google+</a></div>
+		</div> <!-- end .footer-widget --></div> <!-- end .footer-widget --><div class="footer-widget last"><div id="text-4" class="f_widget widget_text">			<div class="textwidget"><!-- <iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2FDreamBotStudios&amp;width=260&amp;height=290&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=true" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100%; height:290px;" allowTransparency="true"></iframe> --></div>
+		</div> <!-- end .footer-widget --><div id="nav_menu-2" class="f_widget widget_nav_menu"><h4 class="widgettitle">Site Information</h4><div class="menu-legal-stuff-container"><ul id="menu-legal-stuff" class="menu"><li id="menu-item-24" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="http://www.dreambotstudios.com/about/">About</a></li>
+<li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a href="http://www.dreambotstudios.com/contact/">Contact</a></li>
+<li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27"><a href="http://www.dreambotstudios.com/sitemap/">Sitemap</a></li>
+<li id="menu-item-28" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28"><a href="http://www.dreambotstudios.com/terms-of-service/">Terms of Service</a></li>
+<li id="menu-item-29" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29"><a href="http://www.dreambotstudios.com/privacy-policy/">Privacy Policy</a></li>
+</ul></div></div> <!-- end .footer-widget --></div> <!-- end .footer-widget -->	</div> <!-- end .container -->
+</div> <!-- end #footer-widgets -->
+	<div id="footer-bottom">
+		<div class="container clearfix">
+			<ul id="menu-legal-stuff-1" class="bottom-nav"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="http://www.dreambotstudios.com/about/">About</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a href="http://www.dreambotstudios.com/contact/">Contact</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27"><a href="http://www.dreambotstudios.com/sitemap/">Sitemap</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28"><a href="http://www.dreambotstudios.com/terms-of-service/">Terms of Service</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29"><a href="http://www.dreambotstudios.com/privacy-policy/">Privacy Policy</a></li>
+</ul>
+			<p id="copyright">Designed by <a href="http://www.markusskupeika.com" title="Markus Skupeika">Markus Skupeika</a> | Powered by <a href="http://www.dreambotstudios.com">Dream Bot Studios</a></p>
+		</div> <!-- end .container -->
+	</div> <!-- end #footer-bottom -->
+
+	<script type='text/javascript' src='http://www.dreambotstudios.com/wp-content/plugins/anti-spam/js/anti-spam-5.5.js'></script>
+<script type='text/javascript' src='http://www.dreambotstudios.com/wp-includes/js/comment-reply.min.js?ver=5.2.7'></script>
+<script type='text/javascript' src='http://www.dreambotstudios.com/wp-content/themes/Fusion/js/superfish.js?ver=1.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var et_custom = {"mobile_nav_text":"Navigation Menu"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.dreambotstudios.com/wp-content/themes/Fusion/js/custom.js?ver=1.0'></script>
+<script type='text/javascript' src='http://www.dreambotstudios.com/wp-content/themes/Fusion/epanel/page_templates/js/fancybox/jquery.easing-1.3.pack.js?ver=1.3.4'></script>
+<script type='text/javascript' src='http://www.dreambotstudios.com/wp-content/themes/Fusion/epanel/page_templates/js/fancybox/jquery.fancybox-1.3.4.pack.js?ver=1.3.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var et_ptemplates_strings = {"captcha":"Captcha","fill":"Fill","field":"field","invalid":"Invalid email"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.dreambotstudios.com/wp-content/themes/Fusion/epanel/page_templates/js/et-ptemplates-frontend.js?ver=1.1'></script>
+<script type='text/javascript' src='http://www.dreambotstudios.com/wp-includes/js/wp-embed.min.js?ver=5.2.7'></script>
+	<script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            //$( document ).ajaxStart(function() {
+            //});
+
+			
+            for (var i = 0; i < document.forms.length; ++i) {
+                var form = document.forms[i];
+				if ($(form).attr("method") != "get") { $(form).append('<input type="hidden" name="NqByjxzFgOurn" value="6hcrQIfsBzZNb" />'); }
+if ($(form).attr("method") != "get") { $(form).append('<input type="hidden" name="dXF_nC" value="2oTgnb" />'); }
+            }
+
+			
+            $(document).on('submit', 'form', function () {
+				if ($(this).attr("method") != "get") { $(this).append('<input type="hidden" name="NqByjxzFgOurn" value="6hcrQIfsBzZNb" />'); }
+if ($(this).attr("method") != "get") { $(this).append('<input type="hidden" name="dXF_nC" value="2oTgnb" />'); }
+                return true;
+            });
+
+			
+            jQuery.ajaxSetup({
+                beforeSend: function (e, data) {
+
+                    //console.log(Object.getOwnPropertyNames(data).sort());
+                    //console.log(data.type);
+
+                    if (data.type !== 'POST') return;
+
+                    if (typeof data.data === 'object' && data.data !== null) {
+						data.data.append("NqByjxzFgOurn", "6hcrQIfsBzZNb");
+data.data.append("dXF_nC", "2oTgnb");
+                    }
+                    else {
+                        data.data =  data.data + '&NqByjxzFgOurn=6hcrQIfsBzZNb&dXF_nC=2oTgnb';
+                    }
+                }
+            });
+
+        });
+	</script>
+	<center><style>div.links {width:150px;height:1px;padding:0px;font:11px Tahoma;overflow:hidden;}</style>
+<div class="links">
+﻿</div></center>
+</body>
+</html>

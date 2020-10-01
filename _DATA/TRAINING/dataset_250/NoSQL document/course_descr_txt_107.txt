@@ -1,0 +1,9 @@
+This course teaches you how to create an emulator for the Chip-8, once you complete this project you will be able to emulate games from the mid 1970s and on wards!
+
+Requirements:
+
+You must understand how to program in the C programming language
+Understand hexadecimal
+Understand bitwise operators
+An understanding of how to link with libraries
+Please upload the outcomes of this class in the project gallery

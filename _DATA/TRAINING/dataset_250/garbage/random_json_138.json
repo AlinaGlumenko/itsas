@@ -1,0 +1,28 @@
+{
+  "id": "bwaoMQadlUSbkdDX32Fh0w",
+  "name": "Plastic - ABS (Yellowed Dirty)",
+  "origin": "mixer-created",
+  "categories": [
+    "smartmaterial",
+    "smartmaterials",
+    "mixer"
+  ],
+  "tags": [],
+  "previews": {
+    "images": [
+      {
+        "uri": "SmartMaterialPreview.png"
+      }
+    ]
+  },
+  "meta": [],
+  "averageColor": "#A09A83",
+  "version": 2,
+  "maps": [
+    {
+      "name": "SmartMaterial",
+      "type": "smartmaterial",
+      "uri": "Plastic - ABS (Yellowed Dirty).xml"
+    }
+  ]
+}

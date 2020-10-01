@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <time>27/10/2018, 04:29:21</time>
+  <sender>jasonwhenry@myrealbox.com</sender>
+  <message>SQL ERROR [ mysql4 ] Access denied for user 'drlforum_forum'@'localhost' (using password: YES) [1045]</message>
+</root>

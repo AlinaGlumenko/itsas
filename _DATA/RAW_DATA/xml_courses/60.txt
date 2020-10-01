@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<root><@context>http://schema.org/
-</@context><@id>https://www.skillshare.com/classes/Linux-Troubleshooting-Course-with-Practical-Examples/1449742266undefined</@id>undefined<name>Linux Troubleshooting Course with Practical Examples</name>undefined<description> Maintain a reliable and highly available Linux server infrastructure, and reduce costly downtime. In this Linux troubleshooting training course, you gain the expertise to effectively diagnose and fix common and complex Linux server configuration and administrations issues, and learn to apply those skills in production environment inux Troubleshooting Course </description>undefined<image>https://static.skillshare.com/uploads/video/thumbnails/a877f973c7b41027e0b9870cc715775b/448-252</image>undefined<provider>
-<name>Skillshare</name>
-<sameAs>https://www.skillshare.com</sameAs>
-<logo>https://static.skillshare.com/assets/images/hands_logo_2x.png</logo><@type>Organizationundefined</@type>undefined</provider>undefined<author>undefined<name>Imran Afzal</name>undefined<sameAs>https://www.skillshare.com/user/iafzal0405</sameAs>undefined<image>https://static.skillshare.com/uploads/users/5999364/user-image-medium.jpg?1033660780</image><@type>Personundefined</@type>undefined</author><@type>Courseundefined</@type>undefined</root>

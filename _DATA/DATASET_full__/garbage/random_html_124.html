@@ -1,0 +1,305 @@
+<HTML LANG="EN">
+<HEAD>
+<TITLE>FreeDNS - Free subdomain AND domain hosting!</TITLE>
+<style type="text/css">
+.storeuserData {behavior:url(#default#userData);}
+
+body, td, p { font-family: Verdana, Helvetica, Arial; font-size: 13px; color: #000000; }
+
+body { background: cornflowerblue; }
+
+a:link, a:active { color: #000000; }
+a:visited { color: #808080; }
+
+h1 { text-decoration: none;  font-size: 16px;  font-family: Verdana,Helvetica,Arial; font-style: normal; font-weight: bold; }
+
+.error_dialog {
+	text-align: center;
+	margin-top: 0px; 
+}
+.error_exclamation_text {
+  background-image:url('https://freedns.afraid.org/images/exclamation_yellow_tri_mini.gif');
+  background-repeat:no-repeat;
+  padding-left: 25px;
+}
+
+.trd td { background: #CCCCCC; }
+.trl td { background: #EEEEEE; }
+.trd span, .trl span { font-size: smaller; }
+.trd a:link, .trd a:visited, .trl a:link, .trl a:visited { color: #000000; text-decoration: underline; }
+
+
+
+.btn-group .button {
+  background-color: #ffffff;
+  color: black;
+  border: 2px solid #000000;
+  padding: 11px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0px 0px;
+}
+
+.btn-group .button:hover {
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 13px 30px;
+}
+
+.button {border-radius: 4px;}
+</style><meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<META NAME="Keywords" CONTENT="freedns, free dns, dns, dns hosting, domain hosting, free domain hosting, live dns hosting, fast dns hosting, dynamic dns">
+<META NAME="Description" CONTENT="Free DNS hosting, lets you fully manage your own domain.  Dynamic DNS and Static DNS services available.  You may also create hosts off other domains that we host upon the domain owners consent, we have several domains to choose from!">
+<META NAME="Author" CONTENT="dnsadmin@afraid.org">
+<script type="text/javascript">
+<!--
+function windowOpener() {
+	window.open("/faq/type.php","shockscreen","width=500,height=320,resizable=no,status=no,scrollbars=1");
+}
+
+function windowOpener2() {
+	window.open("/faq/subclone.php","shockscreen","width=500,height=320,resizable=no,status=no,scrollbars=1");
+}
+function focusNClearInput(inputObject) {
+
+    var hasBeenFocused = inputObject.getAttribute("hasBeenFocused") != null;
+
+    if (!hasBeenFocused) {
+        inputObject.setAttribute("hasBeenFocused", "true");
+        inputObject.style.color = "#000000";
+        inputObject.value = "";
+        var thisForm = inputObject.form;
+        for (ii = 0;  ii < thisForm.elements.length; ii++) {
+            if (thisForm.elements[ii].type == "submit"){
+                thisForm.elements[ii].disabled = false;
+            }
+        }
+
+    }
+}
+-->
+</script>
+<!-- Matomo Tag Manager -->
+<script type="text/javascript">
+var _mtm = _mtm || [];
+_mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+g.type='text/javascript'; g.async=true; g.defer=true; g.src='https://cdn.matomo.cloud/afraid.matomo.cloud/container_Fz4JOiyW.js';
+s.parentNode.insertBefore(g,s);
+</script>
+<!-- End Matomo Tag Manager -->
+
+</HEAD>
+<body text="#000000" bgcolor="cornflowerblue" link="#000000" vlink="#808080" alink="#000000">
+
+
+<table border="0" width="100%" cellspacing="5" height="100%">
+
+<tr><td align="right" colspan="3" bgcolor=white><font size="5"><b>FreeDNS - Free subdomain AND domain hosting!</b></font></td></tr>
+<tr><td bgcolor="white" valign="top" align="center" width="15%">
+<b>For Members:</b>
+<hr>
+<table width="80%">
+<tr><td>[</td><td align=center><a href="/menu/">Main Menu</a></td><td>]</td></tr>
+<tr><td>[</td><td align=center><a href="/domain/">Domains</a></td><td>]</td></tr>
+<tr><td>[</td><td align=center><a href="/subdomain/">Subdomains</a></td><td>]</td></tr>
+<tr><td>[</td><td align=center><a href="/redirect/">Web Forward</a></td><td>]</td></tr>
+<tr><td>[</td><td align=center><a href="/dynamic/">Dynamic DNS</a></td><td>]</td></tr>
+<tr><td>[</td><td align=center><a href="/reverse/">IPv6 Reverse</a></td><td>]</td></tr>
+<tr><td>[</td><td align=center><a href="/secondary/">Backup DNS</a></td><td>]</td></tr>
+<tr><td>[</td><td align=center><a href="/profile/">Preferences</a></td><td>]</td></tr>
+<tr><td>[</td><td align=center><a href="/domain/registry/">Registry</a></td><td>]</td></tr>
+<tr><td>[</td><td align=center><a href="/logout/">Logout</a></td><td>]</td></tr>
+</table>
+<br><br>
+
+<b>For Everybody:</b>
+<hr>
+<table width="80%">
+<tr><td>[</td><td align=center><a href="/">Home</a></td><td>]</td></tr>
+<tr><td>[</td><td align=center><a href="/about-us/">About Us</a></td><td>]</td></tr>
+<tr><td>[</td><td align=center><a href="/faq/">FAQ</a></td><td>]</td></tr>
+<tr><td>[</td><td align=center><a href="/news/">News</a></td><td>]</td></tr>
+<!-- <tr><td>[</td><td align=center><a href="/forums/">Forums</a></td><td>]</td></tr> -->
+<tr><td>[</td><td align=center><a href="/stats/">DNS Stats</a></td><td>]</td></tr>
+<tr><td>[</td><td align=center><a href="/signup/aup/">AUP/TOS</a></td><td>]</td></tr>
+<tr><td>[</td><td align=center><a href="/contact/">Contact</a></td><td>]</td></tr>
+<tr><td colspan=2>&nbsp;</td></tr>
+<tr><td>[</td><td align=center><a href="/guide/dd-wrt/">Router Setup Guide</a></td><td>]</td></tr>
+
+</table>
+
+<br>
+
+
+
+
+<br>
+
+
+
+
+</td><td bgcolor="white">
+<br>
+<center>
+
+<!--
+<table border=0><tr><td>
+<font color=blue face=verdana size=2>
+
+Thanks for everyone who has signed up as a <a href=/premium/>Premium Member</a> for server re-infastructuring.<br>
+Enough has been raised for 1 1/2 servers in 1 short week.  The new server will <br>
+be up soon.  Additional premium memberships will still go to the 2nd additional server.<br>
+
+Thank you all, <b>seriously</b>. This is going to add further stability, and be a joy to work<br>
+ with an improved infastructure.<br><br>
+<font color=green>8/26/06 - The new server is now alive!  ns3.afraid.org.</font>
+
+</font>
+</td></tr></table>
+<br>
+-->
+
+
+<!--
+<font color=blue face=verdana size=2>
+
+Raising funds for
+server re-infastructuring.<br>
+
+All premium
+membership benefits are doubled!<br>
+
+Ends Aug 25 at 12AM
+
+<a href=/premium/>Sign Up Here!</a><br><br>
+<font color=orange>8/23/06 - 1 server has been paid for 1 year. <font color=green>(STATUS: Ordered)</font></font> - Thank you all<br>
+Server #2 <font color=orange>is now <font color=red><b>46%</b></font> paid for</font>.  <a href=/premium/>Go Premium</a>
+</font>
+<br>
+<br>
+-->
+<script language="JScript" src="/include/fp1.js"></script>
+<center>
+<form action=/zc.php?step=2 method=post id="oPersistForm">
+<table border=0 cellpadding=2>
+<tr><td bgcolor=cornflowerblue colspan=2><font face="verdana, Helvetica, Arial" size="2" color="white">FreeDNS Login!</a></td></tr>
+<tr><td bgcolor=#eeeeee><font face="verdana, Helvetica, Arial" size="2" color="black">Email:</font></td><td bgcolor=#eeeeee><input type="text" maxlength="255" size="16" name="username"></td></tr>
+<tr><td bgcolor=#eeeeee><font face="verdana, Helvetica, Arial" size="2" color="black">Password:</font></td><td bgcolor=#eeeeee><input type="password" maxlength="16" size="16" name="password"></td></tr>
+<tr><td bgcolor=cornflowerblue colspan=2 align=center><table width=100%><tr><td><input type="checkbox" name="remember" value=1><font face="verdana, Helvetica, Arial" size="2" color="white">Remember Me!</font></td><td align=right><input type="submit" name="submit" value="Login" onclick="fnAlertInput()">
+</td></tr></table></td></tr>
+<input class="storeuserData" type="hidden" id="oPersistInput" name='remote'>
+<input type="hidden" name="from" value="L2R5bmFtaWMv">
+<input type=hidden name=action value=auth>
+</form>
+</table>
+<br>
+<a href=/password/><font face="verdana, Helvetica, Arial" size="2">Recover your password here</font></a><br>
+<font face="verdana, Helvetica, Arial" size="2">Keep getting thrown back here?  Enable cookies.</font>
+</center>
+
+
+<center>
+<div class="btn-group">
+  <a href=/signup/?plan=starter><button class="button">Sign up Free</button></a> &nbsp;&nbsp;
+  <a href=/pricing/><button class="button">Premium Plans</button></a>
+</div>
+</center><br>
+</center>
+</td>
+
+<td valign="top" bgcolor="white" width="15%">
+<br>
+
+<center>
+<form action="/domain/dnstrace.php">
+<table>
+<tr><td bgcolor="cornflowerblue"><font face="verdana, Helvetica, Arial" size="2" color="white">DNS Auth Trace</font></td></tr>
+<tr><td bgcolor="#eeeeee" align="center"><input onFocus="focusNClearInput(this)" style="color:red;" type="text" name="domain" value="your.domain.com"></td></tr>
+<tr><td align="right" bgcolor="cornflowerblue" colspan="2"><input type="submit" name="submit" value="Trace"></td></tr>
+</table>
+</form>
+</center>
+
+<center>
+<table bgcolor="#cccccc">
+<tr><td bgcolor="#eeeeee">Members:</td><td bgcolor="#eeeeee" align="right"><font color="red">3,452,922</font></td></tr>
+<tr><td bgcolor="#eeeeee">Premium:</td><td bgcolor="#eeeeee" align="right"><font color="red">4,219</font></td></tr>
+<tr><td bgcolor="#eeeeee">Records:</td><td bgcolor="#eeeeee" align="right"><font color="red">10,478,819</font></td></tr>
+<tr><td bgcolor="#eeeeee">Zones:</td><td bgcolor="#eeeeee" align="right"><font color="red">1,118,139</font></td></tr>
+</table>
+</center>
+
+<br>
+
+<center>
+<table>
+<tr><td>
+<font face="Verdana, Helvetica, Arial" size=1>
+
++50 subdomains<br>
++3 stealth flags<br>
+<b><font color=red>W</font><font color=orange>i</font><font color=yellow>l</font><font color=green>d</font><font color=blue>c</font><font color=indigo>a</font><font color=violet>r</font><font color=red>d</font></b> DNS<br>
+Just $5 a month!<br>
+<a href=/premium/>Go premium today!</a>
+<br>
+<br>
+
+<center>
+<a href=/premium/bitcoin/><font size=1>Now accepting Bitcoin</font></a><br>
+<a border=0 href=/premium/bitcoin/><img height=20 width=20 src=/images/bitcoin-logo.jpg></a><br>
+<br>
+</center><!--
+<br>
+<center>
+<a href=/hurricane-harvey/>Join FreeDNS and Support<br>Hurricane Harvey Relief</a><br>
+Raised: $713.52</b>
+</center>
+-->
+</font>
+</td></tr>
+</table>
+</center>
+
+
+</td>
+
+
+</tr>
+<tr><td colspan="3" align="center" bgcolor="white">
+
+<table width="100%" height="100%" border="0" bgcolor="#eeeeee" cellspacing="5">
+	<tr>
+		<td width="50%" align="center" bgcolor="white">
+
+		<table width="80%" border="0">
+		<tr><td width="32"><img alt="exclamation" src="/images/exclaim.gif"></td><td><b>Tip #1</b><br>Keep your email address current in the preferences area.  If you forget your password, the only way you will be able to recover your account, is via the supplied email address.</td></tr>
+		</table>
+
+		</td>
+
+		<td width="50%" align="center" bgcolor="white">
+			<a href="http://www.freebsd.org/"><img border="0" alt="Powered By FreeBSD" src="/images/powerani.gif"></a>
+		</td>
+	</tr>
+</table>
+
+
+
+
+</td></tr>
+<tr><td colspan="3" bgcolor="white">
+<center>
+&copy; 2001-2020 Joshua Anderson, <a href="https://freedns.afraid.org/">Free DNS</a> is currently processing 3,601 DNS queries per second.  (5 min average).<br>
+</center>
+</td></tr>
+<tr><td align="center" colspan="3" bgcolor="white">Rendered in 0.001 seconds</td></tr></table>
+
+
+</body>
+</html>

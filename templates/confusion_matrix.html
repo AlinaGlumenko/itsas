@@ -13,16 +13,35 @@
         <div class="card-deck mb-3 text-center">
             <div class="card mb-4 box-shadow">
                 <div class="card-header">
-                    <h4 class="my-0 font-weight-normal">Normalized Confusion Matrix</h4>
+                    <h4 class="my-0 font-weight-normal">Normalized Confusion Matrix For Train Set</h4>
                 </div>
                 <div class="card-body">
-                    <div id="container"></div>                    
+                    <div id="container_train"></div>                    
                 </div>                
             </div>
             <div class="w-100"></div>
             <div class="card-body">
                 <div class="alert alert-primary" role="alert">
-                    Accuracy: {{ accuracy }}
+                    Accuracy For Train Set: {{ accuracyTrain }}
+                </div>
+            </div>
+            <div class="w-100"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card-deck mb-3 text-center">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Normalized Confusion Matrix For Test Set</h4>
+                </div>
+                <div class="card-body">
+                    <div id="container_test"></div>                    
+                </div>                
+            </div>
+            <div class="w-100"></div>
+            <div class="card-body">
+                <div class="alert alert-primary" role="alert">
+                    Accuracy For Test Set: {{ accuracyTest }}
                 </div>
             </div>
             <div class="w-100"></div>
@@ -30,13 +49,20 @@
     </div>   
 	<script src="./static/js/matrix.js"></script>
 
-    <script>		
-		var confusionMatrix = {{ matrix|safe }};
-		var labels = {{ classes|safe }};
-		
+    <script>
+        let labels = {{ classes|safe }};
+
+		let confusionMatrixTrain = {{ matrixTrain|safe }};		
 		Matrix({
-			container : '#container',
-			data      : confusionMatrix,
+			container : '#container_train',
+			data      : confusionMatrixTrain,
+			labels    : labels
+        });
+        
+        let confusionMatrixTest = {{ matrixTest|safe }};		
+		Matrix({
+			container : '#container_test',
+			data      : confusionMatrixTest,
 			labels    : labels
 		});
 	</script>

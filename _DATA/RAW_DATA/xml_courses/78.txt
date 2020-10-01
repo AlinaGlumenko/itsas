@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<root><@context>http://schema.org/
-</@context><@id>https://www.skillshare.com/classes/Python-Desktop-Apps-with-PyQT5/1107275971undefined</@id>undefined<name>Python Desktop Apps with PyQT5</name>undefined<description>Learn Python Desktop programming, learn the skill you need to succeed If you are in IT, you are really missing out if you don't learn PyQt. It's the most used desktop module. So, don't be left behind!At the end of this course, you will be able to make desktop apps</description>undefined<image>https://static.skillshare.com/uploads/video/thumbnails/6b668032e19e2f1cf3873ca6cb64206f/448-252</image>undefined<provider>
-<name>Skillshare</name>
-<sameAs>https://www.skillshare.com</sameAs>
-<logo>https://static.skillshare.com/assets/images/hands_logo_2x.png</logo><@type>Organizationundefined</@type>undefined</provider>undefined<author>undefined<name>Frank A</name>undefined<sameAs>https://www.skillshare.com/user/frank-a</sameAs>undefined<image>https://static.skillshare.com/uploads/users/8500718/user-image-medium.gif?1574987543</image><@type>Personundefined</@type>undefined</author><@type>Courseundefined</@type>undefined</root>

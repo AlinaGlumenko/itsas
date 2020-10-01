@@ -1,0 +1,789 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+<script type="text/javascript" src="./mobiquo/tapatalkdetect.js"></script>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="copyright" content="2000, 2002, 2005, 2007 phpBB Group" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+<title>PureBasic Forum &bull; Index page</title>
+<link rel="stylesheet" href="./style.php?id=4&amp;lang=en" type="text/css" />
+<script type="text/javascript">
+// <![CDATA[
+
+
+function popup(url, width, height, name)
+{
+	if (!name)
+	{
+		name = '_popup';
+	}
+	window.open(url.replace(/&amp;/g, '&'), name, 'height=' + height + ',resizable=yes,scrollbars=yes,width=' + width);
+	return false;
+}
+
+function jumpto()
+{
+	var page = prompt('Enter the page number you wish to go to:', '');
+	var per_page = '';
+	var base_url = '';
+
+	if (page !== null && !isNaN(page) && page == Math.floor(page) && page > 0)
+	{
+		if (base_url.indexOf('?') == -1)
+		{
+			document.location.href = base_url + '?start=' + ((page - 1) * per_page);
+		}
+		else
+		{
+			document.location.href = base_url.replace(/&amp;/g, '&') + '&start=' + ((page - 1) * per_page);
+		}
+	}
+}
+
+/**
+* Find a member
+*/
+function find_username(url)
+{
+	popup(url, 760, 570, '_usersearch');
+	return false;
+}
+
+/**
+* Mark/unmark checklist
+* id = ID of parent container, name = name prefix, state = state [true/false]
+*/
+function marklist(id, name, state)
+{
+	var parent = document.getElementById(id);
+	if (!parent)
+	{
+		eval('parent = document.' + id);
+	}
+
+	if (!parent)
+	{
+		return;
+	}
+
+	var rb = parent.getElementsByTagName('input');
+	
+	for (var r = 0; r < rb.length; r++)
+	{
+		if (rb[r].name.substr(0, name.length) == name)
+		{
+			rb[r].checked = state;
+		}
+	}
+}
+
+
+
+// ]]>
+</script>
+</head>
+<body class="ltr">
+<a name="top"></a>
+
+<div id="wrapmain">
+
+	<div id="wrapheader">
+
+		<div id="logodesc">
+			<table width="100%" cellspacing="0">
+			<tr>
+				<td><a href="./index.php"><img src="./styles/subsilverPlus/imageset/purebasic_logo.png" alt="" title="" /></a></td>
+				<td width="100%" align="center"><h1>PureBasic Forum</h1><span class="gen"><a href="http://www.purebasic.com">PureBasic web site</a><br><a href="http://blog.purebasic.com">PureBasic blog page</a></span></td>
+			</tr>
+			</table>
+		</div><!-- / logodesc -->
+
+		<div id="menubar">
+			<table width="100%" cellspacing="0">
+			<tr>
+				<td class="genmed">
+					<a href="./faq.php"><img src="./styles/subsilverPlus/theme/images/icon_mini_faq.gif" width="12" height="13" alt="*" /> FAQ</a>
+					 &nbsp;<a href="./search.php"><img src="./styles/subsilverPlus/theme/images/icon_mini_search.gif" width="12" height="13" alt="*" /> Search</a>
+				</td>
+				<td class="genmed" align="right">
+					 &nbsp;<a href="./ucp.php?mode=register"><img src="./styles/subsilverPlus/theme/images/icon_mini_register.gif" width="12" height="13" alt="*" /> Register</a>
+						 &nbsp;<a href="./ucp.php?mode=login"><img src="./styles/subsilverPlus/theme/images/icon_mini_login.gif" width="12" height="13" alt="*" /> Login</a>&nbsp;
+				</td>
+			</tr>
+			</table>
+		</div><!-- / menubar -->
+
+		<div id="datebar">
+			<table width="100%" cellspacing="0">
+			<tr>
+				<td class="gensmall"></td>
+				<td class="gensmall" align="right">It is currently Sun Sep 20, 2020 5:13 pm<br /></td>
+			</tr>
+			</table>
+		</div>
+
+	</div><!-- / wrapheader -->
+
+	<div id="wrapcentre">
+		
+		<p class="searchbar">
+			<span style="float: left;"><a href="./search.php?search_id=unanswered">View unanswered posts</a> | <a href="./search.php?search_id=active_topics">View active topics</a></span>
+			
+		</p>
+		
+
+		<br style="clear: both;" />
+		<table class="tablebg" width="100%" cellspacing="1" cellpadding="0" style="margin-top: 5px;">
+	<tr>
+		<td class="row1">
+			<p class="breadcrumbs"><a href="./index.php">Board index</a></p>
+			<p class="datetime">All times are UTC + 1 hour </p>
+		</td>
+	</tr>
+	</table>
+		<br /><table class="tablebg" cellspacing="1" width="100%">
+<tr>
+	<td class="cat" colspan="5" align="right">&nbsp;</td>
+</tr>
+<tr>
+	<th colspan="2">&nbsp;Forum&nbsp;</th>
+	<th width="50">&nbsp;Topics&nbsp;</th>
+	<th width="50">&nbsp;Posts&nbsp;</th>
+	<th>&nbsp;Last post&nbsp;</th>
+</tr>
+
+		<tr>
+			<td class="cat" colspan="2"><h4><a href="./viewforum.php?f=29">PureBasic</a></h4></td>
+			<td class="catdiv" colspan="3">&nbsp;</td>
+		</tr>
+	
+		<tr>
+			<td class="row1" width="50" align="center"><img src="./styles/subsilverPlus/imageset/forum_read.gif" width="46" height="25" alt="No unread posts" title="No unread posts" /></td>
+			<td class="row1" width="100%">
+				
+				<a class="forumlink" href="./viewforum.php?f=13">Coding Questions</a>
+				<p class="forumdesc">Just starting out? Need help? Post your questions and find answers here.</p>
+				
+			</td>
+			<td class="row2" align="center"><p class="topicdetails">25101</p></td>
+			<td class="row2" align="center"><p class="topicdetails">177604</p></td>
+			<td class="row2" align="center" nowrap="nowrap">
+				
+					<p class="topicdetails">Sun Sep 20, 2020 10:21 am</p>
+					<p class="topicdetails"><a href="./memberlist.php?mode=viewprofile&amp;u=2291">Michael Vogel</a>
+						<a href="./viewtopic.php?f=13&amp;p=559749#p559749"><img src="./styles/subsilverPlus/imageset/icon_topic_latest.gif" width="18" height="9" alt="View the latest post" title="View the latest post" /></a>
+					</p>
+				
+			</td>
+		</tr>
+	
+		<tr>
+			<td class="row1" width="50" align="center"><img src="./styles/subsilverPlus/imageset/forum_read.gif" width="46" height="25" alt="No unread posts" title="No unread posts" /></td>
+			<td class="row1" width="100%">
+				
+				<a class="forumlink" href="./viewforum.php?f=16">Game Programming</a>
+				<p class="forumdesc">Advanced game related topics</p>
+				
+			</td>
+			<td class="row2" align="center"><p class="topicdetails">1208</p></td>
+			<td class="row2" align="center"><p class="topicdetails">11608</p></td>
+			<td class="row2" align="center" nowrap="nowrap">
+				
+					<p class="topicdetails">Sat Sep 19, 2020 4:56 pm</p>
+					<p class="topicdetails"><a href="./memberlist.php?mode=viewprofile&amp;u=17839">jak64</a>
+						<a href="./viewtopic.php?f=16&amp;p=559730#p559730"><img src="./styles/subsilverPlus/imageset/icon_topic_latest.gif" width="18" height="9" alt="View the latest post" title="View the latest post" /></a>
+					</p>
+				
+			</td>
+		</tr>
+	
+		<tr>
+			<td class="row1" width="50" align="center"><img src="./styles/subsilverPlus/imageset/forum_read.gif" width="46" height="25" alt="No unread posts" title="No unread posts" /></td>
+			<td class="row1" width="100%">
+				
+				<a class="forumlink" href="./viewforum.php?f=36">3D Programming</a>
+				<p class="forumdesc">Everything related to 3D programming</p>
+				
+			</td>
+			<td class="row2" align="center"><p class="topicdetails">684</p></td>
+			<td class="row2" align="center"><p class="topicdetails">4906</p></td>
+			<td class="row2" align="center" nowrap="nowrap">
+				
+					<p class="topicdetails">Mon Aug 31, 2020 6:40 am</p>
+					<p class="topicdetails"><a href="./memberlist.php?mode=viewprofile&amp;u=14211">Cyllceaux</a>
+						<a href="./viewtopic.php?f=36&amp;p=559045#p559045"><img src="./styles/subsilverPlus/imageset/icon_topic_latest.gif" width="18" height="9" alt="View the latest post" title="View the latest post" /></a>
+					</p>
+				
+			</td>
+		</tr>
+	
+		<tr>
+			<td class="row1" width="50" align="center"><img src="./styles/subsilverPlus/imageset/forum_read.gif" width="46" height="25" alt="No unread posts" title="No unread posts" /></td>
+			<td class="row1" width="100%">
+				
+				<a class="forumlink" href="./viewforum.php?f=35">Assembly Programming</a>
+				<p class="forumdesc">Bare metal programming in PureBasic, for experienced users</p>
+				
+			</td>
+			<td class="row2" align="center"><p class="topicdetails">107</p></td>
+			<td class="row2" align="center"><p class="topicdetails">881</p></td>
+			<td class="row2" align="center" nowrap="nowrap">
+				
+					<p class="topicdetails">Fri Jul 03, 2020 2:25 pm</p>
+					<p class="topicdetails"><a href="./memberlist.php?mode=viewprofile&amp;u=15307">Etayson</a>
+						<a href="./viewtopic.php?f=35&amp;p=557032#p557032"><img src="./styles/subsilverPlus/imageset/icon_topic_latest.gif" width="18" height="9" alt="View the latest post" title="View the latest post" /></a>
+					</p>
+				
+			</td>
+		</tr>
+	
+		<tr>
+			<td class="row1" width="50" align="center"><img src="./styles/subsilverPlus/imageset/forum_read.gif" width="46" height="25" alt="No unread posts" title="No unread posts" /></td>
+			<td class="row1" width="100%">
+				
+				<a class="forumlink" href="./viewforum.php?f=18">The PureBasic Editor</a>
+				<p class="forumdesc">Working on new editor enhancements?</p>
+				
+			</td>
+			<td class="row2" align="center"><p class="topicdetails">658</p></td>
+			<td class="row2" align="center"><p class="topicdetails">3651</p></td>
+			<td class="row2" align="center" nowrap="nowrap">
+				
+					<p class="topicdetails">Tue Jul 28, 2020 10:05 pm</p>
+					<p class="topicdetails"><a href="./memberlist.php?mode=viewprofile&amp;u=17705">AMpos</a>
+						<a href="./viewtopic.php?f=18&amp;p=558060#p558060"><img src="./styles/subsilverPlus/imageset/icon_topic_latest.gif" width="18" height="9" alt="View the latest post" title="View the latest post" /></a>
+					</p>
+				
+			</td>
+		</tr>
+	
+		<tr>
+			<td class="row1" width="50" align="center"><img src="./styles/subsilverPlus/imageset/forum_read.gif" width="46" height="25" alt="No unread posts" title="No unread posts" /></td>
+			<td class="row1" width="100%">
+				
+				<a class="forumlink" href="./viewforum.php?f=22">The PureBasic Form Designer</a>
+				<p class="forumdesc">You need some new stunning features ? Tell us here.</p>
+				
+			</td>
+			<td class="row2" align="center"><p class="topicdetails">328</p></td>
+			<td class="row2" align="center"><p class="topicdetails">2325</p></td>
+			<td class="row2" align="center" nowrap="nowrap">
+				
+					<p class="topicdetails">Sun Sep 13, 2020 8:22 pm</p>
+					<p class="topicdetails"><a href="./memberlist.php?mode=viewprofile&amp;u=17434">FlatEarth</a>
+						<a href="./viewtopic.php?f=22&amp;p=559536#p559536"><img src="./styles/subsilverPlus/imageset/icon_topic_latest.gif" width="18" height="9" alt="View the latest post" title="View the latest post" /></a>
+					</p>
+				
+			</td>
+		</tr>
+	
+		<tr>
+			<td class="row1" width="50" align="center"><img src="./styles/subsilverPlus/imageset/forum_read.gif" width="46" height="25" alt="No unread posts" title="No unread posts" /></td>
+			<td class="row1" width="100%">
+				
+				<a class="forumlink" href="./viewforum.php?f=7">General Discussion</a>
+				<p class="forumdesc">Everything else that doesn't fall into one of the other PB categories.</p>
+				
+			</td>
+			<td class="row2" align="center"><p class="topicdetails">4554</p></td>
+			<td class="row2" align="center"><p class="topicdetails">41912</p></td>
+			<td class="row2" align="center" nowrap="nowrap">
+				
+					<p class="topicdetails">Sat Sep 19, 2020 2:34 pm</p>
+					<p class="topicdetails"><a href="./memberlist.php?mode=viewprofile&amp;u=273">DarkDragon</a>
+						<a href="./viewtopic.php?f=7&amp;p=559725#p559725"><img src="./styles/subsilverPlus/imageset/icon_topic_latest.gif" width="18" height="9" alt="View the latest post" title="View the latest post" /></a>
+					</p>
+				
+			</td>
+		</tr>
+	
+		<tr>
+			<td class="row1" width="50" align="center"><img src="./styles/subsilverPlus/imageset/forum_read.gif" width="46" height="25" alt="No unread posts" title="No unread posts" /></td>
+			<td class="row1" width="100%">
+				
+				<a class="forumlink" href="./viewforum.php?f=3">Feature Requests and Wishlists</a>
+				<p class="forumdesc">Got an idea for enhancing PureBasic? New command(s) you'd like to see?</p>
+				
+			</td>
+			<td class="row2" align="center"><p class="topicdetails">5561</p></td>
+			<td class="row2" align="center"><p class="topicdetails">34546</p></td>
+			<td class="row2" align="center" nowrap="nowrap">
+				
+					<p class="topicdetails">Sun Sep 20, 2020 4:35 pm</p>
+					<p class="topicdetails"><a href="./memberlist.php?mode=viewprofile&amp;u=782">kenmo</a>
+						<a href="./viewtopic.php?f=3&amp;p=559753#p559753"><img src="./styles/subsilverPlus/imageset/icon_topic_latest.gif" width="18" height="9" alt="View the latest post" title="View the latest post" /></a>
+					</p>
+				
+			</td>
+		</tr>
+	
+		<tr>
+			<td class="row1" width="50" align="center"><img src="./styles/subsilverPlus/imageset/forum_read.gif" width="46" height="25" alt="No unread posts" title="No unread posts" /></td>
+			<td class="row1" width="100%">
+				
+				<a class="forumlink" href="./viewforum.php?f=12">Tricks 'n' Tips</a>
+				<p class="forumdesc">Share your advanced PureBasic knowledge/code with the community.</p>
+				
+			</td>
+			<td class="row2" align="center"><p class="topicdetails">4364</p></td>
+			<td class="row2" align="center"><p class="topicdetails">39860</p></td>
+			<td class="row2" align="center" nowrap="nowrap">
+				
+					<p class="topicdetails">Fri Sep 18, 2020 10:16 pm</p>
+					<p class="topicdetails"><a href="./memberlist.php?mode=viewprofile&amp;u=17574">Saki</a>
+						<a href="./viewtopic.php?f=12&amp;p=559716#p559716"><img src="./styles/subsilverPlus/imageset/icon_topic_latest.gif" width="18" height="9" alt="View the latest post" title="View the latest post" /></a>
+					</p>
+				
+			</td>
+		</tr>
+	
+		<tr>
+			<td class="cat" colspan="2"><h4><a href="./viewforum.php?f=30">Bug Reports</a></h4></td>
+			<td class="catdiv" colspan="3">&nbsp;</td>
+		</tr>
+	
+		<tr>
+			<td class="row1" width="50" align="center"><img src="./styles/subsilverPlus/imageset/forum_read.gif" width="46" height="25" alt="No unread posts" title="No unread posts" /></td>
+			<td class="row1" width="100%">
+				
+				<a class="forumlink" href="./viewforum.php?f=4">Bugs - Windows</a>
+				<p class="forumdesc">Post bugreports for the Windows version here</p>
+				
+			</td>
+			<td class="row2" align="center"><p class="topicdetails">516</p></td>
+			<td class="row2" align="center"><p class="topicdetails">2696</p></td>
+			<td class="row2" align="center" nowrap="nowrap">
+				
+					<p class="topicdetails">Sat Sep 19, 2020 7:40 pm</p>
+					<p class="topicdetails"><a href="./memberlist.php?mode=viewprofile&amp;u=17686">Olli</a>
+						<a href="./viewtopic.php?f=4&amp;p=559738#p559738"><img src="./styles/subsilverPlus/imageset/icon_topic_latest.gif" width="18" height="9" alt="View the latest post" title="View the latest post" /></a>
+					</p>
+				
+			</td>
+		</tr>
+	
+		<tr>
+			<td class="row1" width="50" align="center"><img src="./styles/subsilverPlus/imageset/forum_read.gif" width="46" height="25" alt="No unread posts" title="No unread posts" /></td>
+			<td class="row1" width="100%">
+				
+				<a class="forumlink" href="./viewforum.php?f=23">Bugs - Linux</a>
+				<p class="forumdesc">Post bugreports for the Linux version here</p>
+				
+			</td>
+			<td class="row2" align="center"><p class="topicdetails">381</p></td>
+			<td class="row2" align="center"><p class="topicdetails">1347</p></td>
+			<td class="row2" align="center" nowrap="nowrap">
+				
+					<p class="topicdetails">Wed Sep 16, 2020 10:30 am</p>
+					<p class="topicdetails"><a href="./memberlist.php?mode=viewprofile&amp;u=2" style="color: #AA0000;" class="username-coloured">Fred</a>
+						<a href="./viewtopic.php?f=23&amp;p=559636#p559636"><img src="./styles/subsilverPlus/imageset/icon_topic_latest.gif" width="18" height="9" alt="View the latest post" title="View the latest post" /></a>
+					</p>
+				
+			</td>
+		</tr>
+	
+		<tr>
+			<td class="row1" width="50" align="center"><img src="./styles/subsilverPlus/imageset/forum_read.gif" width="46" height="25" alt="No unread posts" title="No unread posts" /></td>
+			<td class="row1" width="100%">
+				
+				<a class="forumlink" href="./viewforum.php?f=24">Bugs - Mac OSX</a>
+				<p class="forumdesc">Post bugreports for the Mac OSX version here</p>
+				
+			</td>
+			<td class="row2" align="center"><p class="topicdetails">221</p></td>
+			<td class="row2" align="center"><p class="topicdetails">868</p></td>
+			<td class="row2" align="center" nowrap="nowrap">
+				
+					<p class="topicdetails">Tue Sep 15, 2020 10:02 pm</p>
+					<p class="topicdetails"><a href="./memberlist.php?mode=viewprofile&amp;u=4100">jamirokwai</a>
+						<a href="./viewtopic.php?f=24&amp;p=559622#p559622"><img src="./styles/subsilverPlus/imageset/icon_topic_latest.gif" width="18" height="9" alt="View the latest post" title="View the latest post" /></a>
+					</p>
+				
+			</td>
+		</tr>
+	
+		<tr>
+			<td class="row1" width="50" align="center"><img src="./styles/subsilverPlus/imageset/forum_read.gif" width="46" height="25" alt="No unread posts" title="No unread posts" /></td>
+			<td class="row1" width="100%">
+				
+				<a class="forumlink" href="./viewforum.php?f=42">Bugs - IDE</a>
+				<p class="forumdesc">Post bugs related to the IDE here</p>
+				
+			</td>
+			<td class="row2" align="center"><p class="topicdetails">154</p></td>
+			<td class="row2" align="center"><p class="topicdetails">512</p></td>
+			<td class="row2" align="center" nowrap="nowrap">
+				
+					<p class="topicdetails">Mon Jun 15, 2020 1:36 pm</p>
+					<p class="topicdetails"><a href="./memberlist.php?mode=viewprofile&amp;u=5165">Josh</a>
+						<a href="./viewtopic.php?f=42&amp;p=556154#p556154"><img src="./styles/subsilverPlus/imageset/icon_topic_latest.gif" width="18" height="9" alt="View the latest post" title="View the latest post" /></a>
+					</p>
+				
+			</td>
+		</tr>
+	
+		<tr>
+			<td class="row1" width="50" align="center"><img src="./styles/subsilverPlus/imageset/forum_read.gif" width="46" height="25" alt="No unread posts" title="No unread posts" /></td>
+			<td class="row1" width="100%">
+				
+				<a class="forumlink" href="./viewforum.php?f=37">Bugs - Documentation</a>
+				<p class="forumdesc">Found an issue in the documentation ? Please report it here !</p>
+				
+					<p class="forumdesc"><strong>Moderator:</strong> <a href="./memberlist.php?mode=group&amp;g=4168">Documentation Editors</a></p>
+				
+			</td>
+			<td class="row2" align="center"><p class="topicdetails">196</p></td>
+			<td class="row2" align="center"><p class="topicdetails">1000</p></td>
+			<td class="row2" align="center" nowrap="nowrap">
+				
+					<p class="topicdetails">Wed Sep 16, 2020 9:04 am</p>
+					<p class="topicdetails"><a href="./memberlist.php?mode=viewprofile&amp;u=2" style="color: #AA0000;" class="username-coloured">Fred</a>
+						<a href="./viewtopic.php?f=37&amp;p=559626#p559626"><img src="./styles/subsilverPlus/imageset/icon_topic_latest.gif" width="18" height="9" alt="View the latest post" title="View the latest post" /></a>
+					</p>
+				
+			</td>
+		</tr>
+	
+		<tr>
+			<td class="cat" colspan="2"><h4><a href="./viewforum.php?f=31">OS Specific</a></h4></td>
+			<td class="catdiv" colspan="3">&nbsp;</td>
+		</tr>
+	
+		<tr>
+			<td class="row1" width="50" align="center"><img src="./styles/subsilverPlus/imageset/forum_read.gif" width="46" height="25" alt="No unread posts" title="No unread posts" /></td>
+			<td class="row1" width="100%">
+				
+				<a class="forumlink" href="./viewforum.php?f=10">AmigaOS</a>
+				<p class="forumdesc">AmigaOS specific forum</p>
+				
+			</td>
+			<td class="row2" align="center"><p class="topicdetails">91</p></td>
+			<td class="row2" align="center"><p class="topicdetails">466</p></td>
+			<td class="row2" align="center" nowrap="nowrap">
+				
+					<p class="topicdetails">Sat Jul 18, 2020 7:11 pm</p>
+					<p class="topicdetails"><a href="./memberlist.php?mode=viewprofile&amp;u=15317">_aNdy_</a>
+						<a href="./viewtopic.php?f=10&amp;p=557698#p557698"><img src="./styles/subsilverPlus/imageset/icon_topic_latest.gif" width="18" height="9" alt="View the latest post" title="View the latest post" /></a>
+					</p>
+				
+			</td>
+		</tr>
+	
+		<tr>
+			<td class="row1" width="50" align="center"><img src="./styles/subsilverPlus/imageset/forum_read.gif" width="46" height="25" alt="No unread posts" title="No unread posts" /></td>
+			<td class="row1" width="100%">
+				
+				<a class="forumlink" href="./viewforum.php?f=15">Linux</a>
+				<p class="forumdesc">Linux specific forum</p>
+				
+			</td>
+			<td class="row2" align="center"><p class="topicdetails">1303</p></td>
+			<td class="row2" align="center"><p class="topicdetails">7466</p></td>
+			<td class="row2" align="center" nowrap="nowrap">
+				
+					<p class="topicdetails">Sat Sep 19, 2020 5:48 pm</p>
+					<p class="topicdetails"><a href="./memberlist.php?mode=viewprofile&amp;u=17574">Saki</a>
+						<a href="./viewtopic.php?f=15&amp;p=559735#p559735"><img src="./styles/subsilverPlus/imageset/icon_topic_latest.gif" width="18" height="9" alt="View the latest post" title="View the latest post" /></a>
+					</p>
+				
+			</td>
+		</tr>
+	
+		<tr>
+			<td class="row1" width="50" align="center"><img src="./styles/subsilverPlus/imageset/forum_read.gif" width="46" height="25" alt="No unread posts" title="No unread posts" /></td>
+			<td class="row1" width="100%">
+				
+				<a class="forumlink" href="./viewforum.php?f=5">Windows</a>
+				<p class="forumdesc">Windows specific forum</p>
+				
+			</td>
+			<td class="row2" align="center"><p class="topicdetails">1598</p></td>
+			<td class="row2" align="center"><p class="topicdetails">10499</p></td>
+			<td class="row2" align="center" nowrap="nowrap">
+				
+					<p class="topicdetails">Sun Sep 20, 2020 10:57 am</p>
+					<p class="topicdetails"><a href="./memberlist.php?mode=viewprofile&amp;u=826">oryaaaaa</a>
+						<a href="./viewtopic.php?f=5&amp;p=559750#p559750"><img src="./styles/subsilverPlus/imageset/icon_topic_latest.gif" width="18" height="9" alt="View the latest post" title="View the latest post" /></a>
+					</p>
+				
+			</td>
+		</tr>
+	
+		<tr>
+			<td class="row1" width="50" align="center"><img src="./styles/subsilverPlus/imageset/forum_read.gif" width="46" height="25" alt="No unread posts" title="No unread posts" /></td>
+			<td class="row1" width="100%">
+				
+				<a class="forumlink" href="./viewforum.php?f=19">Mac OSX</a>
+				<p class="forumdesc">Mac OSX specific forum</p>
+				
+			</td>
+			<td class="row2" align="center"><p class="topicdetails">1096</p></td>
+			<td class="row2" align="center"><p class="topicdetails">6592</p></td>
+			<td class="row2" align="center" nowrap="nowrap">
+				
+					<p class="topicdetails">Thu Sep 17, 2020 4:26 pm</p>
+					<p class="topicdetails"><a href="./memberlist.php?mode=viewprofile&amp;u=4161">ProphetOfDoom</a>
+						<a href="./viewtopic.php?f=19&amp;p=559670#p559670"><img src="./styles/subsilverPlus/imageset/icon_topic_latest.gif" width="18" height="9" alt="View the latest post" title="View the latest post" /></a>
+					</p>
+				
+			</td>
+		</tr>
+	
+		<tr>
+			<td class="cat" colspan="2"><h4><a href="./viewforum.php?f=32">Miscellaneous</a></h4></td>
+			<td class="catdiv" colspan="3">&nbsp;</td>
+		</tr>
+	
+		<tr>
+			<td class="row1" width="50" align="center"><img src="./styles/subsilverPlus/imageset/forum_read.gif" width="46" height="25" alt="No unread posts" title="No unread posts" /></td>
+			<td class="row1" width="100%">
+				
+				<a class="forumlink" href="./viewforum.php?f=14">Announcement</a>
+				<p class="forumdesc">Developed or developing a new product in PureBasic? Tell the world about it.</p>
+				
+			</td>
+			<td class="row2" align="center"><p class="topicdetails">1720</p></td>
+			<td class="row2" align="center"><p class="topicdetails">37739</p></td>
+			<td class="row2" align="center" nowrap="nowrap">
+				
+					<p class="topicdetails">Sun Sep 20, 2020 2:15 am</p>
+					<p class="topicdetails"><a href="./memberlist.php?mode=viewprofile&amp;u=5038">leonhardt</a>
+						<a href="./viewtopic.php?f=14&amp;p=559742#p559742"><img src="./styles/subsilverPlus/imageset/icon_topic_latest.gif" width="18" height="9" alt="View the latest post" title="View the latest post" /></a>
+					</p>
+				
+			</td>
+		</tr>
+	
+		<tr>
+			<td class="row1" width="50" align="center"><img src="./styles/subsilverPlus/imageset/forum_read.gif" width="46" height="25" alt="No unread posts" title="No unread posts" /></td>
+			<td class="row1" width="100%">
+				
+				<a class="forumlink" href="./viewforum.php?f=17">Off Topic</a>
+				<p class="forumdesc">For everything that's not in any way related to PureBasic. General chat etc...</p>
+				
+			</td>
+			<td class="row2" align="center"><p class="topicdetails">5459</p></td>
+			<td class="row2" align="center"><p class="topicdetails">69603</p></td>
+			<td class="row2" align="center" nowrap="nowrap">
+				
+					<p class="topicdetails">Tue Sep 15, 2020 2:24 pm</p>
+					<p class="topicdetails"><a href="./memberlist.php?mode=viewprofile&amp;u=331">NicTheQuick</a>
+						<a href="./viewtopic.php?f=17&amp;p=559607#p559607"><img src="./styles/subsilverPlus/imageset/icon_topic_latest.gif" width="18" height="9" alt="View the latest post" title="View the latest post" /></a>
+					</p>
+				
+			</td>
+		</tr>
+	
+		<tr>
+			<td class="cat" colspan="2"><h4><a href="./viewforum.php?f=33">Showcase</a></h4></td>
+			<td class="catdiv" colspan="3">&nbsp;</td>
+		</tr>
+	
+		<tr>
+			<td class="row1" width="50" align="center"><img src="./styles/subsilverPlus/imageset/forum_read.gif" width="46" height="25" alt="No unread posts" title="No unread posts" /></td>
+			<td class="row1" width="100%">
+				
+				<a class="forumlink" href="./viewforum.php?f=27">Applications - Feedback and Discussion</a>
+				<p class="forumdesc">Applications, Games, Tools, User libs and useful stuff coded in PureBasic</p>
+				
+			</td>
+			<td class="row2" align="center"><p class="topicdetails">593</p></td>
+			<td class="row2" align="center"><p class="topicdetails">11071</p></td>
+			<td class="row2" align="center" nowrap="nowrap">
+				
+					<p class="topicdetails">Sat Sep 19, 2020 3:10 pm</p>
+					<p class="topicdetails"><a href="./memberlist.php?mode=viewprofile&amp;u=16679">darius676</a>
+						<a href="./viewtopic.php?f=27&amp;p=559727#p559727"><img src="./styles/subsilverPlus/imageset/icon_topic_latest.gif" width="18" height="9" alt="View the latest post" title="View the latest post" /></a>
+					</p>
+				
+			</td>
+		</tr>
+	
+		<tr>
+			<td class="row1" width="50" align="center"><img src="./styles/subsilverPlus/imageset/forum_read.gif" width="46" height="25" alt="No unread posts" title="No unread posts" /></td>
+			<td class="row1" width="100%">
+				
+				<a class="forumlink" href="./viewforum.php?f=25">PureFORM &amp; JaPBe</a>
+				<p class="forumdesc">All PureFORM, JaPBe, Libs and useful code maintained by gnozal</p>
+				
+					<p class="forumdesc"><strong>Moderator:</strong> <a href="./memberlist.php?mode=viewprofile&amp;u=86">gnozal</a></p>
+				
+			</td>
+			<td class="row2" align="center"><p class="topicdetails">38</p></td>
+			<td class="row2" align="center"><p class="topicdetails">6198</p></td>
+			<td class="row2" align="center" nowrap="nowrap">
+				
+					<p class="topicdetails">Sun Jul 12, 2020 11:40 am</p>
+					<p class="topicdetails"><a href="./memberlist.php?mode=viewprofile&amp;u=2469">mk-soft</a>
+						<a href="./viewtopic.php?f=25&amp;p=557444#p557444"><img src="./styles/subsilverPlus/imageset/icon_topic_latest.gif" width="18" height="9" alt="View the latest post" title="View the latest post" /></a>
+					</p>
+				
+			</td>
+		</tr>
+	
+		<tr>
+			<td class="row1" width="50" align="center"><img src="./styles/subsilverPlus/imageset/forum_read.gif" width="46" height="25" alt="No unread posts" title="No unread posts" /></td>
+			<td class="row1" width="100%">
+				
+				<a class="forumlink" href="./viewforum.php?f=26">TailBite</a>
+				<p class="forumdesc">TailBite specific forum</p>
+				
+					<p class="forumdesc"><strong>Moderators:</strong> <a href="./memberlist.php?mode=viewprofile&amp;u=86">gnozal</a>, <a href="./memberlist.php?mode=viewprofile&amp;u=1040">ABBKlaus</a>, <a href="./memberlist.php?mode=viewprofile&amp;u=1830">lexvictory</a></p>
+				
+			</td>
+			<td class="row2" align="center"><p class="topicdetails">128</p></td>
+			<td class="row2" align="center"><p class="topicdetails">1679</p></td>
+			<td class="row2" align="center" nowrap="nowrap">
+				
+					<p class="topicdetails">Wed Nov 15, 2017 10:52 am</p>
+					<p class="topicdetails"><a href="./memberlist.php?mode=viewprofile&amp;u=37">El_Choni</a>
+						<a href="./viewtopic.php?f=26&amp;p=514904#p514904"><img src="./styles/subsilverPlus/imageset/icon_topic_latest.gif" width="18" height="9" alt="View the latest post" title="View the latest post" /></a>
+					</p>
+				
+			</td>
+		</tr>
+	
+</table>
+<span class="gensmall"><a href="./ucp.php?mode=delete_cookies">Delete all board cookies</a> | <a href="./memberlist.php?mode=leaders">The team</a></span><br />
+
+
+<br clear="all" />
+
+<table class="tablebg" width="100%" cellspacing="1" cellpadding="0" style="margin-top: 5px;">
+	<tr>
+		<td class="row1">
+			<p class="breadcrumbs"><a href="./index.php">Board index</a></p>
+			<p class="datetime">All times are UTC + 1 hour </p>
+		</td>
+	</tr>
+	</table>
+	<br clear="all" />
+
+	<table class="tablebg" width="100%" cellspacing="1">
+	<tr>
+		<td class="cat" colspan="2"><h4>Who is online</h4></td>
+	</tr>
+	<tr>
+	
+		<td class="row1" rowspan="2" align="center" valign="middle"><img src="./styles/subsilverPlus/theme/images/whosonline.gif" alt="Who is online" /></td>
+	
+		<td class="row1" width="100%"><span class="genmed">In total there are <strong>264</strong> users online :: 1 registered, 3 hidden and 260 guests (based on users active over the past 5 minutes)<br />Most users ever online was <strong>1381</strong> on Tue Sep 15, 2020 8:21 pm<br /><br />Registered users: <a href="./memberlist.php?mode=viewprofile&amp;u=2552">oreopa</a></span></td>
+	</tr>
+	
+		<tr>
+			<td class="row1"><b class="gensmall">Legend :: <a style="color:#AA0000" href="./memberlist.php?mode=group&amp;g=4164">Administrators</a>, <a href="./memberlist.php?mode=group&amp;g=4168">Documentation Editors</a>, <a style="color:#00AA00" href="./memberlist.php?mode=group&amp;g=4163">Global moderators</a></b></td>
+		</tr>
+	
+	</table>
+
+	<br clear="all" />
+
+	<table class="tablebg" width="100%" cellspacing="1">
+	<tr>
+		<td class="cat" colspan="2"><h4>Birthdays</h4></td>
+	</tr>
+	<tr>
+		<td class="row1" align="center" valign="middle"><img src="./styles/subsilverPlus/theme/images/whosonline.gif" alt="Birthdays" /></td>
+		<td class="row1" width="100%"><p class="genmed">No birthdays today</p></td>
+	</tr>
+	</table>
+
+
+<br clear="all" />
+
+<table class="tablebg" width="100%" cellspacing="1">
+<tr>
+	<td class="cat" colspan="2"><h4>Statistics</h4></td>
+</tr>
+<tr>
+	<td class="row1"><img src="./styles/subsilverPlus/theme/images/whosonline.gif" alt="Statistics" /></td>
+	<td class="row1" width="100%" valign="middle"><p class="genmed">Total posts <strong>508809</strong> | Total topics <strong>62089</strong> | Total members <strong>5891</strong> | Our newest member <strong><a href="./memberlist.php?mode=viewprofile&amp;u=17920">Wolfsong</a></strong></p></td>
+</tr>
+</table>
+
+
+	<br clear="all" />
+
+	<form method="post" action="./ucp.php?mode=login">
+	
+	<table class="tablebg" width="100%" cellspacing="1">
+	<tr>
+		<td class="cat"><h4><a href="./ucp.php?mode=login">Login</a></h4></td>
+	</tr>
+	<tr>
+		<td class="row1" align="center"><span class="genmed">Username:</span> <input class="post" type="text" name="username" size="10" />&nbsp; <span class="genmed">Password:</span> <input class="post" type="password" name="password" size="10" />&nbsp;  <span class="gensmall">Log me on automatically each visit</span> <input type="checkbox" class="radio" name="autologin" />&nbsp; <input type="submit" class="btnmain" name="login" value="Login" /></td>
+	</tr>
+	</table>
+        <input type="hidden" name="redirect" value="./index.php?" />
+
+	
+	</form>
+
+
+<br clear="all" />
+
+<table class="legend">
+<tr>
+	<td width="20" align="center"></td>
+	<td><span class="gensmall">New posts</span></td>
+	<td>&nbsp;&nbsp;</td>
+	<td width="20" align="center"><img src="./styles/subsilverPlus/imageset/forum_read.gif" width="46" height="25" alt="No unread posts" title="No unread posts" /></td>
+	<td><span class="gensmall">No new posts</span></td>
+	<td>&nbsp;&nbsp;</td>
+	<td width="20" align="center"><img src="./styles/subsilverPlus/imageset/forum_read_locked.gif" width="46" height="25" alt="No unread posts [ Locked ]" title="No unread posts [ Locked ]" /></td>
+	<td><span class="gensmall">Forum locked</span></td>
+</tr>
+</table>
+
+
+	</div><!-- / wrapcentre -->
+	<!--
+		We request you retain the full copyright notice below including the link to www.phpbb.com.
+		This not only gives respect to the large amount of time given freely by the developers
+		but also helps build interest, traffic and use of phpBB3. If you (honestly) cannot retain
+		the full copyright we ask you at least leave in place the "Powered by phpBB" line, with
+		"phpBB" linked to www.phpbb.com. If you refuse to include even this then support on our
+		forums may be affected.
+
+		The phpBB Group : 2006
+	//-->
+	
+	<!--
+		phpBB style name: subsilver+
+		Based on style: subsilver2 (this is the default phpBB3 style)
+		Author:  Sevdin Filiz ( http://www.canversoft.net/ )
+	//-->
+
+<div align=center>
+<script type="text/javascript"><!--
+google_ad_client = "pub-9400838095205149";
+/* 728x90, forum anglais */
+google_ad_slot = "3681155193";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br>&nbsp;<br>
+</div>
+	
+	<div id="wrapfooter">
+		<br /><br />
+		<span class="copyright">Powered by <a href="http://www.phpbb.com/">phpBB</a> &copy; 2008 phpBB Group
+		<br />subSilver+ theme by <a href="http://www.canversoft.net/" title="kurumsal ve bireysel web çözümleri" target="_blank">Canver Software</a>, sponsor <a href="http://www.sanalmodifiye.com/" title="Sanal Modifiye" target="_blank">Sanal Modifiye</a>
+		</span>
+	</div>
+</div><!-- / wrapmain -->
+
+</body>
+</html>

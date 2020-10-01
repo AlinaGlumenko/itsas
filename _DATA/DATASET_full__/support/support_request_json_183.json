@@ -1,0 +1,5 @@
+{
+"time" : "06/05/2017, 13:13:42",
+"sender" : "isaiah0203@yahoo.com",
+"message" : "I keep getting this error randomly when trying to access different courses General Error SQL ERROR [ mysql4 ] User drlcourses has already more than 'max_user_connections' active connections [1203]"
+}

@@ -1,2 +1,11 @@
-87a9cba183bf2f94d49915264c6edf63
+Curious about Artificial Intelligence? Start here with Machine Learning — what it is, what it isn't, and how we all interact with it every day.
 
+Join product developer and keynote speaker Christian Heilmann for a fascinating class all about Machine Learning. From how we all use it to where it's headed in the future, you'll learn the ins and outs of how machines are processing our data, finding patterns, and making our lives easier every day. With a focus on how machine learning can power human interfaces and ease our interactions with technology, lessons are packed with tools and tips for developers, designers, and the curious-minded. Key lessons include:
+
+Machine Learning myths, capabilities, and limitations
+Tools to incorporate machine learning into your products
+Visual and audio uses for machine learning
+Ethical considerations for everyone
+Whether you're a developer looking to incorporate machine learning into your work or are just curious about artificial intelligence today, this class is a behind-the-scenes glimpse into the world of cutting edge technology.
+
+After taking this class, you'll have a clear understanding of how we all interact with artificial intelligence every day, what that means for your life, and how to harness it to make the world a better place.

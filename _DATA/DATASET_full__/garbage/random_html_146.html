@@ -1,0 +1,168 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
+<link href="./css/style.css" type="text/css" rel="stylesheet"/>
+<link href="./css/component.css" type="text/css" rel="stylesheet"/>
+<link href="./css/welcome.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="./js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="./js/jquery-ui-1.10.4.min.js"></script>
+<script type="text/javascript" src="./script/skk.js"></script>
+<script type="text/javascript" src="./config/config.js"></script>
+<script type="text/javascript" src="./script/logic.js"></script>
+<script type="text/javascript" src="./script/pub_action.js"></script>
+<script type="text/javascript" src="./script/customized.js"></script>
+<script type="text/javascript" src="./script/welcome.js"></script>
+<script type="text/javascript" src="./script/init.js"></script>
+</head>
+
+<body onload="init_welcome()">
+<div class="head">
+	<a id="logo_a" href="" style="display:block; height:60px; float:left;">
+		<img id="logo_img" border="0" src="./images/logo.png" style="margin:9px 0 0 6px" />
+	</a>
+	<div class="head_middle" id="showlang"></div>
+	<div class="head_right" id="advanced"><a id="advance" href=""><img id="imgsrc" src="images/btn_mobile_setup.png" border="0" /></a></div>
+</div>
+<div class="tips" align="center">
+	<span id="div_qs"></span>
+</div>
+
+<div class="inter" id="inter">
+	<div class="inter_left" id="interl"></div>
+	<div class="inter_right">
+		<div class="inter_right_span" id="h3_inter"></div>
+		<div id="inter_right_conntype_inputs" class="inter_right_contype">
+			<div class="df_context">
+				<select class="df_select" size="1" id="selmode" onChange="set_value(this.value);" style="width:340px;">
+					<option value ="1"></option>
+					<option value ="0"></option>
+					<option value="3"></option>
+					<option value="4"></option>
+					<option value="6"></option>
+					<option value="8"></option>
+					<option value="17"></option>
+				</select>
+			</div>
+			<div class="df_context" style="border-top:1px solid #ececec" id="ip">
+				<div class="df_label" id="l_ip"></div>
+				<input type="text" class="df_text" id="wan_ip" maxlength="15"/>
+			</div>
+			<div class="df_context" id="mask">
+				<div class="df_label" id="l_mask"></div>
+				<input type="text" class="df_text" id="wan_mask" maxlength="15"/>
+			</div>
+			<div class="df_context" id="gateway">
+				<div class="df_label" id="l_gateway"></div>
+				<input type="text" class="df_text" id="wan_gw" maxlength="15"/>
+			</div>
+			<div class="df_context" id="dns_a">
+				<div class="df_label" id="l_dns_a"></div>
+				<input type="text" class="df_text" id="wan_dns_a" maxlength="15"/>
+			</div>
+			<div class="df_context" id="dns_b">
+				<div class="df_label" id="l_dns_b"></div>
+				<input type="text" class="df_text" id="wan_dns_b" maxlength="15"/>
+				<label id="dns_b_after"></label>
+			</div>
+			<div class="df_context" style="border-top:1px solid #ececec" id="user">
+				<div class="df_label" id="l_user"></div>
+				<input type="text" class="df_text" id="pppoe_username" maxlength="31"/>
+			</div>
+			<div class="df_context" id="pass">
+				<label class="df_label" id="l_pass"></label>
+				<span id="ppp_show_hide">
+				<input id="pppoe_pwd" maxlength="31" type="password" class="df_text" /></span>	<!-- 127 -->
+				<input id="pppoe_pwd_btn" type="button" class="df_btn" style="float:left;min-width:20px;height:20px;margin-top:4px;background:url(./images/show_pwd.png) no-repeat; _background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='crop', src='./images/show_pwd.png');border:none;margin-top:5px;" />
+			</div>
+			<div class="df_context" id="domain">
+				<div class="df_label" id="l_domain"></div>
+				<input type="text" class="df_text" id="wan_domain" maxlength="40"/>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="wl_power_layer" class="wl_power">
+	<div id="wl_power_image" class="wl_power_left"></div>
+	<div class="wl_power_right">
+		<div id="s_power" class="wl_power_right_span">Wireless Signal</div>
+		<div id="s_power1" class="df_label" style="margin-bottom:1px;"></div>
+		<div>
+			<input class="df_radio" type="radio" onclick="set_power(0)" name="wl_power" value="0">
+			<label id="s_down">Normal</label>
+			<input class="df_radio" type="radio" onclick="set_power(1)" name="wl_power" value="1">
+			<label id="s_up">Enhanced</label>
+			<input type="hidden" id="wl_power" value="0" />
+		</div>
+	</div>
+</div>
+
+<div class="wire" id="wires">
+	<div class="wire_left" id="wirel"></div>
+	<div class="wire_right df_wireless" >
+		<div class="df_panel">
+			<div class="wire_right_span" id="h3_wire"></div>
+		</div>
+
+		<!-- wireless -->
+		<div class="df_panel" id="wire_sel_band_div">
+			<div class="df_label" id="div_wire_sel_band"></div>
+			<div>
+				<input type="radio" class="df_radio" value="1" name="band_mode" id="band_mode_2" onclick="band_sec_set();"/>
+				<label id="l_band_mode_2" for="band_mode_2"></label>
+				<input type="radio" class="df_radio" value="0" name="band_mode" id="band_mode_5" onclick="band_sec_set();"/>
+				<label id="l_band_mode_5" for="band_mode_5"></label>
+			</div>
+		</div>
+
+		<div class="df_panel div_2g div_2g_mtop">
+			<div class="df_label" id="div_ssid"></div>
+			<div><input type="text" class="df_text" maxlength="33" id="ssid"/></div>
+		</div>
+		<div class="df_panel div_2g" id="wire_sec_div">
+			<div class="df_label" id="div_wire_sec"></div>
+			<input type="radio" class="df_radio" value="0" name="enable_wire" id="enable_wire1" onclick="enable_wire_click('')"/>
+			<label id="l_sec_mode_none" for="enable_wire1"></label>
+			<input type="radio" class="df_radio" value="6" name="enable_wire" id="enable_wire2" onclick="enable_wire_click('')"/>
+			<label id="l_sec_mode_mix" for="enable_wire2"></label>
+		</div>
+		<div class="df_panel div_2g div_2g_mtop" id="wire_sec_pwd_div">
+			<div class="df_label" id="div_wire_pwd"></div>
+			<input type="password" class="df_text" maxlength="63" id="wan_key_wpa"/>
+			<div id="wan_sec_tip" class="df_after"></div>
+		</div>
+
+		<div class="df_panel div_5g div_5g_mtop">
+			<div class="df_label" id="div_ssid5g"></div>
+			<input type="text" class="df_text" maxlength="33" id="ssid5g"/>
+		</div>
+		<div class="df_panel div_5g" id="wire_sec5g_div">
+			<div class="df_label" id="div_wire_sec5g"></div>
+			<input type="radio" class="df_radio" value="0" name="enable_wire5g" id="enable_wire5g1" onclick="enable_wire_click('5g')"/>
+			<label id="l_sec_mode_none5g" for="enable_wire5g1"></label>
+			<input type="radio" class="df_radio" value="6" name="enable_wire5g" id="enable_wire5g2" onclick="enable_wire_click('5g')"/>
+			<label id="l_sec_mode_mix5g" for="enable_wire5g2"></label>
+		</div>
+		<div class="df_panel div_5g div_5g_mtop" id="wire_sec_pwd_div">
+			<div class="df_label" id="div_wire_pwd5g"></div>
+			<input type="password" class="df_text" maxlength="63" id="wan_key_wpa5g"/>
+			<div id="wan_sec_tip5g" class="df_after"></div>
+		</div>
+		<!-- end of wireless -->
+
+	</div>
+</div>
+
+<div class="bottom" align="center">
+		<input type="button" class="df_btn btn_save" onClick="save_shortcut();" />
+</div>
+<div class="help" id="help_s">http://www.netis-systems.com | E-mail info@netis-systems.com
+<span id="pcver" style="display:none" onClick="go(1,'w');" ></span>
+<span id="mobver" style="display:none" onClick="go(0,'w');"></span>
+</div>
+</body>
+</html>

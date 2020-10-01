@@ -1,0 +1,25 @@
+Learn how to speed up your java programs and multi-task once and for all with this easy but informative multi threading course.
+
+In this course we discuss and preform
+
+1. Multi-threading theory
+
+2. Creating a thread in Java
+
+3. Mutex theory
+
+4. Creating a mutex
+
+5. Semaphore theory
+
+6. Creating a semaphore
+
+7. Atomic Variable theory
+
+8. Creating atomic variables
+
+9. Thread pool theory
+
+10. Creating thread pools.
+
+After this course you should be on your way to knowing multi-threading well its important to follow this course to the end as multi-threading can be a complicated subject. I have made it as simple as possible for beginners stick with it and you will see results.

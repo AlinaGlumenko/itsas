@@ -1,0 +1,28 @@
+{
+  "id": "3UdsSJd4qkWcEyU9LRnOsw",
+  "name": "Metal - Old Blued Steel",
+  "origin": "mixer-created",
+  "categories": [
+    "smartmaterial",
+    "smartmaterials",
+    "mixer"
+  ],
+  "tags": [],
+  "previews": {
+    "images": [
+      {
+        "uri": "SmartMaterialPreview.png"
+      }
+    ]
+  },
+  "meta": [],
+  "averageColor": "#68727E",
+  "version": 2,
+  "maps": [
+    {
+      "name": "SmartMaterial",
+      "type": "smartmaterial",
+      "uri": "Metal - Old Blued Steel.xml"
+    }
+  ]
+}

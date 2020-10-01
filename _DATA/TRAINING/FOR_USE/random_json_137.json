@@ -1,0 +1,28 @@
+{
+  "id": "btvBHKi54UGl0-gFGOsddw",
+  "name": "Plastic - Bakelite (Black)",
+  "origin": "mixer-created",
+  "categories": [
+    "smartmaterial",
+    "smartmaterials",
+    "mixer"
+  ],
+  "tags": [],
+  "previews": {
+    "images": [
+      {
+        "uri": "SmartMaterialPreview.png"
+      }
+    ]
+  },
+  "meta": [],
+  "averageColor": "#191919",
+  "version": 2,
+  "maps": [
+    {
+      "name": "SmartMaterial",
+      "type": "smartmaterial",
+      "uri": "Plastic - Bakelite (Black).xml"
+    }
+  ]
+}

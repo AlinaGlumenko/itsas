@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <time>06/02/2019, 02:06:41</time>
+  <sender>lkafar@getdebtfree.com</sender>
+  <message>every time i look at a topic i get this weird message above the "courses" Title saying: [phpBB Debug] PHP Warning: in file [ROOT]/includes/functions.php on line 286: date() [function.date]: It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected 'America/Chicago' for 'CDT/-5.0/DST' instead</message>
+</root>
