@@ -78,7 +78,9 @@ def classifier():
             # build default classifier
             buildClassifier(app.config["TRAINING_DATA_PATH"], 'default', testSize, app.config["COLUMN_NAMES"], app.config["RESULT_VALUES"])
             
-        return redirect('/confusion_matrix')
+        # return redirect('/confusion_matrix')
+        return redirect('/exploitation')
+
     return render_template('classifier.html')
 
 import numpy as np

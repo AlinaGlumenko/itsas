@@ -26,9 +26,10 @@ def getClassifierFor(data, testSize, columnsNames, resultColNames):
     testSize = int(testSize)
 
     data = data[[columnsNames[-1]] + columnsNames[:-1]]
+    del data[columnsNames[4]]
 
     # prepare string data in cols (category) for training
-    df_with_dummies = pd.get_dummies(data, columns=[columnsNames[3], columnsNames[4], columnsNames[5]])
+    df_with_dummies = pd.get_dummies(data, columns=[columnsNames[3], columnsNames[5]])
 
     # create a dictionary with the label codification
     result_codes = {}
@@ -117,7 +118,8 @@ def startClassify(fullPath, columnsNames, resultColNames, dirPathForSaving):
 
     # prepare data
     preparedData = data[list(data.columns)[1:-1]]
-    df_with_dummies = pd.get_dummies(preparedData, columns=[columnsNames[3], columnsNames[4], columnsNames[5]])
+    del preparedData[columnsNames[4]]
+    df_with_dummies = pd.get_dummies(preparedData, columns=[columnsNames[3], columnsNames[5]])
 
     # load db rfc
     path_rfc_pickle = os.getcwd() + "\\logic\\intermediateFiles\\db_rfc.pickle"
