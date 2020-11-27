@@ -69,7 +69,7 @@ def classifier():
                 # change filename
                 filename = secureCustomFilename(trainingSetFile.filename)
                 # clear dir
-                clearDir(app.config['TRAINING_DATA_PATH'])
+                clearDir(app.config['TRAINING_DATA_PATH'], 'default')
                 # save file
                 trainingSetFile.save(os.path.join(app.config['TRAINING_DATA_PATH'], filename))
                 # build custom classifier

@@ -175,7 +175,7 @@ def createFeaturesFromText(data, contentType):
     df = df.rename({'Content_Parsed_6': 'Content_Parsed'}, axis='columns')
     
     # TF-IDF
-    features = tfidf.transform(df).toarray()    
+    features = tfidf.transform(df).toarray()
     return features
 
 

@@ -26,10 +26,11 @@ def getClassifierFor(data, testSize, columnsNames, resultColNames):
     testSize = int(testSize)
 
     data = data[[columnsNames[-1]] + columnsNames[:-1]]
-    del data[columnsNames[4]]
+    # del data[columnsNames[4]]
+    print(data.columns)
 
     # prepare string data in cols (category) for training
-    df_with_dummies = pd.get_dummies(data, columns=[columnsNames[3], columnsNames[5]])
+    df_with_dummies = pd.get_dummies(data, columns=[columnsNames[3], columnsNames[4], columnsNames[5]])
 
     # create a dictionary with the label codification
     result_codes = {}
@@ -47,6 +48,7 @@ def getClassifierFor(data, testSize, columnsNames, resultColNames):
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=testSize/100) # for example, 70% training and 30% test
 
     #Create a Gaussian Classifier
+    # clf = RandomForestClassifier(n_estimators=100, random_state=3)
     clf = RandomForestClassifier(n_estimators=100)
 
     #Train the model using the training sets y_pred=clf.predict(X_test)
@@ -118,8 +120,8 @@ def startClassify(fullPath, columnsNames, resultColNames, dirPathForSaving):
 
     # prepare data
     preparedData = data[list(data.columns)[1:-1]]
-    del preparedData[columnsNames[4]]
-    df_with_dummies = pd.get_dummies(preparedData, columns=[columnsNames[3], columnsNames[5]])
+    # del preparedData[columnsNames[4]]
+    df_with_dummies = pd.get_dummies(preparedData, columns=[columnsNames[3], columnsNames[4], columnsNames[5]])
 
     # load db rfc
     path_rfc_pickle = os.getcwd() + "\\logic\\intermediateFiles\\db_rfc.pickle"

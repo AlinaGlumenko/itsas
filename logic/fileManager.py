@@ -32,11 +32,12 @@ def saveRawDataFiles(files, filesDirPath, allowedExtensions):
             print("can't save file")
 
 
-def clearDir(filesDirPath):
+def clearDir(filesDirPath, exceptionName=''):
     '''remove files from directory'''
     with os.scandir(filesDirPath) as entries:
         for entry in entries:
-            if entry.is_file():                    
+            name = entry.name.rsplit(".", 1)[0]
+            if entry.is_file() and name != exceptionName:                    
                 os.remove(filesDirPath + entry.name)
 
 
